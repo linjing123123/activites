@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>我的爱心证书</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="./css/swiper.min.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="./css/style.css?v={$v}">
+    <script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+    <script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+</head>
+<body>
+<!-- 头部导航 -->
+<include file="Activity/Public/header" title="我的爱心证书" backflag="true" appgo="false" />
+<div class="content pt88">
+    <!-- 有爱心证书 -->
+    <div class="havecate theme-color">
+        <div class="certificate-title">您已累计获得<span>5</span>张爱心证书</div>
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img class="certificate-img" src="./images/certificate-item.png"/>
+                </div>
+                <div class="swiper-slide">
+                    <img class="certificate-img" src="./images/certificate-item.png"/>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination" style="display:block"></div>
+    </div>
+    <!-- 无爱心证书 -->
+    <div class="nocate">
+        <img class="certificate-img" src="./images/nocate-icon.png"/>
+        <p class="certificate-text">暂无爱心证书</p>
+    </div>
+</div>
+</body>
+<script src="../public/js/public.js?v={$v}"></script>
+<script src="../public/js/zepto.alert.js?v={$v}"></script>
+<script src="./js/swiper.min.js?v={$v}"></script>
+<script type="text/javascript">
+    $(function(){
+        //判断app是安卓还是ios方法（例）
+        var u = navigator.userAgent;
+        if (u.indexOf("pop=1") < 0) {
+            $(".content").removeClass("pt88");
+        }else{
+
+        }
+    })
+</script>
+<script type="text/javascript">
+    //滑块特效
+    window.onload = function() {
+        var swiper = new Swiper('.swiper-container',{
+            slidesPerView: 1.4,
+            centeredSlides : true,
+            pagination : '.swiper-pagination',
+            onInit:function(swiper){
+                // swiper.slides[0].className="swiper-slide";//第一次打开不要动画
+                //如果只有两张图片的时候，只在右侧滑动
+                if(swiper.slides.length == 2){
+                    console.log(1);
+                }
+            }
+        });
+    }
+
+</script>
+</html>

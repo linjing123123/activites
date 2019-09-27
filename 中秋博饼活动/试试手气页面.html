@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>无博饼不中秋</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">	    
+	    <link rel="stylesheet" type="text/css" href="./css/css.css?v={$v}">	    
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="content playtest">
+			<img src="./images/playTestBg.png?v={$v}"/>
+			<div class="playTestText">
+				试试手气，只显示结果，<br>
+				不涉及到奖品抽奖和发送，次数无限制
+			</div>
+			<div class="test-shaizhibox">
+				<!--碗-->
+				<div class="test-wan">
+					<img src="./images/wan.png?v={$v}">
+					<div class="box1 sz k1">
+						<div class="up sm"></div>
+						<div class="down sm"></div>
+						<div class="before sm"></div>
+						<div class="after sm"></div>
+						<div class="left sm"></div>
+						<div class="right sm"></div>
+						<div class="z1"></div>
+						<div class="z2"></div>
+						<div class="z3"></div>
+						<div class="z4"></div>
+						<div class="z5"></div>
+						<div class="z6"></div>
+					</div>
+					<div class="box2 sz k2">
+						<div class="up sm"></div>
+						<div class="down sm"></div>
+						<div class="before sm"></div>
+						<div class="after sm"></div>
+						<div class="left sm"></div>
+						<div class="right sm"></div>
+						<div class="z1"></div>
+						<div class="z2"></div>
+						<div class="z3"></div>
+						<div class="z4"></div>
+						<div class="z5"></div>
+						<div class="z6"></div>
+					</div>
+					<div class="box3 sz k3">
+						<div class="up sm"></div>
+						<div class="down sm"></div>
+						<div class="before sm"></div>
+						<div class="after sm"></div>
+						<div class="left sm"></div>
+						<div class="right sm"></div>
+						<div class="z1"></div>
+						<div class="z2"></div>
+						<div class="z3"></div>
+						<div class="z4"></div>
+						<div class="z5"></div>
+						<div class="z6"></div>
+					</div>
+					<div class="box4 sz k4">
+						<div class="up sm"></div>
+						<div class="down sm"></div>
+						<div class="before sm"></div>
+						<div class="after sm"></div>
+						<div class="left sm"></div>
+						<div class="right sm"></div>
+						<div class="z1"></div>
+						<div class="z2"></div>
+						<div class="z3"></div>
+						<div class="z4"></div>
+						<div class="z5"></div>
+						<div class="z6"></div>
+					</div>
+					<div class="box5 sz k5">
+						<div class="up sm"></div>
+						<div class="down sm"></div>
+						<div class="before sm"></div>
+						<div class="after sm"></div>
+						<div class="left sm"></div>
+						<div class="right sm"></div>
+						<div class="z1"></div>
+						<div class="z2"></div>
+						<div class="z3"></div>
+						<div class="z4"></div>
+						<div class="z5"></div>
+						<div class="z6"></div>
+					</div>
+					<div class="box6 sz k6">
+						<div class="up sm"></div>
+						<div class="down sm"></div>
+						<div class="before sm"></div>
+						<div class="after sm"></div>
+						<div class="left sm"></div>
+						<div class="right sm"></div>
+						<div class="z1"></div>
+						<div class="z2"></div>
+						<div class="z3"></div>
+						<div class="z4"></div>
+						<div class="z5"></div>
+						<div class="z6"></div>
+					</div>
+				</div>
+			</div>
+			<div class="test-yaobtn"><span class="test-icon"></span>点击或摇一摇</div>
+		</div>
+		<!--遮罩-->
+		<div class="test-zz" style="display: none;"></div>
+		<!--没有奖品弹窗-->
+		<div class="test-alert-none alertnone" style="display: none;">
+			<img src="./images/test-alert-none.png?v={$v}"/>
+			<div class="box1 sz k1">
+				<div class="up sm1"></div>
+				<div class="down sm1"></div>
+				<div class="before sm1"></div>
+				<div class="after sm1"></div>
+				<div class="left sm1"></div>
+				<div class="right sm1"></div>
+			<div class="z1"></div>
+				<div class="z2"></div>
+				<div class="z3"></div>
+				<div class="z4"></div>
+				<div class="z5"></div>
+				<div class="z6"></div>
+			</div>
+			<div class="box2 sz k2">
+				<div class="up sm1"></div>
+				<div class="down sm1"></div>
+				<div class="before sm1"></div>
+				<div class="after sm1"></div>
+				<div class="left sm1"></div>
+				<div class="right sm1"></div>
+				<div class="z1"></div>
+				<div class="z2"></div>
+				<div class="z3"></div>
+				<div class="z4"></div>
+				<div class="z5"></div>
+				<div class="z6"></div>
+			</div>
+			<div class="box3 sz k3">
+				<div class="up sm1"></div>
+				<div class="down sm1"></div>
+				<div class="before sm1"></div>
+				<div class="after sm1"></div>
+				<div class="left sm1"></div>
+				<div class="right sm1"></div>
+				<div class="z1"></div>
+				<div class="z2"></div>
+				<div class="z3"></div>
+				<div class="z4"></div>
+				<div class="z5"></div>
+				<div class="z6"></div>
+			</div>
+			<div class="box4 sz k4">
+				<div class="up sm1"></div>
+				<div class="down sm1"></div>
+				<div class="before sm1"></div>
+				<div class="after sm1"></div>
+				<div class="left sm1"></div>
+				<div class="right sm1"></div>
+				<div class="z1"></div>
+				<div class="z2"></div>
+				<div class="z3"></div>
+				<div class="z4"></div>
+				<div class="z5"></div>
+				<div class="z6"></div>
+			</div>
+			<div class="box5 sz k5">
+				<div class="up sm1"></div>
+				<div class="down sm1"></div>
+				<div class="before sm1"></div>
+				<div class="after sm1"></div>
+				<div class="left sm1"></div>
+				<div class="right sm1"></div>
+				<div class="z1"></div>
+				<div class="z2"></div>
+				<div class="z3"></div>
+				<div class="z4"></div>
+				<div class="z5"></div>
+				<div class="z6"></div>
+			</div>
+			<div class="box6 sz k6">
+				<div class="up sm1"></div>
+				<div class="down sm1"></div>
+				<div class="before sm1"></div>
+				<div class="after sm1"></div>
+				<div class="left sm1"></div>
+				<div class="right sm1"></div>
+				<div class="z1"></div>
+				<div class="z2"></div>
+				<div class="z3"></div>
+				<div class="z4"></div>
+				<div class="z5"></div>
+				<div class="z6"></div>
+			</div>
+			<!--分享-->
+			<div class="more-btn"></div>
+			<!--再玩一次-->
+			<div class="test-again"></div>
+		</div>
+		<!--有奖品弹窗-->
+		<div class="test-alert-award alertaward" style="display: none;">
+			<img src="./images/test-alert-award.png?v={$v}"/>
+			<!-- 奖品名称 -->
+			<div class="test-alert-award-title">
+				<!-- 一秀 -->
+				<img src="./images/testAlertTitle1.png?v={$v}"/>
+				<!-- 二举 -->
+				<img style="display:none" src="./images/testAlertTitle2.png?v={$v}"/>
+				<!-- 三红 -->
+				<img style="display:none" src="./images/testAlertTitle3.png?v={$v}"/>
+				<!-- 四进 -->
+				<img style="display:none" src="./images/testAlertTitle4.png?v={$v}"/>
+				<!-- 对堂 -->
+				<img style="display:none" src="./images/testAlertTitle5.png?v={$v}"/>
+				<!-- 插金花 -->
+				<img style="display:none" src="./images/testAlertTitle6.png?v={$v}"/>
+				<!-- 满堂红 -->
+				<img style="display:none" src="./images/testAlertTitle7.png?v={$v}"/>
+				<!-- 状元 -->
+				<img style="display:none" src="./images/testAlertTitle8.png?v={$v}"/>
+			</div>
+			<div class="box1 sz k1">
+				<div class="up sm1"></div>
+				<div class="down sm1"></div>
+				<div class="before sm1"></div>
+				<div class="after sm1"></div>
+				<div class="left sm1"></div>
+				<div class="right sm1"></div>
+			<div class="z1"></div>
+				<div class="z2"></div>
+				<div class="z3"></div>
+				<div class="z4"></div>
+				<div class="z5"></div>
+				<div class="z6"></div>
+			</div>
+			<div class="box2 sz k2">
+				<div class="up sm1"></div>
+				<div class="down sm1"></div>
+				<div class="before sm1"></div>
+				<div class="after sm1"></div>
+				<div class="left sm1"></div>
+				<div class="right sm1"></div>
+				<div class="z1"></div>
+				<div class="z2"></div>
+				<div class="z3"></div>
+				<div class="z4"></div>
+				<div class="z5"></div>
+				<div class="z6"></div>
+			</div>
+			<div class="box3 sz k3">
+				<div class="up sm1"></div>
+				<div class="down sm1"></div>
+				<div class="before sm1"></div>
+				<div class="after sm1"></div>
+				<div class="left sm1"></div>
+				<div class="right sm1"></div>
+				<div class="z1"></div>
+				<div class="z2"></div>
+				<div class="z3"></div>
+				<div class="z4"></div>
+				<div class="z5"></div>
+				<div class="z6"></div>
+			</div>
+			<div class="box4 sz k4">
+				<div class="up sm1"></div>
+				<div class="down sm1"></div>
+				<div class="before sm1"></div>
+				<div class="after sm1"></div>
+				<div class="left sm1"></div>
+				<div class="right sm1"></div>
+				<div class="z1"></div>
+				<div class="z2"></div>
+				<div class="z3"></div>
+				<div class="z4"></div>
+				<div class="z5"></div>
+				<div class="z6"></div>
+			</div>
+			<div class="box5 sz k5">
+				<div class="up sm1"></div>
+				<div class="down sm1"></div>
+				<div class="before sm1"></div>
+				<div class="after sm1"></div>
+				<div class="left sm1"></div>
+				<div class="right sm1"></div>
+				<div class="z1"></div>
+				<div class="z2"></div>
+				<div class="z3"></div>
+				<div class="z4"></div>
+				<div class="z5"></div>
+				<div class="z6"></div>
+			</div>
+			<div class="box6 sz k6">
+				<div class="up sm1"></div>
+				<div class="down sm1"></div>
+				<div class="before sm1"></div>
+				<div class="after sm1"></div>
+				<div class="left sm1"></div>
+				<div class="right sm1"></div>
+				<div class="z1"></div>
+				<div class="z2"></div>
+				<div class="z3"></div>
+				<div class="z4"></div>
+				<div class="z5"></div>
+				<div class="z6"></div>
+			</div>
+			<!--分享-->
+			<div class="more-btn"></div>
+			<!--再玩一次-->
+			<div class="test-again"></div>
+		</div>
+		<!--分享弹窗-->
+		<div class="alertShareBox" style="display: none;">
+			<div class="alertShare">
+				<img src="./images/share-bg.png?v={$v}"/>
+			</div>
+		</div>
+		<audio id="video1" src="./music/shaizi.mp3?v={$v}" loop="loop" style="opacity: 0;"></audio></div>
+	</body>
+	<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	<script src="../public/js/public.js?v={$v}"></script>
+	<script src="../public/js/dialog.min.js?v={$v}"></script>
+	<script src="../public/js/zepto.alert.js?v={$v}"></script>
+	<script type="text/javascript">
+			
+	var szposi=$(".sz")
+	var moveflag=true;
+	$(".test-yaobtn").on("click",function(){
+		if(moveflag){
+			shaizhi(1,2,3,4,5,6);
+		}		
+//		$(".box2").addClass("s2 ss2");
+	})
+	function shaizhi(first,section,three,fore,five,six){	
+		moveflag=false;
+		var myVideo=document.getElementById("video1");
+		document.getElementById("video1").load();
+		myVideo.play()
+		for(var i=0;i<szposi.length;i++){
+			$(".sz").removeClass("ss"+parseInt(i+1));
+//			$(".sz").eq(i).addClass("s"+i)
+		}
+		$(".test-wan").addClass("shaizi_load");
+		$(".test-wan .box1").addClass("ss"+first);
+		$(".test-wan .box2").addClass("ss"+section);
+		$(".test-wan .box3").addClass("ss"+three);
+		$(".test-wan .box4").addClass("ss"+fore);
+		$(".test-wan .box5").addClass("ss"+five);
+		$(".test-wan .box6").addClass("ss"+six);
+		setTimeout(function(){
+			$(".test-wan").removeClass("shaizi_load");
+			myVideo.pause();
+			//没有奖品
+//			alertnone(first,section,three,fore,five,six)
+//一秀
+alertaward(first,section,three,fore,five,six)
+			moveflag=true;
+		},1300)
+	}
+	//没有奖品
+	function alertnone(first,section,three,fore,five,six){
+		$(".alertnone .box1").addClass("ss"+first);
+		$(".alertnone .box2").addClass("ss"+section);
+		$(".alertnone .box3").addClass("ss"+three);
+		$(".alertnone .box4").addClass("ss"+fore);
+		$(".alertnone .box5").addClass("ss"+five);
+		$(".alertnone .box6").addClass("ss"+six);
+		$(".test-zz").show();
+		$(".alertnone").show();
+	}
+	//有奖品
+	function alertaward(first,section,three,fore,five,six){
+		$(".alertaward .box1").addClass("ss"+first);
+		$(".alertaward .box2").addClass("ss"+section);
+		$(".alertaward .box3").addClass("ss"+three);
+		$(".alertaward .box4").addClass("ss"+fore);
+		$(".alertaward .box5").addClass("ss"+five);
+		$(".alertaward .box6").addClass("ss"+six);
+		$(".test-zz").show();
+		$(".alertaward").show();
+	}
+	if(window.DeviceMotionEvent) {
+		var speed = 25;
+		var x = y = z = lastX = lastY = lastZ = 0;
+		window.addEventListener('devicemotion', function(){
+			var acceleration =event.accelerationIncludingGravity;
+			x = acceleration.x;
+			y = acceleration.y;
+			if(Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed) {
+				shaizhi(3,4,1,1,5,6);
+			}
+			lastX = x;
+			lastY = y;
+		}, false);
+	}	
+	
+	//关闭弹窗
+	$(".test-zz,.test-again").on("click",function(){
+		$(".test-zz").hide();
+		$(".test-alert-none").hide();
+		$(".test-alert-award").hide();
+	})
+	//去分享
+	$(".more-btn").on("click",function(){
+		$(".test-zz").hide();
+		$(".test-alert-none").hide();
+		$(".test-alert-award").hide();
+		$(".alertShareBox").show()
+	})
+	$(".alertShareBox").on("click",function(){
+		$(".alertShareBox").hide()
+	})
+	</script>
+</html>

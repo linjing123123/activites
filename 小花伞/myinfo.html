@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>我的公益账户</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="./css/index.css?v={$v}">
+    <script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+    <script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+</head>
+<body>
+<!-- 头部导航 -->
+<include file="Activity/Public/header" title="我的公益账户" backflag="true" appgo="false" />
+<div class="content theme-color pt88">
+    <div class="mytop">
+        <div class="my_heart">
+            <div>
+                <span>爱心次数(笔)</span>
+                <span>30</span>
+            </div>
+            <div>
+                <span>捐赠金额(元)</span>
+                <span>2.5</span>
+            </div>
+        </div>
+    </div>
+    <div class="myhinfo">
+        <div class="myhtitle">
+            <span>我的爱心证书</span>
+        </div>
+        <img src="./images/likeview.png" />
+    </div>
+    <div class="mydt">
+        <div class="mydttitle">
+            <span>我的爱心动态</span>
+            <a href="">更多</a>
+        </div>
+        <!-- 有爱心动态 -->
+        <ul>
+            <li>
+                <img src="./images/heart.png" />
+                <span>2019.1.30</span>
+                <p>买就捐捐赠了两颗爱心</p>
+            </li>
+            <li>
+                <img src="./images/heart.png" />
+                <span>2019.1.30</span>
+                <p>买就捐捐赠了两颗爱心</p>
+            </li>
+            <li>
+                <img src="./images/heart.png" />
+                <span>2019.1.30</span>
+                <p>买就捐捐赠了两颗爱心</p>
+            </li>
+        </ul>
+        <!-- 无爱心动态 -->
+        <p class="nomydttitle">暂无爱心动态</p>
+    </div>
+</div>
+</body>
+<script src="../public/js/public.js?v={$v}"></script>
+<script src="../public/js/zepto.alert.js?v={$v}"></script>
+<script src="./js/scroll.js"></script>
+<script type="text/javascript">
+$(function(){
+    //判断app是安卓还是ios方法（例）
+    var u = navigator.userAgent;
+    if (u.indexOf("pop=1") < 0) {
+        $(".content").removeClass("pt88");
+    }else{
+
+    }
+})
+</script>
+</html>

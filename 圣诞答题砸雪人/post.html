@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no,email=no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>奖品领取</title>
+	<link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+	<link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+	<link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">
+	<link rel="stylesheet" type="text/css" href="./css/xxstyle.css?v={$v}">
+	<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<include file="Activity/Public/header" title="砸雪人 抢红包" backflag="false" appgo="true" />
+<div class="content">
+	<div class="newbx">
+		<img class="cloud" src="./images/cloud.png?v={$v}"/>
+		<div class="bxcontent">
+			<div class="bxlqWrap">
+				<div class="xx-bxlqtop">
+					<img src="./images/xx-bxlqtop.png?v={$v}" />			
+					<div class="xx-bxlqtop-text">保险领取</div>
+				</div>
+				<div class="bxtitle">“鸽放心”短期意外险（7天）</div>
+				<div class="miaosubox flexbox flexbox-middle">
+					<div class="flexchild miaosutext">请正确填写您的相关信息，以便完成投保。【投保年龄：0-70周岁】</div>
+				</div>
+				<div class="bxlqForm">
+					<input id="tbName2" name="tbName" class="txt" type="text" placeholder="请输入您的姓名" value="">
+					<input id="tbTelNum2" name="tbTelNum" class="txt" type="text" placeholder="请输入您的手机号码" value="" maxlength="11">
+					<input id="tbCardNum" name="tbCardNum" class="txt" type="text" placeholder="请输入您的身份证号" value="" maxlength="18">
+		            <input id="tbEmail" name="tbEmail" class="txt" type="text" value="" placeholder="请输入您的邮箱">
+		            <input id="bztime" name="bztime" class="tbTime txt ipt" type="text" readonly="readonly" placeholder="请选择投保日期">
+				</div>
+				<div class="agreement">
+					<input id="agreement" value="1" type="checkbox">
+					<label for="agreement">
+						<i></i>
+						我已阅读并同意如下条款
+					</label>
+					<div class="tkbox">
+						<a href="http://newm.baigebao.com/Product/new_must_know?pro_num={$pro_num}&mark=1">《保险条款》</a>
+		                <a href="{:U('relief', ['pro_num' => $pro_num])}"> 《免责条款》</a>
+						与
+						<a href="http://newm.baigebao.com/Article/major_pact?pro_number={$pro_num}">《重要告知与申明》</a>
+					</div>
+				</div>
+		        <div class="bxlq-submit">
+		        	<img src="./images/answer-btn.png?v={$v}"/>
+		        	<span>提交</span>
+		        </div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+<script src="../public/js/public.js?v={$v}"></script>
+<script src="../public/js/dialog.min.js?v={$v}"></script>
+<script src="../public/js/zepto.alert.js?v={$v}"></script>
+<script src="../public/js/mobile-select-date.min.js?v={$v}"></script>
+<script type="text/javascript">
+    $(function(){
+    	var nowDate = new Date();//今天
+		var selectDate = new MobileSelectDate();
+		var tbMinDate = new Date(nowDate.setDate(nowDate.getDate()+1)); //次日
+        var tbMaxDate = new Date(nowDate.setDate(nowDate.getDate()+29));
+        var tbMinDate = tbMinDate.format("yyyy/MM/dd");//转换格式
+        var tbMaxDate = tbMaxDate.format("yyyy/MM/dd");//转换格式
+		selectDate.init({
+		    trigger:"#bztime",
+		    min:tbMinDate,
+		    max:tbMaxDate,		            
+		    value:tbMinDate,
+		    callback:function(){
+		    	
+		    }
+		});	
+    	$("#provinceCity").focus(function(){
+		   document.activeElement.blur();
+		});
+		if($("#provinceCity").val()!=""){
+			$("#provinceCity").attr('disabled', "true");
+		}
+        var ajaxLock = true;
+        //保险领取提交按钮
+        $(".bxlq-submit").on('click',function(){
+            if(!ajaxLock){
+                return ;
+            }
+            ajaxLock = false;
+            var tbName2 = $('#tbName2').val().trim();
+            var tbTelNum2 = $('#tbTelNum2').val().trim();
+            var tbCardNum = $('#tbCardNum').val().trim();
+            var agreement = $("#agreement:checked").val();
+            var pro_num = "{$pro_num}";
+            var id = "{$id}";
+            var post_data = {tbName:tbName2,tbTelNum:tbTelNum2, tbCardNum:tbCardNum, pro_num:pro_num, id:id};
+			var provinceCity = $.trim($("#provinceCity").val());
+
+            try{
+                if (!isUserName(tbName2)||!$.isNameTwo(tbName2)) {
+                    throw '亲~请填写正确的姓名~';
+                }
+                if (!isPhoneNo(tbTelNum2)) {
+                    throw '亲~请填写正确的手机号码~';
+                }
+                if(!isCardNo(tbCardNum)){
+                    throw '亲~请输入正确的身份证号码'
+                }
+                // if(provinceCity == ""){
+	            	// $.alert('亲~请选择常住地址~');
+		        //     return false;
+		        // }
+                
+                if (hadEmail(pro_num)) {
+                    var email = $("#tbEmail").val();
+                    if (!email) {
+                        throw '请填写邮箱';
+                    }
+                    if (!isEmail(email)) {
+                        throw '亲~请填写正确的邮箱~';
+                    }
+                    post_data['email'] = email;
+                }
+                
+                if(agreement!=1){
+                    throw '请勾选条款协议'
+                }
+            }catch(err){
+                $.dialog({content: err, time: 2000});
+                ajaxLock = true;
+                return false;
+            }
+		
+            // console.log(tbName2,tbTelNum2,tbCardNum)
+            $.ajax({
+                url: "{:U('addInsuranceInfo')}",
+                type:'post',
+                dataType: "json",
+                data: post_data,
+                success:function(rst){
+                    // console.log(rst);
+                    ajaxLock = true;
+                    //错误处理
+                    if (rst.status != 1000) {
+                        $.dialog({content: rst.data, time: 2000});
+                        return ;
+                    }
+                    $.dialog({content: rst.data, time: 2000});
+                    $(".bxlq-submit").hide();
+                    $(".bxlq-submit-already").show();
+                    $("#agreement").attr("disabled","disabled");
+                    window.location.href = "{:U('award')}";
+                },
+                error:function(){
+                    ajaxLock = true;
+                }
+            });
+        })
+		
+        //是否有email
+        function hadEmail(pro_num){
+            if (pro_num == '104009') {
+                return true;
+            }
+            return false;
+        }
+        
+    });
+</script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js?v={$v}"></script>
+<script type="text/javascript">
+    // 设置为全局变量
+    var defautShareData = {
+        title: "{$share_content.title}",
+        desc: "{$share_content.desc}",
+        link: "{$share_content.link}",
+        imgUrl: "{$share_content.imgUrl}",
+        success: function (res)
+        {
+            $.post("{:U('shareCount')}", {}, function (e)
+            {
+
+            });
+        },
+        cancel: function (res)
+        {
+
+        }
+    };
+
+    //全局的分享函数
+    function shareAll(defautShareData)
+    {
+        wx.onMenuShareTimeline(defautShareData);
+        wx.onMenuShareAppMessage(defautShareData);
+        wx.onMenuShareQQ(defautShareData);
+        wx.onMenuShareQZone(defautShareData);
+        wx.onMenuShareWeibo(defautShareData);
+    }
+
+    // 微信分享
+    wx.config({
+        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: "{$share_content.appId}", // 必填，公众号的唯一标识
+        timestamp: "{$share_content.timestamp}", // 必填，生成签名的时间戳
+        nonceStr: "{$share_content.nonceStr}", // 必填，生成签名的随机串
+        signature: "{$share_content.signature}", // 必填，签名，见附录1
+        jsApiList: ['onMenuShareTimeline', 'checkJsApi', 'showAllNonBaseMenuItem', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone', 'showOptionMenu'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+    });
+    wx.ready(function ()
+    {
+        wx.checkJsApi({
+            jsApiList: [
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareQZone',
+                'onMenuShareWeibo'
+            ]
+        });
+        shareAll(defautShareData);
+    });
+
+    //百度统计代码
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9ee78e21f6ce6141bb71d69d95079dee";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+
+</script>
+</html>

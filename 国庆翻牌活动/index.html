@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>翻一翻 拿红包</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">	    
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="./css/index.css?v={$v}">	    
+    <script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+    <script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+</head>
+<body>
+<div class="content">
+    <!-- 活动已结束 1、theme-bg替换theme-bg2  2、活动时间隐藏 -->
+    <div class="theme-bg">
+        <div class="time-text">活动时间：2019年9月25日 至 2019年9月31日</div>
+        <div class="tip1">翻开四张白鸽卡可抢最高188红包</div>
+        <div class="flop-list flexbox">
+            <div class="flop-item-box">
+                <div class="flop-item roface-bg" data-index="0"></div>
+            </div>
+            <div class="flop-item-box">
+                <div class="flop-item no-flop" data-index="1"></div>
+            </div>
+            <div class="flop-item-box">
+                <div class="flop-item no-flop" data-index="2"></div>
+            </div>
+            <div class="flop-item-box">
+                <div class="flop-item no-flop" data-index="3"></div>
+            </div>
+        </div>
+        <div class="tip2">翻开四张白鸽牌，即可打开下方现金红包！</div>
+        <div class="tip3">188元红包还剩0-10个</div>
+        <div class="noclick flexbox flexbox-middle">
+            <div class="laba-icon"></div>
+            <div class="scroll">
+                <ul class="rowup">
+                    <li>130****9203 抽中188元红包；</li><li>
+                        159****6662 抽中18元红包；</li><li>
+                        130****9203 抽中8元红包；</li><li>
+                        159****6662 抽中3元红包；</li><li>
+                        130****9203 抽中188元红包；</li><li>
+                        159****6662 抽中18元红包；</li><li>
+                        130****9203 抽中8元红包；</li><li>
+                        159****6662 抽中3元红包；</li><li>
+                        130****9203 抽中188元红包；</li><li>
+                        159****6662 抽中3元红包；</li>     
+                </ul>
+            </div>
+        </div>
+        <div class="hb-wrap flexbox flexbox-middle">
+            <div class="hb-item"></div>
+            <div class="hb-item"></div>
+            <div class="hb-item"></div>
+        </div>
+        <!-- 活动规则按钮 -->
+        <div class="rule-btn"></div>
+        <!-- 客服按钮 -->
+        <div class="kefu-btn"></div>
+    </div>
+</div>
+<!-- 活动规则弹框 -->
+<div class="alertbox rule-box">
+    <div class="rule-wrapper">
+        <div class="rule-title"></div>
+        <div class="rule-big-border">
+            <div class="rule-content">
+                <p class="flexbox"><span class="xuyao-icon"></span><span class="flexchild">活动期间内每位用户仅可参与一次此活动；</span></p>
+                <p class="flexbox"><span class="xuyao-icon"></span><span class="flexchild">翻起4张白鸽卡才可抽取红包；</span></p>
+                <p class="flexbox"><span class="xuyao-icon"></span><span class="flexchild">红包以微信现金红包形式发放，成功领取红包后请注意查收；</span></p>
+                <p class="flexbox"><span class="xuyao-icon"></span><span class="flexchild">红包有效时长为24小时，未领取则自动退回；请及时点击领取；</span></p>
+                <p class="flexbox"><span class="xuyao-icon"></span><span class="flexchild">因红包发放数量较大，可能会出现延迟情况，请耐心等待。如长时间未收到请联系在线客服进行处理；</span></p>
+                <p class="flexbox"><span class="xuyao-icon"></span><span class="flexchild">中奖用户如出现退保等行为，需返还所有活动期间获得奖励，如需申请请联系在线客服进行处理；</span></p>
+                <p class="flexbox"><span class="xuyao-icon"></span><span class="flexchild">用户如被发现有舞弊或通过bug、漏洞等违规方式获取奖励行为，将取消参与活动资格并追回活动奖励。</span></p>
+                <div class="kefu-btn2 flexbox flexbox-middle"><span class="ts-icon"></span>如有其他问题请联系在线客服。</div>
+            </div>
+        </div>
+        <div class="close-alertbox-btn"></div>
+    </div>
+</div>
+<!-- 邀请1位与好友参与，即可解锁剩余所有白鸽卡！ -->
+<div class="alertbox secflop-box">
+    <div class="secflop-wrapper">
+        <div class="alertbox-big-border">
+            <div class="alertbox-content">
+                <div class="share-icon"></div>
+                <div class="secflop-text1">邀请<span>1</span>位好友参与</div>
+                <div class="secflop-text2">即可解锁剩余所有白鸽卡！</div>
+                <div class="alertbox-btn secflop-btn">马上去</div>
+            </div>
+        </div>
+        <div class="close-alertbox-btn"></div>
+    </div>
+</div>
+<!-- 朋友圈分享 -->
+<div class="pyqfx">
+    <img src="./images/fx_icon.png?v={$v}"/>
+</div>
+<!-- 1未满足抽红包条件-弹框 -->
+<div class="alertbox notclick-hb-box" style="display: none;">
+    <div class="notclick-hb-wrapper">
+        <div class="alertbox-big-border">
+            <div class="alertbox-content">
+                <div class="tip-icon"></div>
+                <div class="notclick-hb-text1">就差最后一步啦！</div>
+                <div class="notclick-hb-text2">
+                    购买<span>1.5元</span>的白鸽小额意外伤害保险，<br/>
+                    即可<span>打开3-188元的现金红包！</span>
+                </div>
+                <div class="alertbox-btn notclick-hb-btn">去购买</div>
+            </div>
+        </div>
+        <div class="close-alertbox-btn"></div>
+    </div>
+</div>
+<!-- 2满足抽红包-弹框 -->
+<div class="alertbox click-hb-box" style="display: none;">
+    <div class="click-hb-wrapper">
+        <div class="gh-gif"></div>
+        <div class="click-hb-title"></div>
+        <div class="alertbox-big-border">
+            <div class="alertbox-content">
+                <div class="click-hb-text1">获得188元微信现金红包</div>
+                <div class="click-hb-text2">
+                    请前往“白鸽保险”微信公众号（账号：
+                    baigebaoxian ）提取到账，还有一份惊
+                    喜礼包一起送给你。
+                </div>
+                <div class="click-hb-ewm">
+                    <img src="./images/ewm.png?v={$v}"/>
+                </div>
+                <div class="alertbox-btn ewm-btn" data-clipboard-text="baigebaoxian">复制微信公众号</div>
+            </div>
+        </div>
+        <div class="close-alertbox-btn"></div>
+    </div>
+</div>
+<!-- 3红包已被领完-弹框 -->
+<div class="alertbox empty-hb-box" style="display: none;">
+    <div class="empty-hb-wrapper">
+        <div class="alertbox-big-border">
+            <div class="alertbox-content">
+                <div class="empty-icon"></div>
+                <div class="empty-hb-text2">
+                    请前往“白鸽保险”微信公众号（账号：
+                    baigebaoxian ）提取到账，还有一份惊
+                    喜礼包一起送给你。
+                </div>
+                <div class="empty-hb-ewm">
+                    <img src="./images/ewm.png?v={$v}"/>
+                </div>
+                <div class="alertbox-btn ewm-btn" data-clipboard-text="baigebaoxian">复制微信公众号</div>
+            </div>
+        </div>
+        <div class="close-alertbox-btn"></div>
+    </div>
+</div>
+<!-- 4未翻完卡牌点击红包-弹框 -->
+<div class="alertbox noflop-hb-box" style="display: none;">
+    <div class="noflop-hb-wrapper">
+        <div class="alertbox-big-border">
+            <div class="alertbox-content">
+                <div class="noflop-icon"></div>
+                <div class="noflop-hb-text2">
+                    翻开所有“白鸽卡”才可获得拆红包
+                    机会哦～
+                </div>
+                <div class="alertbox-btn noflop-hb-btn">快去翻牌</div>
+            </div>
+        </div>
+        <div class="close-alertbox-btn"></div>
+    </div>
+</div>
+<!-- 5点击红包已关注微信公众号-弹框 -->
+<div class="alertbox lq-hb-box" style="display: none;">
+    <div class="lq-hb-wrapper">
+        <div class="alertbox-big-border">
+            <div class="alertbox-content">
+                <div class="tip-icon"></div>
+                <div class="lq-hb-text1">
+                    红包已发出，快去“白鸽保险”微信公
+                    众号领取吧！
+                </div>
+            </div>
+        </div>
+        <div class="close-alertbox-btn"></div>
+    </div>
+</div>
+</body>
+<script src="../public/js/public.js?v={$v}"></script>
+<script src="../public/js/zepto.alert.js?v={$v}"></script>
+<script src="./js/scroll.js?v={$v}"></script>
+<script src="./js/clipboard.min.js?v={$v}"></script>
+<script type="text/javascript">
+    // 设置keyframes属性
+    function addKeyFrames(y){
+        var style = document.createElement('style');
+        style.type = 'text/css';
+        //设置动画
+        var keyFrames = `
+        @-webkit-keyframes move {
+            0% {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                -webkit-transform: translate3d(A_DYNAMIC_VALUE, 0, 0);
+                transform: translate3d(A_DYNAMIC_VALUE, 0, 0);
+            }
+            
+        }
+        @keyframes move {
+            0% {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                -webkit-transform: translate3d(A_DYNAMIC_VALUE, 0, 0);
+                transform: translate3d(A_DYNAMIC_VALUE, 0, 0);
+            }
+            
+        }`;
+        style.innerHTML = keyFrames.replace(/A_DYNAMIC_VALUE/g, y);
+        document.getElementsByTagName('head')[0].appendChild(style);
+    }
+
+    function init(){ 
+        //获取宽度
+        var allwidth = 0;
+        $('.scroll ul li').each(function(i){
+            allwidth +=$(this).width() + parseFloat($(this).css("margin-right").split('px')[0]);
+        })
+        var width = allwidth/2;
+        addKeyFrames( '-' + width  +'px');
+        document.querySelector('.scroll ul').className += ' rowup';
+        //获取li 数量 设置动画时间
+        var licount = (15*$('.scroll ul li').length/10)+'s';
+        $('.scroll ul').css({'animation-duration': licount});
+    }
+    init();
+</script>
+<script type="text/javascript">
+$(function(){
+    //关闭弹框
+    $(".close-alertbox-btn, .noflop-hb-btn").on("click", function(){
+        $(".content").removeClass("overflowH");
+        $(".alertbox").hide();
+    });
+
+    //显示规则弹框
+    $(".rule-btn").on("click", function(){
+        $(".content").addClass("overflowH");
+        $(".rule-box").show();
+    });
+
+    //马上去分享
+    $(".secflop-btn").on("click",function(){
+        $(".secflop-box").hide();
+        $(".pyqfx").show();
+    });
+    //关闭分享遮罩
+    $(".pyqfx").on("click", function(){
+        $(".content").removeClass("overflowH");
+        $(this).hide();
+    });
+
+    //点击翻牌
+    var flopFlag = true ; //是否可翻牌
+    $(".flop-item").on("click",function(){
+        if(flopFlag) {
+            flopFlag = false;
+            var $index = $(this).attr("data-index") //中奖项目
+            var item = $(".flop-item-box");
+            for(var i=0;i<item.length ;i++) {
+                if (i == $index){
+                    //中奖项目
+                    $(this).parent().addClass("roface");
+                    $(this).html(flopAward($index));
+                    $(this).removeClass("no-flop").addClass("roface-bg").css("opacity","1");
+                }
+            }
+        } else {
+            // 弹框 邀请1位与好友参与，即可解锁剩余所有白鸽卡！
+            $(".content").addClass("overflowH");
+            $(".secflop-box").show();
+        }
+    });
+
+    //判断展示的奖品
+    function flopAward ($index){
+        switch($index) {
+            case "0"://小花伞
+                return '<div class="flop-item-title">小花伞公益保障项目</div><div class="flop-item-content">以“保险扶贫”为核心，通过公益保险为他们的健康安全提供切实有效的保障。</div><div class="flop-item-btn"></div>';
+                break; 
+            case "1": //医疗险
+                return '<div class="flop-item-title">医疗险</div><div class="flop-item-content">主要报销门诊和医疗费用，花多少报销多少。</div><div class="flop-item-btn"></div>';
+                break; 
+            case "2": //重疾险
+            return '<div class="flop-item-title">重疾险</div><div class="flop-item-content">针对特定重大疾病及部分轻症，确诊即赔，满足条件保额多少赔多少。</div><div class="flop-item-btn"></div>';
+                break; 
+            case "3"://意外险
+            return '<div class="flop-item-title">意外险</div><div class="flop-item-content">提供由于意外导致的死亡、伤残或门诊、医疗等的保险赔偿。</div><div class="flop-item-btn"></div>';
+                break;
+        }
+    }
+
+    //卡片了解更多
+    $(".flop-item-box").on("click", ".flop-item-btn", function(){
+        var index = $(this).parent().attr("data-index");
+        // 0=>小花伞  1=》医疗险 2=》重疾险 3=》意外险
+        console.log(index);
+    });
+
+
+    //实例化 ClipboardJS对象;
+	var copyBtn = new ClipboardJS('.ewm-btn');
+    //复制后打开微信
+    copyBtn.on("success",function(e){
+        // 复制成功
+        $.dialog({content: "复制成功", time: 2000});
+    });
+    copyBtn.on("error",function(e){
+        //复制失败；
+        $.dialog({content: "复制失败", time: 2000});
+    });
+})
+</script>
+</html>
+
+

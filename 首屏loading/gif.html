@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>拆包有礼</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+	    <link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">	    
+	    <link rel="stylesheet" type="text/css" href="./css/index.css?v={$v}">	    
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+		body {
+		 	background: #000; 
+		}
+		
+		img {
+		  display: block;
+			
+		  margin: 0 auto;
+		}
+		
+		canvas {
+			display: block;
+		
+			margin:0 auto;
+		}
+	
+		</style>
+	</head>
+	<body class="index-bg">
+		<!-- 头部导航 -->
+		<header class="header flexbox flexbox-middle person-header blue border-f1">
+			<a href="javascript:;" id="hrefLogin" class="icon-back icon-back left" title="返回"></a>
+			<h1 class="flexchild ellipsis">白鸽手机碎屏险</h1>
+		</header>
+		<div class="canpos pt88">
+			<canvas id="c"></canvas>
+			<div class="loading"></div>
+		</div>
+
+		<div class="content pt88" style="display: none;">
+			<img src="./images/gif1.gif" style="display: none;"/>
+			<img src="./images/gif2.gif" style="display: none;"/>
+			<img src="./images/gif3.gif" style="display: none;"/>
+			<div class="gif-click" style="display: none;"></div>
+			<div class="gif-text">傻逼你倒是点啊</div>
+		</div>
+	</body>
+	<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	<script src="../public/js/zepto.alert.js?v={$v}"></script>
+	<script src="./js/index.js?v={$v}"></script>
+	<script type="text/javascript">
+		var u = navigator.userAgent;
+		if (u.indexOf("pop=1") < 0) {
+			$("header").remove();
+			$(".content").removeClass("pt88");
+		} else {
+			
+		}
+		var viewheight=$(window).height()
+		$(".content").height(viewheight)
+		var img_arr = ['./images/gif1.gif','./images/gif2.gif','./images/gif3.gif'];
+		var nums = img_arr.length;
+		var start = 0;
+		for(var i in img_arr){
+		    var img = document.createElement('img');
+		    img.src = img_arr[i];
+		    (function(j){
+		    img.onload = function(){
+		     start++;
+		     	if(start == nums){
+		     		$(".content").show();
+		     		$(".content img").eq(0).show();
+		     		$(".canpos").hide();
+		    	}
+		    	$(".loading").html(parseInt(start/nums)*100 + '%') ;
+		    };
+		   })(i); 
+		} 
+		var contentmun=0;
+		$(".content").on("click",function(){
+			contentmun++;
+			if(contentmun<3){
+				$(".content img").hide();
+				$(".content img").eq(contentmun).show();
+				if(contentmun==2){
+					$(".gif-click").show()
+				}
+			}	
+		})
+		$(".gif-click").on("click",function(){
+			window.location.href="";
+		})
+	</script>
+		
+</html>

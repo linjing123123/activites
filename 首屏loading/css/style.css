@@ -1,0 +1,620 @@
+.relative{position: relative;}
+.f-24 {
+    font-size: .24rem;
+}
+/* ========================================产品页====================================== */
+/*头部*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 1024px;
+    left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+    margin: 0 auto;
+    height: 0.88rem;
+    z-index: 19;
+    background-color: #4d72e2;
+    color: #fff;
+   /* border-bottom: 1px solid #F1F1F1;*/
+}
+.header.border-f1{
+	/* border-bottom: 1px solid #F1F1F1; */
+}
+.header.blue {
+    background: #4d72e2;
+    color: #fff;
+}
+.header h1 {
+    /*display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;*/
+    text-align: center;
+    font-weight: normal;
+    font-size: 0.36rem;
+    margin: 0 1.2rem;
+}
+.header .skip{
+	padding-right: .43rem;
+}
+.header .left{
+	position: absolute;
+	left: .3rem;
+	top: 0;
+	z-index: 9;
+}
+.header .right{
+	position: absolute;
+	height: .88rem;
+	line-height: .88rem;
+	right: .3rem;
+	top: 0;
+	z-index: 10;
+}
+.header.blue .icon-back{
+	background: url('../images/back.png') no-repeat left center;
+	background-size: .15rem .27rem;
+	width: .88rem;
+	height: .88rem;
+
+}
+.header h1 {
+	position: relative;
+}
+.icon.icon-share {
+	position: absolute;
+	top: 0.05rem;
+	right: 0.3rem;
+
+	display: none;
+	font-size: 0.3rem;
+	color: #333333;
+}
+
+.hidden{ display: none; }
+
+.bgimg{background: url('../images/bg-repice.png')}
+.paddingTop{padding: 0.86rem 0 1.2rem 0;}
+/* 产品选择开始 */
+.msg-tip-yy {
+    width: 94%;
+    margin: 0 auto;
+    height: .9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.msg-tip-yy a {
+    width: 33.2%;
+    position: relative;
+    float: left;
+    /* width: 125px; */
+    height: .9rem;
+    background: none;
+    color: #fff;
+    font-size: 0.34rem;
+    text-align: center;
+}
+.msg-tip-yy a .selection-rd:checked + .selection-lb {
+    display: block;
+    height: .9rem;
+    background: #2e33cd;
+    font-size: 0.34rem;
+    line-height: .9rem;
+    text-align: center;
+    margin-top: .19rem;
+}
+.msg-tip-yy .selection-lb {
+    background: #1f197e;
+    display: block;
+    height: .8rem;
+    line-height: .8rem;
+    margin-top: .29rem;
+    font-size: 0.3rem;
+    border-top-right-radius: 0.1rem;
+    border-top-left-radius: 0.1rem;
+}
+/* 产品选择结束 */
+
+/* 保障范围开始 */
+.product-wrap{
+    width: 94%;
+    margin: .19rem auto 0;
+    font-size: 0.3rem;
+    background-color: #2e33cd;
+    color:#fff;
+}
+.padding-wrap{
+    padding: .2rem .25rem .3rem;
+}
+.con-bzfw{
+    background-color: #1a1290;
+    border: solid 1px #5d62f9;
+    margin-bottom:.2rem;
+}
+.con-bzfw dd {
+    padding: 0 0.2rem;
+    height: 1rem;
+    line-height: 1rem;
+}
+.lq-down-icon {
+    width: 0.22rem;
+    height: 0.16rem;
+    margin-left: 0.1rem;
+    margin-top: -0.04rem;
+    background: url(../images/putup.png) no-repeat;
+    background-size: 100% 100%;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+}
+.lq-down-icon.active {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+}
+.lq-down-icon {
+    width: 0.22rem;
+    height: 0.16rem;
+    margin-left: 0.1rem;
+    margin-top: -0.04rem;
+    background: url(../images/putup.png) no-repeat;
+    background-size: 100% 100%;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+}
+.con-bzfw .lq-down-content {
+    display: none;
+    padding:0 0.2rem 0.3rem;
+}
+/* 保障范围结束 */
+/* 表单提交开始 */
+.formwrap dl dd {
+    margin-bottom: 0.2rem;
+    height: 1rem;
+}
+.formwrap .fill-label {
+    display: inline-block;
+    width: 1.5rem;
+    min-width: 1rem;
+    padding-right: 0.15rem;
+    font-size: 0.3rem;
+    color: #fff;
+}
+.phoneselect {
+    position: relative;
+    padding-left: 0.2rem;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    border: 1px solid #5d62f9;
+    width: 2rem;
+    display: block;
+	background-color: #1a1290;
+}
+.phoneselect:nth-of-type(1) {
+    width: 1.8rem;
+    margin-right: 0.2rem;
+}
+.phoneselect:nth-of-type(2) {
+    width: 2.3rem;
+}
+.formwrap .periodtype {
+    line-height: 30px;
+    height: 28px;
+}
+.formwrap .select {
+    position: absolute;
+    z-index: 2;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 90%;
+    height: 0.8rem;
+    line-height: 0.9rem;
+    font-size: 0.26rem;
+    border: 0;
+    background: #1a1290;
+    color: #fff;
+}
+.formwrap .calendar-icon {
+    width: 0.22rem;
+    height: 0.16rem;
+    background-image: url(../images/putdown.png);
+    background-repeat: no-repeat;
+    background-size: 0.29rem auto;
+    background-position: center center;
+}
+.period {
+    top: 41%;
+}
+.period {
+    position: absolute;
+    right: 0.2rem;
+    z-index: 3;
+    top: 50%;
+}
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sexuality:checked + label.btn-box {
+    color: #fff;
+    background: #e7492b;
+    border: 1px solid #5d62f9;
+}
+.fixcss {
+    padding: 0;
+    text-align: center;
+}
+.btn-box {
+    width: 1.7rem;
+    height: .8rem;
+    line-height: 0.9rem;
+    display: inline-block;
+    padding: 0 0.3rem;
+    font-size: 0.26rem;
+    color: #fff;
+    border: 1px solid #5d62f9;
+}
+.finput{
+    background: #1a1290;
+    border: 1px solid #5d62f9;
+    height: 0.9rem;
+    position: relative;
+}
+.finput input{-webkit-text-fill-color: #fff;color: #fff;padding:.26rem .2rem;width: 92%;}
+.verticalright{
+    position: absolute;
+    width: 1.4rem;
+    height: .6rem;
+    top: .16rem;
+    right: .2rem;
+}
+.verticalright img{width: 100%;height:100%;}
+.getmsg{
+    position: absolute;
+    top: .26rem;
+    right: .2rem;
+    color: #ffe844;
+}
+.btn-disabled{
+    font-size:.24rem;
+}
+/* 表单提交结束 */
+/* 免责条款开始 */
+.freerulewrap {
+    width: 90%;
+    margin: .21rem auto 0;
+    font-size: 0.24rem;
+    color: #fff;
+}
+.checkbox-icon {
+    width: 0.3rem;
+    height: 0.3rem;
+    border: 1px solid #d7d7d7;
+    border-radius: 0.1rem;
+    background-color: #fff;
+}
+.agreeTerm:checked + .checkbox-icon {
+    border: 1px solid #d7d7d7;
+    background-image: url(../images/redHook_icon.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+    background-color: #fff;
+}
+.freerulea a,.freerule{display: inline-block;text-decoration: underline;}
+/* 免责条款结束 */
+/* 产品介绍开始 */
+.pro-infor-wrap{
+    width: 94%;
+    margin: .28rem auto 0;
+}
+/* 产品介绍结束 */
+
+/* 分享开始 */
+.share_btn {
+    width: .9rem;
+    position: fixed;
+    top: 32%;
+    right: .1rem;
+    z-index: 10;
+}
+.shareLayer {
+    display: none;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.8);
+    z-index: 20;
+}
+.share-alert {
+    position: absolute;
+    z-index: 22;
+    width: 5.53rem;
+    margin: 0 auto;
+    top:.4rem;
+    right: .5rem;
+    display: none;
+}
+/* 分享结束 */
+
+/* 底部悬浮开始 */
+.footer {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 11;
+    width: 100%;
+    margin: 0 auto;
+    height: 1rem;
+    color: #fff;
+    background-color: #1f1983;
+}
+.sole,.insure{height: 100%;}
+.footer .sole .service{
+    display: inline-block;
+    margin-left: 0.3rem;
+    padding-right: 0.4rem;
+    font-size: 0.22rem;
+    border-right: 1px solid #fff;
+    text-align: center;
+}
+.icon-service {
+    width: 0.36rem;
+    height: 0.38rem;
+    background: url(../images/service.png) no-repeat;
+    background-size: 100%;
+}
+.footer .price {
+    padding-left: .3rem;
+    font-size: 0.4rem;
+}
+.footer .insure-btn {
+    width: 3.67rem;
+    border-radius: 0;
+    height: 100%;
+    font-size: 0.32rem;
+    color: #fff;
+    background-color: #e7492b;
+}
+/* 底部悬浮结束 */
+/* 底部弹窗开始 */
+.shadeLayer {
+    display: none;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 12;
+}
+.tbxz-dialog-outer,.mztk-dialog-outer,.qump-dialog-outer,.quanmp-dialog-outer,.qsqmp-dialog-outer {
+    position: fixed;
+    width: 92%;
+    height: 4.9rem;
+    left: 50%;
+    top: 4.08rem;
+    transition: all .8 ease-in-out;
+    border-radius: .2rem;
+    z-index: 100;
+    color:#fff;
+    background: #423ac8;
+    font-size: 0.4rem;
+    text-align: center;
+    padding: 0.4rem 0 0;
+    margin-left: -46%;
+    bottom: 0;
+    display: none;
+}
+#mztk-dialog-outer{
+    top:2.08rem;
+    height: 8.9rem;
+}
+.noteboxh1{position: relative;}
+.noteboxh1 .closebtn {
+    position: absolute;
+    top: -0.11rem;
+    right: 0.3rem;
+    width: 0.4rem;
+    display: inline-block;
+    z-index: 100;
+}
+
+.notebox-tbxz .notecontent,.notebox-mztk .notecontent,.notebox-qump .notecontent,.notebox-quanmp .notecontent,.notebox-qsqmp .notecontent {
+    margin-top: .3rem;
+    padding: 0rem 4% 0;
+    font-size: .3rem;
+	line-height: .36rem;
+	letter-spacing: 0px;
+    color: #ffffff;
+    text-align: left;
+    max-height: 7.6rem;
+    overflow: auto;
+}
+/* 底部弹窗结束 */
+
+/* ============================================奖品领取页====================================== */
+.paddingTop2 {
+    padding: 0.86rem 0 1rem 0;
+}
+/* 奖品领取页banner开始 */
+.awardBanner{
+    width: 7.2rem;
+    height:1.86rem;
+    position: relative;
+    top:.28rem;
+    left: 50%;
+    margin-left: -3.6rem;
+}
+/* 奖品领取页banner结束 */
+/* 奖品领取页信息款开始 */
+.infoBoxWrap{
+    background-color: #2e33cd;
+    font-size: .3rem;
+    min-height: 9.6rem;
+}
+.infoBox{
+    padding-top: 2.56rem;
+    margin: 0 auto;
+    width: 6.6rem;
+    height:5.3rem;
+    position: relative;
+}
+.infoBox-content{
+    position: absolute;
+    top: 2.56rem;
+    left: 50%;
+    width: 92%;
+    margin-left: -46%;
+    text-align: center;
+}
+.infoBox-content .infoBox-title{
+    color:#fff;
+    font-size: .34rem;
+}
+.infoBox-content .infoBox-con{
+    margin-top:.76rem;
+    font-size: .3rem;
+}
+.infoBox-content .fill-label {
+    display: inline-block;
+    width: 1.32rem;
+    min-width: 1rem;
+    padding-right: 0.15rem;
+}
+.infoBox-con div{margin-bottom: .32rem;}
+.infoBox-con .icinput{
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    height: 0.8rem;
+}
+.icinput input::-moz-placeholder { color: #999; }
+.icinput input::-webkit-input-placeholder { color:#999; }
+.icinput input:-ms-input-placeholder { color:#999; }
+.icinput input{width: 92%;padding:.24rem .2rem;color:#000;}
+.addressDiv .ictextarea{
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    height: 1.6rem;
+    line-height: 0.57rem;
+}
+.ictextarea textarea::-moz-placeholder { color: #999; }
+.ictextarea textarea::-webkit-input-placeholder { color:#999; }
+.ictextarea textarea:-ms-input-placeholder { color:#999; }
+.ictextarea textarea{width: 91%;padding:.24rem .2rem;color:#000;border:none;}
+.addressDiv span:nth-child(1){
+    height: .8rem;
+    line-height: .8rem;
+}
+.footer2{
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 11;
+    width: 100%;
+    margin: 0 auto;
+    height: 1.2rem;
+    color: #fff;
+    background-color: #191eb2;
+}
+.footer2 .sole .service2 {
+    display: inline-block;
+    margin-left: 0.64rem;
+    padding-right: 0.64rem;
+    font-size: 0.28rem;
+    text-align: center;
+}
+.footer2 .insure-btn {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    font-size: 0.32rem;
+    color: #fff;
+    background-color: #e7492b;
+}
+/* 奖品领取页信息款结束 */
+
+/* 登录弹出框 */
+.loginLayer{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 12;
+}
+.loginLayer .login-contain {
+    width: 5.85rem;
+    position: absolute;
+    top: 3.94rem;
+    right: .85rem;
+    background: #fff;
+    border-radius: .08rem;
+}
+.login-box-top{
+    height:.9rem;
+    line-height: .9rem;
+    color:#333;
+    font-size: .32rem;
+    text-align: center;
+    background: #e8ecfc;
+    border-top-left-radius: .08rem;
+    border-top-right-radius: .08rem;
+    position: relative;
+}
+.closeLoginBox{
+    position: absolute;
+    top: .32rem;
+    right: 0.24rem;
+    width: 0.26rem;
+    display: inline-block;
+    z-index: 100;
+}
+.login-box-info{
+    padding: 1rem 0;
+    font-size: .28rem;
+    line-height: .38rem;
+    color:#666;
+    text-align: center;
+}
+.login-box-bottom{
+    border-top: 1px solid #e1e1e1;
+}
+.login-box-bottom div{
+    width: 49.8%;
+    height: .88rem;
+    line-height: .88rem;
+    text-align: center;
+}
+.login-box-bottom div:nth-child(1){
+    border-right: 1px solid #e1e1e1;
+}

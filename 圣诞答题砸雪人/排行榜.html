@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>砸雪人 抢红包</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">	    
+	    <link rel="stylesheet" type="text/css" href="./css/style2.css?v={$v}">	    
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+		<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	</head>
+	<body>
+		<div class="rank-page">
+			<div class="rank-list-bg">
+				<div class="rank-list-contain">
+					<div class="rank-list-title">
+						<img src="./images/rank-list-title.png" />
+					</div>
+					<div class="rank-list-box">
+						<div class="rank-list-t flexbox flexbox-middle">
+							<div class="col1 flexchild">用户</div>
+							<div class="col2">次数</div>
+							<div class="col3">当前排名</div>
+						</div>
+						<ul class="rank-list">
+							<li class="flexbox flexbox-middle">							
+								<img class="rank-item-photo" src="./images/photo.png" />
+								<div class="rank-item-name ellipsis">昵称昵称昵称昵称昵称</div>
+								<div class="rank-num col2">21</div>
+								<div class="current-rank col3 rank1"></div>
+							</li>
+							<li class="flexbox flexbox-middle">							
+								<img class="rank-item-photo" src="./images/photo.png" />
+								<div class="rank-item-name ellipsis">昵称昵称昵称昵称昵称</div>
+								<div class="rank-num col2">21</div>
+								<div class="current-rank col3 rank2"></div>
+							</li>
+							<li class="flexbox flexbox-middle">							
+								<img class="rank-item-photo" src="./images/photo.png" />
+								<div class="rank-item-name ellipsis">昵称昵称昵称昵称昵称</div>
+								<div class="rank-num col2">21</div>
+								<div class="current-rank col3 rank3"></div>
+							</li>
+							<li class="flexbox flexbox-middle">							
+								<img class="rank-item-photo" src="./images/photo.png" />
+								<div class="rank-item-name ellipsis">131****4567</div>
+								<div class="rank-num col2">21</div>
+								<div class="current-rank col3">4</div>
+							</li>
+							<li class="flexbox flexbox-middle">							
+								<img class="rank-item-photo" src="./images/photo.png" />
+								<div class="rank-item-name ellipsis">昵称昵称昵称昵称昵称</div>
+								<div class="rank-num col2">21</div>
+								<div class="current-rank col3">5</div>
+							</li>						
+						</ul>
+						<div class="more-btn">查看更多</div>
+					</div>
+				</div>
+			</div>	
+		    <div class="rank-award-box">
+		    	<div class="row row-title flexbox flexbox-middle">
+		    		<div class="col col11">名次</div>
+		    		<div class="col col12 flexchild">奖品</div>
+		    		<div class="col col13">价值</div>
+		    		<div class="col col14">数量</div>
+		    	</div>
+		    	<div class="row flexbox flexbox-middle">
+		    		<div class="col11">1</div>
+		    		<div class="col col12 flexchild">
+		    			<div class="rank-award-name">沃尔玛购物卡</div>
+		    			<div class="rank-award-name">滴滴快车出行充值卡</div>
+		    			<div class="rank-award-name">星巴克礼品卡</div>
+		    			<div class="rank-award-name">京东商城购物卡</div>
+		    			<div class="rank-award-name">进口316L不锈钢小米保温杯</div>
+		    			<div class="rank-award-name">小米运动蓝牙耳机</div>
+		    			<div class="rank-award-name">白鸽系列周边抱枕</div>
+		    			<div class="rank-award-name">安心e生百万医疗保险</div>
+		    		</div>
+		    		<div class="col col13">
+		    			<div class="award-price">500</div>
+		    			<div class="award-price">100</div>
+		    			<div class="award-price">100</div>
+		    			<div class="award-price">100</div>
+		    			<div class="award-price">99</div>
+		    			<div class="award-price">99</div>
+		    			<div class="award-price">15</div>
+		    			<div class="award-price">128</div>
+		    		</div>
+		    		<div class="col col14">
+		    			<div class="award-num">1</div>
+		    			<div class="award-num">1</div>
+		    			<div class="award-num">1</div>
+		    			<div class="award-num">1</div>
+		    			<div class="award-num">1</div>
+		    			<div class="award-num">1</div>
+		    			<div class="award-num">2</div>
+		    			<div class="award-num">1</div>
+		    		</div>
+		    	</div>
+		    	<div class="row flexbox flexbox-middle">
+		    		<div class="col11">2-3</div>
+		    		<div class="col col12 flexchild">
+		    			<div class="rank-award-name">京东商城购物卡</div>
+		    			<div class="rank-award-name">小米电动牙刷/小米运动手环</div>
+		    			<div class="rank-award-name">全国通用电影票</div>
+		    			<div class="rank-award-name">白鸽手机碎屏险（标准版）</div>
+		    			<div class="rank-award-name">白鸽系列周边抱枕</div>		    			
+		    		</div>
+		    		<div class="col col13">
+		    			<div class="award-price">100</div>
+		    			<div class="award-price">189</div>
+		    			<div class="award-price">90</div>
+		    			<div class="award-price">79</div>
+		    			<div class="award-price">15</div>
+		    		</div>
+		    		<div class="col col14">
+		    			<div class="award-num">1</div>
+		    			<div class="award-num">1</div>
+		    			<div class="award-num">2</div>
+		    			<div class="award-num">1</div>
+		    			<div class="award-num">2</div>
+		    		</div>
+		    	</div>
+		    	<div class="row flexbox flexbox-middle">
+		    		<div class="col11">4-5</div>
+		    		<div class="col col12 flexchild">
+		    			<div class="rank-award-name">京东商城购物卡</div>
+		    			<div class="rank-award-name">白鸽系列周边抱枕</div>
+		    			<div class="rank-award-name">白鸽吃货卫士（饕餮版）</div>	    			
+		    		</div>
+		    		<div class="col col13">
+		    			<div class="award-price">100</div>
+		    			<div class="award-price">15</div>
+		    			<div class="award-price">18</div>
+		    		</div>
+		    		<div class="col col14">
+		    			<div class="award-num">1</div>
+		    			<div class="award-num">2</div>
+		    			<div class="award-num">1</div>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div class="rank-end-tip">活动结束后砸雪人次数排名前 5 名请联系白鸽客服领取奖品，<br/>7个工作日未联系客服则视为放弃中奖资格。</div>
+		</div>
+	</body>
+	<script src="../public/js/public.js?v={$v}"></script>
+	<script src="../public/js/dialog.min.js?v={$v}"></script>
+	<script src="../public/js/zepto.alert.js?v={$v}"></script>
+	<script type="text/javascript">
+		
+	</script>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>小花伞公益</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="./css/index.css?v={$v}">
+    <script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+    <script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+</head>
+<body>
+<!-- 头部导航 -->
+<include file="Activity/Public/header" title="小花伞公益" backflag="true" appgo="true" />
+<div class="content theme-color pt88">
+    <div class="top">
+        <div class="uinfo">
+            <img src="./images/demo.png" />
+            <span>作为一颗桃</span>
+        </div>
+        <div class="topbanner">
+            <img src="./images/banner.png" />
+        </div>
+        <a class="myimg" href="">
+            <img src="./images/myzh.png" />
+        </a>
+    </div>
+    <div class="noclick">
+        <p></p>
+        <div class="scroll">
+            <ul>
+                <li>
+                    <img src="./images/userimg.png" />
+                    <span>130****0000</span>
+                    <span>捐赠了2颗爱心</span>
+                </li>
+                <li>
+                    <img src="./images/userimg.png" />
+                    <span>130****0000</span>
+                    <span>捐赠了2颗爱心</span>
+                </li>
+                <li>
+                    <img src="./images/userimg.png" />
+                    <span>130****0000</span>
+                    <span>捐赠了2颗爱心</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="total_heart">
+        <div>
+            <span>募捐善款(元)</span>
+            <span>300.00</span>
+        </div>
+        <div>
+            <span>爱心份数(份)</span>
+            <span>25148</span>
+        </div>
+        <div>
+            <span>爱心用户(人)</span>
+            <span>20000</span>
+        </div>
+    </div>
+    <div class="buy">
+        <div class="buytitle">
+            <span>买就捐</span>
+            <a href="">更多</a>
+        </div>
+        <ul class="product-list-cnt">
+            <li class="product-box">
+                <a class="" onclick="insureList('/Product/detail?pro_num=102005','102005')">
+                    <div class="product-box-top">
+                        <div class="free-mark">公益产品</div>                            
+                        <img src="https://m.baigebaodev.com/upload/baoxian/20180929/5baf584632500.png" alt="">
+                        <span class="pbt-sales">销量：<i>14623</i></span>
+                        <span class="pbt-price">￥<i>480.00</i><i class="pbt-price-up">起</i>
+                            <div class="free-mark1">捐赠48颗爱心起</div>
+                        </span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="san">
+            <div class="santitle">
+                <span>自由捐</span>
+            </div>
+            <img src="./images/urbg.png" />
+        </div>
+    <div class="bottom-tel">
+        <a class="bottom-tel-num" href="tel:4009-024-365"><img class="imgblock" src="./images/bottom-tel1.png?v=1557457211"></a>
+        <a class="aboutus-link" onclick="maiDian('click','/Article/aboutUs','aboutus_click')"><img class="imgblock" src="./images/bottom-tel2.png?v=1557457211"></a>
+    </div>
+    <a href="umbrellainfo.html" class="umbrellainfo">
+        <img src="./images/ubrinfo.png" />
+    </a>
+    <div class="kefu service_show_btn">
+        <img src="./images/services.png?v={$v}" />
+    </div>
+</div>
+</body>
+<script src="../public/js/public.js?v={$v}"></script>
+<script src="../public/js/zepto.alert.js?v={$v}"></script>
+<!-- <script src="./js/scroll.js"></script> -->
+<script type="text/javascript">
+    // 设置keyframes属性
+    function addKeyFrames(y){
+        var style = document.createElement('style');
+        style.type = 'text/css';
+        //设置动画
+        var keyFrames = `
+        @-webkit-keyframes move {
+            0% {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                -webkit-transform: translate3d(A_DYNAMIC_VALUE, 0, 0);
+                transform: translate3d(A_DYNAMIC_VALUE, 0, 0);
+            }
+            
+        }
+        @keyframes move {
+            0% {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                -webkit-transform: translate3d(A_DYNAMIC_VALUE, 0, 0);
+                transform: translate3d(A_DYNAMIC_VALUE, 0, 0);
+            }
+            
+        }`;
+        style.innerHTML = keyFrames.replace(/A_DYNAMIC_VALUE/g, y);
+        document.getElementsByTagName('head')[0].appendChild(style);
+    }
+
+    function init(){ 
+        //获取宽度
+        var allwidth = 0;
+        $('.scroll ul li').each(function(i){
+            allwidth +=$(this).width() + parseFloat($(this).css("margin-right").split('px')[0]);
+        })
+        var width = allwidth/2;
+        addKeyFrames( '-' + width  +'px');
+        document.querySelector('.scroll ul').className += ' rowup';
+        //获取li 数量 设置动画时间
+        var licount = (15*$('.scroll ul li').length/10)+'s';
+        $('.scroll ul').css({'animation-duration': licount});
+    }
+    init();
+</script>
+<script type="text/javascript">
+$(function(){
+    // 埋点
+    window.onbeforeunload=function(e){
+        maiDian('exposure','','{$event_key}_Activelanding_page_enter');
+    }
+
+    //判断app是安卓还是ios方法（例）
+    var u = navigator.userAgent;
+    if (u.indexOf("pop=1") < 0) {
+        $(".content").removeClass("pt88");
+    }else{
+
+    }
+})
+</script>
+<script type="text/javascript">
+    $(function(){
+        // $('.scroll').scroll({
+        //     speed: 80, //数值越大，速度越快
+        //     direction: 'horizantal'
+        // });
+    })
+</script>
+<include file="Public/service" />
+</html>

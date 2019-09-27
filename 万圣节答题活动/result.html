@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>测一测你内心住着什么鬼</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">	    
+	    <link rel="stylesheet" type="text/css" href="./css/style.css?v={$v}">	    
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+		<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	</head>
+	<body>
+		<div class="content result-page">
+			<div class="result-box">				
+				<img class="result-img" onclick="return false;" src="./images/result-img.png?v={$v}" />
+			    <div class="result-name">万物的王强</div>
+			</div>
+			<div class="btn-box">
+				<a href="javascript:;" class="again-btn"></a>
+				<a href="javascript:;" class="show-btn"></a>
+			</div>
+			<!--<div class="share-box flexbox flexbox-middle">
+				<div class="qcord-box"><img class="qcord" onclick="return false;" src="./images/qcord.png?v={$v}" /></div>
+			    <div class="text-box">
+			    	<div class="text1">测一测你内心住着什么鬼</div>
+			    	<div class="text2">长按保存生成分享图片</div>
+			    </div>
+			</div>-->
+		</div>
+		<!--遮罩-->
+	    <div class="bg" style="display: none;"></div>
+		<div class="shareContent" id="shareContent" style="opacity: 0;z-index: -1;">
+			<img class="share-img" onclick="return false;" src="./images/share-img.png?v={$v}" />
+		    <div class="result-name">万恶的王强的我想去看</div>
+		    <div class="logo"><img class="share-img" onclick="return false;" src="./images/logo.png?v={$v}" /></div>
+		</div>		
+		<div class="shareimgbox imgDiv saveImage" style="display: none;">
+			<div class="shareimg-close"></div>
+			<img src=""/>
+			<div class="clicktime">长按保存图片</div>
+		</div>	
+	</body>
+	<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	<script src="../public/js/zepto.alert.js?v={$v}"></script>
+	<script src="../public/js/html2canvas/html2canvas.min.js?v={$v}"></script>
+	<script src="../public/js/canvas2image.js?v={$v}"></script>
+	<script type="text/javascript">
+	//优化图片清晰度
+    function convert2canvas() {
+        var cntElem = $('#shareContent')[0];
+
+        var shareContent = cntElem;//需要截图的包裹的（原生的）DOM 对象
+        var width = shareContent.offsetWidth; //获取dom 宽度
+        var height = shareContent.offsetHeight; //获取dom 高度
+        var canvas = document.createElement("canvas"); //创建一个canvas节点
+        var scale = 2; //定义任意放大倍数 支持小数
+        canvas.width = width * scale; //定义canvas 宽度 * 缩放
+        canvas.height = height * scale; //定义canvas高度 *缩放
+        canvas.getContext("2d").scale(scale, scale); //获取context,设置scale
+        var opts = {
+            async:false,//使用同步
+            scale: scale, // 添加的scale 参数
+            canvas: canvas, //自定义 canvas
+//             logging: true, //日志开关，便于查看html2canvas的内部执行流程
+            width: width, //dom 原始宽度
+            height: height,
+            scrollX:0,
+            scrollY:0,
+            useCORS: true // 【重要】开启跨域配置
+        };
+
+        // document.getElementById("canvas").appendChild(canvas);
+
+        html2canvas(shareContent, opts).then(function (canvas) {
+
+            var context = canvas.getContext('2d');
+            // 【重要】关闭抗锯齿
+            context.mozImageSmoothingEnabled = false;
+            context.webkitImageSmoothingEnabled = false;
+            context.msImageSmoothingEnabled = false;
+            context.imageSmoothingEnabled = false;
+
+
+            // 【重要】默认转化的格式为png,也可设置为其他格式
+            var img = Canvas2Image.convertToImage(canvas, canvas.width, canvas.height,'png');
+            img.crossOrigin="anonymous";
+
+            // document.body.appendChild(img);
+            $(".imgDiv img").remove();
+            $(".imgDiv").append(img);
+            $(".saveImage").show();
+	        $(".bg").show();
+
+//          $(img).css({
+//              "width": canvas.width / 2 * 0.9 + "px",
+//              "height": canvas.height / 2 * 0.86 + "px",
+//          }).addClass('imgDiv');
+
+        });
+    }
+    $(function(){
+    	$(".show-btn").on("click",function(){
+	    	//dom转图片并优化清晰度
+            convert2canvas();
+            //弹框显示需要保存的图片
+	           
+	    })
+    	$(".shareimg-close").on("click",function(){
+    		$(".saveImage").hide();
+	        $(".bg").hide();
+    	})
+    })
+	</script>
+</html>

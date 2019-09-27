@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>无博饼不中秋</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">	    
+	    <link rel="stylesheet" type="text/css" href="./css/css.css?v={$v}">	    
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="content mymoon">
+			<img src="./images/mymoonbg.png?v={$v}"/>
+			<div class="collectRuleBtn"><img src="./images/collectRuleBtn.png?v={$v}"/></div>
+			<div class="moonBox">
+				<div class="moonDesBox">
+					<img class="hzmflMsg" src="./images/hzmflMsg.png?v={$v}"/>
+					<img class="sclrMsg" style="display:none" src="./images/sclrMsg.png?v={$v}"/>
+					<img class="fynrMsg" style="display:none" src="./images/fynrMsg.png?v={$v}"/>
+				</div>
+				<div class="flexbox flexbox-middle moonCakeBox">
+					<!-- 黑芝麻凤梨 -->
+					<div class="hzmfl">
+						<!-- 灰的 -->
+						<img src="./images/moonCake1.png?v={$v}"/>
+						<!-- 亮的 -->
+						<img style="display:none" src="./images/moonCakeLight1.png?v={$v}"/>
+						<span>x 0</span>
+					</div>
+					<!-- 酸菜莲蓉 -->
+					<div class="sclr">
+						<!-- 灰的 -->
+						<img src="./images/moonCake2.png?v={$v}"/>
+						<!-- 亮的 -->
+						<img style="display:none" src="./images/moonCakeLight2.png?v={$v}"/>
+						<span>x 0</span>
+					</div>
+					<!-- 鲱鱼牛肉 -->
+					<div class="fynr">
+						<!-- 灰的 -->
+						<img src="./images/moonCake3.png?v={$v}"/>
+						<!-- 亮的 -->
+						<img style="display:none" src="./images/moonCakeLight3.png?v={$v}"/>
+						<span>x 0</span>
+					</div>
+				</div>
+			</div>
+			<div class="convertMoonBtn"><img src="./images/convertMoonBtn.png?v={$v}"/></div>
+		</div>
+		<!-- 遮罩层 -->
+		<div class="zhezhaoWrap"></div>
+		<!-- 如何获得月饼弹框 -->
+		<div class="getMoonRuleText">
+			<img src="./images/getMoonRuleBg.png?v={$v}"/>
+			<div class="text1">
+				<p>月饼获得方法：</p>
+				<p>①老用户可通过购买任意金额的保险产品获得一个月饼（每个订单对应一个月饼）</p>
+				<p>②老用户邀请新用户注册，老用户新用户各自可获得一个月饼，最多可邀请80个好友注册（即最多邀请可获得80个月饼）</p>
+				<p>③新用户注册成功，可获得一个月饼</p>
+				<p>④新老用户首次分享朋友圈，可获得一个月饼</p>
+			</div>
+			<div class="text2">
+				<p>如何参与博饼抽奖：</p>
+				<p>①新老用户每天免费获得一次博饼抽奖机会获取奖励</p>
+				<p>②若想再获得博饼机会，需消耗3个月饼。（每消耗3个月饼，获得一次博饼机会）</p>
+				<p>③单笔保费订单≥100元，可获得1次抽奖机会。</p>
+			</div>
+			<div class="getMoonRule-close"></div>
+		</div>
+
+		<!-- 月饼不足弹框 -->
+		<div class="noMoonBoxWap">
+			<img src="./images/noMoonBoxWapBg.png?v={$v}"/>
+			<div class="flexbox flexbox-middle noMoonCon1">
+				<p class="flexchild">
+					<span>购买保险</span>可获得月饼，<br>
+					集齐三个月饼，<br>
+					就可兑换一次博饼机会
+				</p>
+				<a class="goBuyBtn" href="javascript:;"></a>
+			</div>
+			<div class="flexbox flexbox-middle noMoonCon2">
+				<p class="flexchild">
+					<span>邀请好友成功注册</span>或<span>首<br>次分享</span>可各获得一个月饼
+				</p>
+				<a class="goShareBtn" href="javascript:;"></a>
+			</div>
+			<a class="noMoonBox-close" href="javascript:;"></a>
+		</div>
+
+		<!--分享弹窗-->
+		<div class="alertShareBox" style="display: none;">
+			<div class="alertShare">
+				<img src="./images/share-bg.png?v={$v}"/>
+			</div>
+		</div>
+	</body>
+	<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	<script src="../public/js/public.js?v={$v}"></script>
+	<script src="../public/js/dialog.min.js?v={$v}"></script>
+	<script src="../public/js/zepto.alert.js?v={$v}"></script>
+	<script type="text/javascript">
+
+		$(function(){
+			//显示相应的月饼信息
+			$(".moonCakeBox>div").each(function(index){
+				$(this).click(function(){
+					$(".moonDesBox>img").hide();
+					$(".moonDesBox").find("img").eq(index).show();
+				});
+			});
+
+			// 显示收集月饼规则
+			$(".collectRuleBtn").click(function(){
+				$(".zhezhaoWrap").show();
+				$(".getMoonRuleText").show();
+			});
+			// 隐藏月饼规则
+			$(".getMoonRule-close").click(function(){
+				$(".zhezhaoWrap").hide();
+				$(".getMoonRuleText").hide();
+			});
+			$(".zhezhaoWrap").click(function(){
+				$(".zhezhaoWrap").hide();
+				$(".getMoonRuleText").hide();
+				$(".noMoonBoxWap").hide();
+			});
+
+			//关闭月饼不足弹框
+			$(".noMoonBox-close").click(function(){
+				$(".zhezhaoWrap").hide();
+				$(".noMoonBoxWap").hide();
+			});
+
+			//引导去朋友圈
+			$(".goShareBtn").click(function(){
+				$(".zhezhaoWrap").hide();
+				$(".noMoonBoxWap").hide();
+				$(".alertShareBox").show();
+			})
+			$(".alertShareBox").click(function(){
+				$(".alertShareBox").hide()
+			})
+		});
+	</script>
+</html>

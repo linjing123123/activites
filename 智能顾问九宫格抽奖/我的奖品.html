@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>难倒AI算你赢</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">	    
+	    <link rel="stylesheet" type="text/css" href="./css/style.css?v={$v}">	    
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="content">
+			<div class="my-award">
+				<div class="hasAward" class="hasAward">
+					<div class="list">
+						<div class="title">白鸽小额意外伤害险</div>
+						<div class="date">2018-09-20 14:30:00</div>
+						<span class="btn to-receive">去领取</span>
+					</div>
+					<div class="list">
+						<div class="title">白鸽小额意外伤害险</div>
+						<div class="date">2018-09-20 14:30:00</div>
+						<span class="btn to-receive">去兑换</span>
+					</div>
+					<div class="list">
+						<div class="title">白鸽小额意外伤害险</div>
+						<div class="date">2018-09-20 14:30:00</div>
+						<span class="btn to-receive">去使用</span>
+					</div>
+					<div class="list">
+						<div class="title">白鸽小额意外伤害险</div>
+						<div class="date">2018-09-20 14:30:00</div>
+						<span class="btn receive-ed">已领取</span>
+					</div>
+				</div>
+				<div class="noAward" style="display: none;">
+					<img class="no-award-img" src="./images/noAward.png" />
+					<div class="txt">暂无奖品</div>
+				</div>
+			</div>
+		</div>
+		<!--遮罩-->
+		<div class="dialog2"></div>
+		<div class="alert-dialog">
+			<div class="to-receive-dialog">
+				<div class="close-btn"></div>
+				<div class="receive-dialog-t">确认兑换</div>
+				<div class="receive-dialog-tip">将在1-3个工作日完成充值</div>
+				<div class="tel-box"><input type="tel" id="tel" maxlength="11" placeholder="请输入手机号码"/></div>
+				<div class="group-btn">
+					<div class="cancel-btn">取消</div>
+					<div class="submit-btn">确认</div>
+				</div>
+			</div>
+		</div>	
+	</body>
+	<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	<script src="../public/js/public.js?v={$v}"></script>
+	<script src="../public/js/dialog.min.js?v={$v}"></script>
+	<script src="../public/js/zepto.alert.js?v={$v}"></script>
+	<script type="text/javascript">
+		$(".close-btn").on("click",function(){
+			$(".alert-dialog").hide();
+		});
+		var ajaxLock = true;
+		$(".submit-btn").on("click",function(){
+			var tel=$.trim($("#tel").val());
+			if(tel==""||!isPhoneNo(tel)){
+				$.dialog({content: '手机格式不正确!', time: 2000});
+	            return ;
+			}
+			if(ajaxLock){
+                ajaxLock = false;
+                $.ajax({
+                    url: "",
+                    type: 'POST',
+                    data: {},
+                    success: function (res) {
+                        ajaxLock = true;
+                        if (res.status == 1000) {
+                        	$.dialog({content: res.data, time: 2500});
+                        }else {
+                        	
+                        }
+                    },
+                    error: function () {
+                        $.dialog({content: '网络加载失败！', time: 2000});
+                        ajaxLock=true;
+                    }
+                });
+            }
+		})
+	</script>
+</html>

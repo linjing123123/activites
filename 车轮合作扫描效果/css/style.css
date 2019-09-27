@@ -1,0 +1,163 @@
+body, html {
+	height: 100%;
+}
+.shadeLayer {
+    display: none;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 12;
+}
+.theme-color {	
+	background-color: #030632;
+}
+.img-box {
+	position:relative;
+}
+.scanning {
+	position: absolute;
+	bottom: .7rem;
+	left:0;
+	right:0;
+	margin:0 auto;
+}
+.game-page {
+	position: relative;
+	background:#030632 url("../images/bg.png") no-repeat;
+    background-size:100% auto;
+}
+.upload-img-box {
+	width: 6.6rem;
+	height: 4.6rem;
+	margin:2.82rem auto .24rem;
+	background-color: #2c3060;
+	border-radius: .2rem;
+	text-align: center;
+	padding-top: .75rem;
+    box-sizing: border-box;
+}
+.refresh {
+	position: absolute;
+	top:1rem;
+	right: 0;
+	width:1.74rem;
+	height: .7rem;
+	background: url("../images/refresh.png") no-repeat;
+    background-size:100% auto;
+}
+.tip {
+	margin-top: .5rem;
+	color: #fe5171;
+	font-size:.34rem;
+}
+.upload-tip {
+	text-align: center;
+	font-size:.24rem;
+	color:#fff;
+	line-height: .36rem;
+}
+.file {
+	position: relative;
+	width:2.04rem;
+	height:2.04rem;
+	margin:0 auto;
+	background: url("../images/camera.png") no-repeat;
+    background-size:100% 100%;
+}
+.file input{
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.photo-box {
+	position: relative;
+	overflow: hidden;
+	margin-top: .4rem;
+}
+.photo-box .photo-bg {
+	width:6rem;
+	margin:0 auto;
+}
+.photo-box .animate {
+	position: absolute;
+	width:5.4rem ;
+	left:0;
+	right:0;
+	margin:0 auto;
+	top:-5.8rem;
+	z-index: 2;
+	/*animation:move 2s infinite;
+	-webkit-animation:move 2s infinite;*/
+}
+.imgshow {
+    position: absolute;
+    width: 5.3rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: .21rem;
+    height: 9.42rem;
+}
+@keyframes move{
+	/*from{top:-1rem;}
+	to{top: 4.1rem;}*/
+	0%  {top:-5.8rem;}
+	20% {top:4.1rem;}
+	40%  {top:-5.8rem;}
+	60% {top:4.1rem;}
+	80%  {top:-5.8rem;}	
+	100% {top:4.1rem;}
+}
+@-webkit-keyframes move{
+	/*from{top:-1rem;}
+	to{top: 4.1rem;}*/
+	0%  {top:-5.8rem;}
+	20% {top:4.1rem;}
+	40%  {top:-5.8rem;}
+	60% {top:4.1rem;}
+	80%  {top:-5.8rem;}	
+	100% {top:4.1rem;}
+}
+.finish {
+	width:1.91rem;
+	height:.37rem;
+	margin: .4rem auto;
+	background: url("../images/finish.png") no-repeat;
+    background-size:100% 100%;
+}
+.award-box {
+	position: fixed;
+	width: 100%;
+    top:50%;
+    left:50%;
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    transform: translate(-50%,-50%); 
+	z-index: 13;
+	
+}
+.award-box .close{
+	position: absolute;
+	width:.74rem;
+	height:.74rem;
+	left:50%;
+	margin-left:-.37rem;
+	bottom:0;
+}
+.award-box .ljlq{
+	position: absolute;
+    width: 3.29rem;
+    height: .76rem;
+    left: 50%;
+    margin-left: -1.67rem;
+    bottom: 1.66rem;
+}	

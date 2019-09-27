@@ -1,0 +1,218 @@
+.boxWrap{
+	position: relative;
+	width: 100%;
+}
+.boxWrap .boxBg{
+	display: block;
+	/* width: 7.5rem; */
+}
+/* 活动奖品 */
+.awardBox{
+	position: absolute;
+	top:1.24rem;
+	left: 0;
+	right: 0;
+	width: 6.86rem;
+	height: 1.56rem;
+	line-height: .52rem;
+	margin: 0 auto;
+}
+.awardBox .award-list{
+	background: url(../images/yindao_xing.png) no-repeat 50%;
+    background-size: .22rem .22rem;
+	background-position-x: 0;
+	padding-left: .3rem;
+	margin-left: .2rem;
+	font-size: .26rem;
+	color: #fffffd;
+}
+/* 活动详情 */
+.detailBox{
+	position: absolute;
+    top: 0.98rem;
+    left: 0;
+    right: 0;
+    width: 5.72rem;
+/*    height: 5.47rem;*/
+    line-height: .57rem;
+    margin: .3rem .7rem 0 1.08rem;
+}
+.detailBox .detail-list{
+	color: #ffffff;
+    font-size: .26rem;
+    line-height: .38rem;
+    margin-top: .18rem;
+    position: relative;
+}
+.detailBox .detail-list>.dot-num{
+	position: absolute;
+    left: -.47rem;
+    display: inline-block;
+    width: .32rem;
+    height: .32rem;
+    background: url(../images/dot-num.png) no-repeat;
+	background-size: 100% 100%;
+    text-align: center;
+    color: #fffffd;
+    font-size: .24rem;
+    line-height: .36rem;
+}
+.detailBox .detail-list .lighttxt{
+	color: #fef88e;
+}
+.yindao_btn{
+	position: absolute;
+	bottom: .27rem;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width:6.64rem;
+	height: 1.17rem; 
+}
+/* 活动结束页 */
+.awardTotalTitle{
+	position: absolute;
+	top: 0.14rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+	font-size: .4rem;
+	font-weight: bold;
+    color: #ffffff;
+}
+.endAwardBox{
+	position: absolute;
+    top: 1.2rem;
+    left: 0;
+    right: 0;
+    width: 6.28rem;
+    height: 2.26rem;
+    margin: 0 auto;
+    color: #fff;
+    font-size: .3rem;
+    overflow: hidden;
+}
+.endAwardBox .list{
+	height: .56rem;
+    line-height: .56rem;
+}
+.endAwardBox .list .num{
+	width: .32rem;
+    height: .32rem;
+    background: url(../images/dot-num.png) no-repeat;
+	background-size: 100% 100%;
+    text-align: center;
+    color: #fffffd;
+    font-size: .24rem;
+    margin: .12rem .14rem .12rem 0;
+    line-height: .34rem;
+}
+.endAwardBox .list .awardName{
+	display: inline-block;
+    min-width: 2.84rem;
+}
+.endAwardBox .list .time{
+	font-size: .26rem;
+	line-height: .6rem;
+}
+.dialog2{
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 9;
+    display: none;
+}
+/* 客服 */
+.shareBtn{
+	width: 1rem;
+    height: .76rem;
+    position: fixed;
+    top: 9.14rem;
+    right: 0;
+}
+.kefu{
+	width: 1rem;
+    height: .8rem;
+    position: fixed;
+    top: 10.14rem;
+    right: 0;
+}
+.challenge-dialog {
+	position: absolute;
+	width: 7.47rem;
+	height: 4.88rem;
+	left:0;
+	right: 0;
+	margin:0 auto;
+	top:50%;
+	margin-top:-2.44rem;
+	background-color: #fff;
+	border-radius: .25rem;
+	font-size: .3rem;
+	color: #fff;
+	text-align: center;
+	background: url("../images/tiaoz-img.png") no-repeat;
+	background-size: 100% 100%;
+	z-index: 10;
+}
+.challenge-dialog .text {
+	position: absolute;
+	left:2.83rem;
+	top:.93rem;
+	text-align: center;
+}
+.index-btn {
+	display: inline-block;
+	width:2.82rem;
+	height: .8rem;
+	line-height: .8rem;
+	margin:.85rem auto 0;
+	color: #fff;
+	font-size: .32rem;
+	text-align: center;
+	font-weight:bold;
+    background: url("../images/index-btn.png") no-repeat;
+	background-size: 100% 100%;
+}
+.challenge-btn {
+	margin-top: 3.6rem;
+}
+.challenge-close {
+	position: absolute;
+	width: .26rem;
+	height: .26rem;
+	right: 1.07rem;
+	top:.22rem;
+}
+/* 分享弹框 */
+.alertShareBox{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 9;
+	background: rgba(0,0,0,0.7);
+	display: none;
+}
+.alertShare{
+	width: 4.17rem;
+    position: absolute;
+    top: .1rem;
+    left: 3rem;
+    z-index: 9;
+}
+.overflowH{
+    overflow: hidden;
+}
+.pt88 {
+	padding-top: .88rem;
+}

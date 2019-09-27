@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>玩游戏 赚金币 兑大奖</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="./css/reward.css?v={$v}">
+    <script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+    <script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+</head>
+<body>
+<div class="content theme-color">
+    <div class="top-box flexbox-middle flexbox">
+        <img class="headImg" src="./images/headimg.png?v={$v}" />
+        <div class="coin-box flexchild">
+            <div class="coin-num"><i></i>76</div>
+            <div class="coin-text">当前白鸽金币</div>
+        </div>
+        <div class="goreward-btn"><img src="./images/goreward-btn.png?v={$v}" /></div>
+    </div>
+    <div class="reward-con reward-con-bg1">
+        <div class="reward-box">
+            <div class="reward-item flexbox-middle flexbox">
+                <div class="reward-item-left">
+                    <div class="reward-item-text1">兑礼日期： 2019/06/15</div>
+                    <div class="reward-item-text2">兑换奖品： 1元白鸽现金红包</div>
+                    <div class="reward-item-text3">消耗金币： <span>110</span></div>
+                </div>
+                <div class="reward-item-right flexchild">
+                    <div class="reward-btn">去查看</div>
+                </div>
+            </div>
+            <div class="reward-item flexbox-middle flexbox">
+                <div class="reward-item-left">
+                    <div class="reward-item-text1">兑礼日期： 2019/06/15</div>
+                    <div class="reward-item-text2">兑换奖品： 1元白鸽现金红包</div>
+                    <div class="reward-item-text3">消耗金币： <span>110</span></div>
+                </div>
+                <div class="reward-item-right flexchild">
+                    <div class="reward-btn">去使用</div>
+                </div>
+            </div>
+            <div class="reward-item flexbox-middle flexbox">
+                <div class="reward-item-left">
+                    <div class="reward-item-text1">兑礼日期： 2019/06/15</div>
+                    <div class="reward-item-text2">兑换奖品： 1元白鸽现金红包</div>
+                    <div class="reward-item-text3">消耗金币： <span>110</span></div>
+                </div>
+                <div class="reward-item-right flexchild">
+                    <div class="reward-btn">已发放</div>
+                </div>
+            </div>
+            <div class="reward-item flexbox-middle flexbox">
+                <div class="reward-item-left">
+                    <div class="reward-item-text1">兑礼日期： 2019/06/15</div>
+                    <div class="reward-item-text2">兑换奖品： 1元白鸽现金红包</div>
+                    <div class="reward-item-text3">消耗金币： <span>110</span></div>
+                </div>
+                <div class="reward-item-right flexchild">
+                    <div class="reward-btn">去查看</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../public/js/public.js?v={$v}"></script>
+<script src="../public/js/zepto.alert.js?v={$v}"></script>
+<script>
+$(function(){
+    if(isIphoneX()){
+        $(".reward-con").removeClass("reward-con-bg1").addClass("reward-con-bg2");
+    }else{
+        $(".reward-con").removeClass("reward-con-bg2").addClass("reward-con-bg1");
+    }
+})
+
+/**
+    * 判断iphonex
+    *
+    * */
+function isIphoneX(){
+    return $(window).width() >= 375 && $(window).width() < 400 && $(window).height() >= 724;
+}
+</script>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>难倒AI算你赢</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">	    
+	    <link rel="stylesheet" type="text/css" href="./css/css.css?v={$v}">	    
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="content">
+			<div class="boxWrap"><img class="boxBg" src="./images/yindao_01.png?v={$v}" /></div>
+			<!-- 活动奖品 -->
+			<div class="boxWrap">
+				<img class="boxBg" src="./images/yindao_02.png?v={$v}" />
+				<div class="awardBox flexbox">
+					<div class="award-list">爱奇艺会员年卡</div>
+					<div class="award-list">100元京东购物卡</div>
+					<div class="award-list">100元话费充值卡</div>
+					<div class="award-list">66元白鸽保险代金券 </div>
+					<div class="award-list">白鸽小额意外伤害保险</div>
+					<div class="award-list">白鸽专属特定疾病保险</div>
+				</div>
+			</div>
+			<!-- 活动详情 -->
+			<div class="boxWrap">
+				<img class="boxBg" src="./images/yindao_03.png?v={$v}" />
+				<div class="detailBox">
+					<div class="detail-list">
+						<span class="dot-num">1</span>活动时间：2018年11月29日-12月12日
+					</div>
+					<div class="detail-list">
+						<span class="dot-num">2</span>用户在<span class="lighttxt">【智能顾问】</span>页面输入任一<span class="lighttxt">保险相关</span>问题即视为发起挑战，当智能AI<span class="lighttxt">无法回复</span>即<span class="lighttxt">挑战成功</span>，获得<span class="lighttxt">一次</span>抽奖机会；
+					</div>
+					<div class="detail-list">
+						<span class="dot-num">3</span>每人每天可向智能AI发起4次挑战；
+					</div>
+					<div class="detail-list">
+						<span class="dot-num">4</span>首次分享<span class="lighttxt">活动链接</span>给好友或朋友圈，可获得<span class="lighttxt">一次</span>抽奖机会；
+					</div>
+					<div class="detail-list">
+						<span class="dot-num">5</span>挑战所获得的抽奖次数可<span class="lighttxt">累计</span>；
+					</div>
+					<div class="detail-list">
+						<span class="dot-num">6</span>本次活动抽奖所获得奖品请在12月13日24:00前进行领取兑换，否则自动失效；
+					</div>
+					<div class="detail-list">
+						<span class="dot-num">7</span>本次活动如有疑问请联系在线客服
+					</div>
+				</div>
+				<div class="yindao_btn"><img class="boxBg" src="./images/yindao_btn.png?v={$v}" /></div>
+			</div>
+		</div>
+		<!--遮罩-->
+		<div class="dialog2"></div>
+		<!--挑战ai-->
+		<div class="challenge-dialog">
+			<div class="text">想要获取抽奖资格<br/>请先挑战智能AI，<br/>挑战成功即可抽奖</div>
+			<a class="challenge-btn index-btn" href="">开始挑战</a>
+			<div class="challenge-close"></div>
+		</div>
+		<!-- 分享 -->
+		<div class="shareBtn"><img src="./images/share.png?v={$v}"></div>
+		<!-- 客服 -->
+		<div class="kefu service_show_btn"><img src="./images/kefu.png?v={$v}"></div>
+		<!-- 分享弹框 -->
+		<div class="alertShareBox">
+			<div class="alertShare">
+				<img src="../../../Public/src/activity/2018/moonday/images/share-bg.png?v={$v}">
+			</div>
+		</div>
+	</body>
+	<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	<script src="../public/js/public.js?v={$v}"></script>
+	<script src="../public/js/dialog.min.js?v={$v}"></script>
+	<script src="../public/js/zepto.alert.js?v={$v}"></script>
+	<script>
+	$(function(){
+		//关闭跳转ai弹框
+		$(".challenge-close").on("click",function(){
+			$(".dialog2,.challenge-dialog").hide();
+			$(".content").removeClass("overflowH");
+		});
+		//点击分享
+		$(".shareBtn").on("click",function(){
+			$(".alertShareBox").show();
+			$(".content").addClass("overflowH");
+		});
+		//关闭分享页
+		$(".alertShareBox").on("click",function(){
+			$(this).hide();
+			$(".content").removeClass("overflowH");
+		});
+	});
+	</script>
+	<include file="Public/service" />
+</html>

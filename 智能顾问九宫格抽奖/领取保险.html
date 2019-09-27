@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>难倒AI算你赢</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">	    
+	    <link rel="stylesheet" type="text/css" href="./css/style.css?v={$v}">	    
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="content">
+			<div class="img-box">
+				<img class="bg-img" src="./images/receive1.png" />
+			</div>
+			<div class="img-box">
+				<img class="bg-img" src="./images/receive2.png" />
+			</div>
+			<div class="img-box">
+				<img class="bg-img" src="./images/receive3.png" />
+			</div>
+			<div class="img-box">
+				<img class="bg-img" src="./images/receive4.png" />
+			</div>
+			<div class="img-box">
+				<img class="bg-img" src="./images/receive5.png" />
+			</div>
+			<div class="receive-info">
+				<input id="name" class="ipt" type="text" placeholder="请输入被保人姓名" />
+				<input id="IDcard" class="ipt mt22" type="text" maxlength="18" placeholder="请输入被保人身份证号" />
+				<div class="ipt-txt">承保年龄30至65周岁</div>
+				<input id="tel" class="ipt" type="tel" maxlength="11" placeholder="请输入手机号" />
+				<div class="ipt-wra mt22">
+					<input id="dyncode" type="text" maxlength="4" class="ipt-short" placeholder="请输入右侧图形码">
+					<img id="dyncodeimg" class="code-img" src="{:U('getDynamicCode')}" onclick="javascript:this.src = '{:U('getDynamicCode')}?tm=' + Math.random();">
+				</div>
+				<div class="ipt-wra mt22">
+					<input id="VerifyCode" type="txt" maxlength="6" class="ipt-short" placeholder="请输入手机验证码">
+					<input id="getVerifyCode" type="button" class="getVerifyCode" value="获取验证码">
+				</div>
+				<div class="agreement mt22">
+					<input id="agreement" value="1" type="checkbox">
+					<label for="agreement"><i></i>我已阅读</label>
+					<div class="tkbox">
+						<a href="#"> 《投保须知》</a>和
+						<a href="http://newm.baigebao.com/Product/new_must_know?pro_num=102007&amp;mark=1&amp;pro_number=102007">《保险条款》</a>
+					</div>
+				</div>
+				<div id="submit" class="receive-btn">立即领取</div>
+			</div>
+		</div>
+		<!--遮罩-->
+		<div class="dialog2"></div>
+		<!--提示弹窗-->
+		<div class="tip-dialog" style="display: none;">
+			<div class="tip-text">投保年龄超出承保年龄<br />请输入正确的被保险人证件号码</div>
+			<div class="tip-close"></div>
+		</div>
+	</body>
+	<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	<script src="../public/js/public.js?v={$v}"></script>
+	<script src="../public/js/dialog.min.js?v={$v}"></script>
+	<script src="../public/js/zepto.alert.js?v={$v}"></script>
+	<script>
+		$(function(){
+			$(".tip-close").on("click",function(){
+				$(".dialog2,.tip-dialog").hide();
+			});
+			//年龄验证
+			$("#IDcard").on("input propertychange",function(){
+				var cardNum = $.trim($(this).val());
+				var age = ages(matchBirthday(cardNum));
+	            if(cardNum.length==18) {
+	                if(!isCardNo(cardNum)){
+	                  $.dialog({content: '亲~，请输入正确的身份证号码', time: 1000});
+	                  return false;
+	                }else {
+	                	console.log(age)
+	              	    if(age<30||65<age){
+							$(".tip-dialog,.dialog2").show();
+							return false;
+						}
+	                }
+	            }
+			})
+			
+			var ajaxLock = true;
+			//投保  表单提交
+	        $("#submit").click(function(){
+	            var tbName = $.trim($('#name').val());
+	            var tbCardNum = $.trim($('#IDcard').val());
+	            var tbTel = $.trim($('#tel').val());
+	            var tx_code = $.trim($('#dyncode').val());
+	            var sms_code = $.trim($("#VerifyCode").val());
+	            var agreement = $("#agreement:checked").val();
+	            if(tbName==""){
+	                $.dialog({content: '您的姓名不能为空', time: 1000});
+	                return false;
+	            }
+	            if(!isUserName(tbName)){
+	                $.dialog({content: '您的姓名格式不正确', time: 1000});
+	                return false;
+	            }
+	            if(tbCardNum==""){
+	                $.dialog({content: '您的身份证号不能为空', time: 1000});
+	                return false;
+	            }
+	            if(!isCardNo(tbCardNum)){
+	                $.dialog({content: '您的身份证号格式不正确', time: 1000});
+	                return false;
+	            }
+	            if(tbTel==""){
+	                $.dialog({content: '手机号码不能为空', time: 1000});
+	                return false;
+	            }
+	            if(!isPhoneNo(tbTel)){
+	                $.dialog({content: '手机号码格式不正确', time: 1000});
+	                return false;
+	            }
+	            if(tx_code.length < 4){
+	                $.dialog({content: '请输入图形验证码!', time: 2000});
+	                return ;
+	            }
+	            if(sms_code.length < 6){
+	                $.dialog({content: '请输入正确的手机验证码!', time: 2000});
+	                return ;
+	            }
+	            if(agreement!=1){
+	                $.dialog({content: '请勾选条款协议', time: 2000});
+	                return ;
+	            }
+	            var order = {
+	                name:tbName,   //投保姓名
+	                paper_num:tbCardNum,  //投保身份证
+	                tel:tbTel,  //手机号
+	                sms_code:sms_code,
+	                csrf_param:'{$csrf_param}',
+	                csrf_token:'{$csrf_token}'
+	            };
+	            if(ajaxLock){
+	                ajaxLock = false;
+	                $.ajax({
+	                    url: "",
+	                    type: 'POST',
+	                    data: order,
+	                    success: function (res) {
+	                        ajaxLock = true;
+	                        if (res.status == 1000) {
+	                            //window.location.href = "{:SITE_URL_M}{:U('WeiXinPay/pay')}?num_id=" + res.data;
+	                        }else if(res.status == 1001){
+	                            ajaxLock = true;
+	                            $.dialog({content: res.data, time: 2500});
+	                        }else if(res.status == 401){
+	                            ajaxLock = true;
+	                            $.dialog({content: res.data, time: 2500});
+	                        }
+	                    },
+	                    error: function () {
+	                        $.dialog({content: '网络加载失败！', time: 2000});
+	                        ajaxLock=true;
+	                    }
+	                });
+	            }
+	        });
+			
+			//登录 发送验证码
+	        var getVerifyFlag = true;
+	        var lockKey = false;
+	        $('#getVerifyCode').on('click', function () {
+	            var tel = $("#tel").val().trim();
+	            var dyncode = $("#dyncode").val().trim();
+	            if(tel == ''){
+	                $.dialog({content: '手机号不能为空!', time: 2000});
+	                return ;
+	            }
+	            if(!isPhoneNo(tel)){
+	                $.dialog({content: '手机格式不正确!', time: 2000});
+	                return ;
+	            }
+	            if(dyncode.length < 4){
+	                $.dialog({content: '请输入图形验证码!', time: 2000});
+	                return ;
+	            }
+	            if (getVerifyFlag) {
+	                getVerifyFlag = false;
+	                $.ajax({
+	                    url: "{:U('smssend')}?t=" + Math.random(),
+	                    type: 'POST',
+	                    data: {tel: tel, dyncode: dyncode,csrf_param:'{$csrf_param}',csrf_token:'{$csrf_token}'},
+	                    success: function (res) {
+	                        if (res.status == 1000) {		//成功
+	                            if (res.re_flag == 1) {
+	                                $('#dyncodeimg').trigger('click');//刷新动态码
+	                            }
+	                            var date = new Date();
+	                            date = date.getTime();
+	                            window.localStorage.setItem('getVerifyCodeTime', date);
+	                            getVerifyCodeCount();
+	                            $.dialog({content: '发送成功！', time: 2000});
+	                            $("#clickVerifyFlag").val(true);
+	                        } else {
+	                            $.dialog({content: res.data, time: 2000});
+	                            $('#dyncodeimg').trigger('click');//刷新动态码
+	                        }
+	                        getVerifyFlag = true;
+	                    },
+	                    error: function () {
+	                        $.dialog({content: '网络加载失败！', time: 2000});
+	                        getVerifyFlag = true;
+	                    }
+	                })
+	            }
+	        });
+	        //登录发送验证码 倒计时
+	        function getVerifyCodeCount() {
+	            if (window.localStorage.getItem('getVerifyCodeTime')) {
+	                var nowTime = new Date();
+	                nowTime = nowTime.getTime();
+	                oldTime = Number(window.localStorage.getItem('getVerifyCodeTime'));
+	                var t = nowTime - oldTime;
+	                //时间差	秒数
+	                var seconds = Math.floor(t / 1000);
+	                counts = 60 - seconds;
+	                var timer = setInterval(function () {
+	                    if (counts > 0) {
+	                        counts--;
+	                        //防止再次发送短信
+	                        $('#getVerifyCode').attr("disabled","disabled");
+	                        $('#getVerifyCode').val('已发送(' + counts + '秒)');
+	                        $('#getVerifyCode').css('color','#ccc');
+	                    } else {
+	                        clearInterval(timer);
+	                        $('#getVerifyCode').removeAttr("disabled");
+	                        $('#getVerifyCode').val('重新发送');
+	                        $('#getVerifyCode').css('color','#ff2f2f');
+	                    }
+	                }, 1000)
+	            }
+	        }
+	        
+		})
+	</script>
+</html>

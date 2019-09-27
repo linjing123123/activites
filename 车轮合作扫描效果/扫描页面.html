@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>挑战你的拍照技术，够牛你就来！</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">	    
+	    <link rel="stylesheet" type="text/css" href="./css/style.css?v={$v}">	    
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="content theme-color game-page">
+			<div class="upload-box">
+				<div class="refresh"></div>
+				<div class="upload-img-box">
+					<div class="file" id="imgForm"><input type="file" id="filed" name="file" accept="image/png,image/jpg" /></div>
+					
+					<div class="tip">上传图片验机</div>
+				</div>
+				<div class="upload-tip">*请将被验证的手机图片进行上传，要求图片拍摄完整，<br />无遮挡无污渍，仅支持图片格式png、jpg</div>
+			    
+		    </div>	
+		    <!--上传成功-->
+		    <div class="photo-box" style="display: none;">
+		    	<img class="photo-bg" src="./images/photo-bg.png?v={$v}" onclick="return false"/>		    	
+		        <img class="imgshow" id="imgshow" src="./images/img.png?v={$v}" onclick="return false"/>
+		        <div class="animate-box">
+		        	<img class="animate" src="./images/animate.png?v={$v}" onclick="return false"/>
+		        </div>
+		    </div>
+		    <!--扫描完成-->
+		    <div class="finish" style="display: none;"></div>
+		    
+		</div>
+		<div class="shadeLayer"></div>
+		<div class="award-box"  style="display: none;">
+			<!--bgspx==》白鸽保险 dnb==》电脑包 gz==公仔  fail==》失败-->
+			<img src="./images/fail.png?v={$v}" onclick="return false"/>
+		    <div class="close"></div>
+		    <div class="ljlq"></div>
+		</div>
+	</body>
+	<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	<script src="../public/js/public.js?v={$v}"></script>
+	<script src="../public/js/dialog.min.js?v={$v}"></script>
+	<script src="../public/js/zepto.alert.js?v={$v}"></script>
+	<script type="text/javascript">
+
+	$(".close , .ljlq").on("click",function(){
+		$(".shadeLayer,.award-box").hide();
+		$(".upload-box").show();
+	    $(".photo-box,.finish").hide();	 
+	})
+	//图片扫描
+	
+	function lunbo(){
+        $(".animate-box .animate").animate({top:"4.1rem"},1000,"linear",function(){  
+            $(this).css("top","-5.8rem");      
+        });  
+   }	
+	//在input file内容改变的时候触发事件
+    $('#filed').change(function(){
+	    var file = $('#filed').get(0).files[0];
+	    //创建用来读取此文件的对象
+	      var reader = new FileReader();
+	    //使用该对象读取file文件
+	      reader.readAsDataURL(file);
+	    //读取文件成功后执行的方法函数
+	      reader.onload=function(e){
+	    //读取成功后返回的一个参数e，整个的一个进度事件
+	    $(".upload-box").hide();
+	    $(".photo-box").show();	    
+		var startRollOne=setInterval(lunbo,1020);
+		var time = setTimeout(function(){
+			$(".finish").show();
+			$(".shadeLayer,.award-box").show();
+			clearInterval(startRollOne);clearTimeout(time)
+		},5000);
+	    console.log(e);
+	    //选择所要显示图片的img，要赋值给img的src就是e中target下result里面
+	    //的base64编码格式的地址
+	        $('#imgshow').get(0).src = e.target.result;
+	
+	    }
+
+    })
+	</script>
+</html>

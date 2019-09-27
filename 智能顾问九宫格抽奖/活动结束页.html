@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>难倒AI算你赢</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">	    
+	    <link rel="stylesheet" type="text/css" href="./css/css.css?v={$v}">	    
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="content">
+			<div class="boxWrap"><img class="boxBg" src="./images/end_01.png?v={$v}" /></div>
+			<div class="boxWrap">
+				<img class="boxBg" src="./images/end_02.png?v={$v}" />
+				<div class="awardTotalTitle">活动期间，您共获得奖品4件</div>
+				<div class="endAwardBox">
+					<ul style="margin-top: 0rem;">
+						<li class="list flexbox">
+							<span class="num">1</span>
+							<span class="awardName">白鸽小额意外伤害险</span>
+							<span class="time">2018-09-20  14:30:25</span>
+						</li>
+						<li class="list flexbox">
+							<span class="num">2</span>
+							<span class="awardName">白鸽小额意外伤害险</span>
+							<span class="time">2018-09-20  14:30:25</span>
+						</li>
+						<li class="list flexbox">
+							<span class="num">3</span>
+							<span class="awardName">白鸽小额意外伤害险</span>
+							<span class="time">2018-09-20  14:30:25</span>
+						</li>
+						<li class="list flexbox">
+							<span class="num">4</span>
+							<span class="awardName">白鸽小额意外伤害险</span>
+							<span class="time">2018-09-20  14:30:25</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	<script src="../public/js/public.js?v={$v}"></script>
+	<script src="../public/js/dialog.min.js?v={$v}"></script>
+	<script src="../public/js/zepto.alert.js?v={$v}"></script>
+	<script>
+	$(function(){
+		//轮播
+		if($(".endAwardBox>ul>li").length>4){
+			var startRollOne=setInterval(lunbo,2000);
+		}
+		function lunbo(){
+			$(".endAwardBox ul").animate({marginTop:"-.56rem"},800,"linear",function(){  
+				$(this).children("li").first().remove().clone(true).appendTo(".endAwardBox ul");
+				$(this).css("margin-top","0rem");      
+			});  
+		}
+	});
+	</script>
+</html>

@@ -1,0 +1,625 @@
+.overflowH {
+    height: 100%;
+    overflow: hidden!important;
+}
+.theme-bg {
+    min-height: 23.38rem;
+    background: #e85027 url("../images/home_bg.png") no-repeat;
+    background-size: 100% 100%;
+    font-family: PingFang-SC-Bold;
+}
+.theme-bg2 {
+    min-height: 23.38rem;
+    background: #e85027 url("../images/home_bg2.png") no-repeat;
+    background-size: 100% 100%;
+    font-family: PingFang-SC-Bold;
+}
+.time-text {
+    color: #f02d03;
+    font-size: .24rem;
+    text-align: center;
+    padding-top: 2.5rem;
+}
+.tip1 {
+    height: .72rem;
+    line-height: .72rem;
+    color: #ffca64;
+    font-family: PingFang-SC-Bold;
+    font-size: .28rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1.74rem;
+}
+.tip1::before {
+    content: '';
+    display: inline-block;
+    width: .3rem;
+    height: .28rem;
+    margin-right: .14rem;
+    margin-bottom: .1rem;
+    background: url(../images/icon_laba.png) no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+}
+.flop-list {
+    padding: .84rem 0 0 .75rem;
+}
+.flop-item-box {
+    width: 2.9rem;
+    height: 3.7rem;
+    margin: 0 .18rem .18rem 0;
+}
+.flop-item-box:nth-child(1) {
+    background: url("../images/home_kp1.png") no-repeat;
+    background-size: 100% 100%;
+}
+.flop-item-box:nth-child(2) {
+    background: url("../images/home_kp2.png") no-repeat;
+    background-size: 100% 100%;
+}
+.flop-item-box:nth-child(3) {
+    background: url("../images/home_kp3.png") no-repeat;
+    background-size: 100% 100%;
+}
+.flop-item-box:nth-child(4) {
+    background: url("../images/home_kp4.png") no-repeat;
+    background-size: 100% 100%;
+}
+.flop-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    opacity: 0;
+}
+/*翻牌动作 start*/
+.roface {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.flop-item-box .roface-bg {
+	background: url("../images/home_kp_pressed.png") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    padding: .54rem .3rem;
+    box-sizing: border-box;
+    z-index: 2;
+}
+.flop-item-title {
+    color: #ff4751;
+    font-size: .24rem;
+    text-align: center;
+    font-weight: bold;
+}
+.flop-item-content {
+    color: #ff4751;
+    font-size: .24rem;
+    text-align: justify;
+    text-justify: inter-ideograph;
+    margin-top: .2rem;
+}
+.flop-item-btn {
+    position: absolute;
+    bottom: .5rem;
+    left: 50%;
+    width: 1.7rem;
+    height: .5rem;
+    margin-left: -.85rem;
+    background: url("../images/flop_item_btn.png") no-repeat;
+    background-size: 100% 100%;
+}
+/*翻牌动作 end*/
+.tip2 {
+    width: 100%;
+    color: #ffca64;
+    font-size: .28rem;
+    text-align: center;
+    margin-top: 1.68rem;
+}
+.tip3 {
+    width: 100%;
+    color: #ffca64;
+    font-size: .4rem;
+    text-align: center;
+}
+.noclick {
+    position: relative;
+    width: 6rem;
+    height: .45rem;
+    margin: .84rem auto 0;
+}
+.scroll{
+    display: inline-block;
+    position: relative;
+    width: 5.5rem;
+    height: .45rem;
+    line-height: .45rem;
+    overflow: hidden;
+}
+.laba-icon {
+    display: inline-block;
+    width: .3rem;
+    height: .28rem;
+    margin-right: .14rem;
+    background: url("../images/icon_laba.png") no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+}
+.scroll ul {
+    position: absolute;
+    white-space: nowrap;
+}
+.scroll ul li {
+    display: inline-block;
+    height: .45rem;
+    color: #ffca64;
+    font-size: .28rem;
+}
+.rowup {-webkit-animation: 150s move infinite linear; animation: 150s move infinite linear;}
+.hb-wrap {
+    width: 6rem;
+    margin: 1.3rem auto 0;
+    justify-content: space-around;
+}
+.hb-item {
+    width: 1.48rem;
+    height: 1.94rem;
+    background: url("../images/hb_gif.gif") no-repeat;
+    background-size: 100% 100%;
+}
+.rule-btn{
+    width: 1rem;
+    height: .84rem;
+    position: absolute;
+    top: .1rem;
+    right: 0;
+    background: url("../images/rule_btn.png") no-repeat;
+    background-size: 100% 100%;
+}
+.kefu-btn{
+    width: .86rem;
+    height: .86rem;
+    position: fixed;
+    top: 3.26rem;
+    right: .1rem;
+    background: url("../images/kefu.png") no-repeat;
+    background-size: 100% 100%;
+}
+.alertbox {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    background: rgba(0,0,0,0.7);
+    display: none;
+}
+.rule-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 6.7rem;
+    height: 10.06rem;
+    color: #f54144;
+    font-size: .26rem;
+    /* margin-left: -3.35rem; */
+}
+.rule-title {
+    width: 3.4rem;
+    height: .72rem;
+    position: relative;
+    background: url("../images/rule_title.png") no-repeat;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    z-index: 11;
+}
+.rule-big-border {
+    width: 100%;
+    padding: .12rem;
+    margin-top: -.5rem;
+    border-radius: .2rem;
+    background-color: #fff2e1;
+    box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+.rule-content {
+    padding: .78rem .54rem .5rem;
+    background-color: #ffffff;
+    border-radius: .2rem;
+    border: solid 1px #ffb533;
+}
+.rule-content>p {
+    margin-bottom: .15rem;
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+.xuyao-icon {
+    display: inline-block;
+    width: .25rem;
+    height: .25rem;
+    margin-top: .05rem;
+}
+.rule-content>p span:nth-child(2) {
+    display: inline-block;
+    padding-left: .14rem
+}
+.rule-content>p:nth-child(1) .xuyao-icon{
+    background: url("../images/tk_xh_1.png") no-repeat;
+    background-size: 100% 100%;
+}
+.rule-content>p:nth-child(2) .xuyao-icon{
+    background: url("../images/tk_xh_2.png") no-repeat;
+    background-size: 100% 100%;
+}
+.rule-content>p:nth-child(3) .xuyao-icon{
+    background: url("../images/tk_xh_3.png") no-repeat;
+    background-size: 100% 100%;
+}
+.rule-content>p:nth-child(4) .xuyao-icon{
+    background: url("../images/tk_xh_4.png") no-repeat;
+    background-size: 100% 100%;
+}
+.rule-content>p:nth-child(5) .xuyao-icon{
+    background: url("../images/tk_xh_5.png") no-repeat;
+    background-size: 100% 100%;
+}
+.rule-content>p:nth-child(6) .xuyao-icon{
+    background: url("../images/tk_xh_6.png") no-repeat;
+    background-size: 100% 100%;
+}
+.rule-content>p:nth-child(7) .xuyao-icon{
+    background: url("../images/tk_xh_7.png") no-repeat;
+    background-size: 100% 100%;
+}
+.rule-content .kefu-btn2 {
+    width: 100%;
+    height: .72rem;
+    line-height: .72rem;
+    color: #f54144;
+    font-size: .26rem;
+	background-color: #ffe2d9;
+    border-radius: .1rem;
+    justify-content: center;
+}
+.rule-content .ts-icon {
+    display: inline-block;
+    width: .24rem;
+    height: .24rem;
+    margin-right: .1rem;
+    background: url("../images/ts_icon.png") no-repeat;
+    background-size: 100% 100%;
+}
+.close-alertbox-btn {
+    width: .78rem;
+    height: .78rem;
+    margin: .3rem auto 0;
+    background: url("../images/close_alertbox_btn.png") no-repeat;
+    background-size: 100% 100%;
+}
+.secflop-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 5.9rem;
+    height: 6.1rem;
+    color: #f54144;
+    font-size: .26rem;
+}
+.alertbox .alertbox-big-border {
+    width: 100%;
+    padding: .12rem;
+    border-radius: .2rem;
+    background-color: #fff2e1;
+    box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+.alertbox .alertbox-content {
+    padding: .48rem .52rem .4rem;
+    background-color: #ffffff;
+    border-radius: .2rem;
+    border: solid 1px #ffb533;
+}
+.share-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0 auto;
+    background: url("../images/share_icon.png") no-repeat;
+    background-size: 100% 100%;
+}
+.secflop-text1 {
+    color: #343434;
+    font-size: .32rem;
+    font-weight: bold;
+    height: .32rem;
+    line-height: .32rem;
+    text-align: center;
+    margin-top: .3rem;
+}
+.secflop-text1>span {
+    color: #f54144;
+}
+.secflop-text2 {
+    height: .26rem;
+    line-height: .26rem;
+    margin-top: .2rem;
+    text-align: center;
+}
+.alertbox-btn {
+    width: 4.7rem;
+    height: .9rem;
+    line-height: .9rem;
+    color: #ffffff;
+    font-size: .32rem;
+    text-align: center;
+    margin-top: .4rem;
+    background: url("../images/tk_button_bg.png") no-repeat;
+    background-size: 100% 100%;
+}
+.pyqfx {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    background: rgba(0,0,0,0.7);
+    display: none;
+}
+.pyqfx>img {
+    width: 3.64rem;
+    height: 4.38rem;
+    position: absolute;
+    top: .2rem;
+    right: .78rem;
+}
+.notclick-hb-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 5.9rem;
+    height: 6.68rem;
+    color: #f54144;
+    font-size: .26rem;
+    /* margin-left: -2.95rem; */
+}
+.notclick-hb-box .alertbox-content {
+    padding: .44 .52rem .4rem;
+}
+.tip-icon {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin: 0 auto;
+    background: url("../images/tk_ts_icon.png") no-repeat;
+    background-size: 100% 100%;
+}
+.notclick-hb-text1 {
+    color: #343434;
+    font-size: .32rem;
+    font-weight: bold;
+    height: .32rem;
+    line-height: .32rem;
+    text-align: center;
+    margin-top: .22rem;
+}
+.notclick-hb-text2 {
+    max-width: 4.3rem;
+    margin: .3rem auto 0;
+    color: #666666;
+}
+.notclick-hb-text2>span {
+    color: #f54144;
+}
+.click-hb-wrapper {
+    position: absolute;
+    top: .52rem;
+    left: 50%;
+    width: 5.9rem;
+    color: #f54144;
+    font-size: .26rem;
+    margin-left: -2.95rem;
+}
+.gh-gif {
+    width: 5.9rem;
+    height: 5.85rem;
+    position: relative;
+    background: url(../images/tk_guan_all_icon.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    z-index: 9;
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+    -webkit-animation: rotate 8s linear infinite;
+    -moz-animation: rotate 8s linear infinite;
+    -o-animation: rotate 8s linear infinite;
+    animation: rotate 8s linear infinite;
+}
+.click-hb-title {
+    width: 3.4rem;
+    height: .72rem;
+    position: relative;
+    background: url(../images/tk_bt_icon.png) no-repeat;
+    background-size: 100% 100%;
+    margin: -4.02rem auto 0;
+    z-index: 11;
+}
+.click-hb-box .alertbox-big-border{
+    position: relative;
+    margin-top: -.5rem;
+    z-index: 10;
+}
+@-webkit-keyframes rotate{
+    from{-webkit-transform: rotate(0deg)}
+    to{-webkit-transform: rotate(360deg)}
+}
+@-moz-keyframes rotate{
+    from{-moz-transform: rotate(0deg)}
+    to{-moz-transform: rotate(359deg)}
+}
+@-o-keyframes rotate{
+    from{-o-transform: rotate(0deg)}
+    to{-o-transform: rotate(359deg)}
+}
+@keyframes rotate{
+    from{transform: rotate(0deg)}
+    to{transform: rotate(359deg)}
+}
+.click-hb-box .alertbox-content{
+    padding: .8rem .52rem .4rem;
+}
+.click-hb-text1 {
+    color: #f54144;
+    font-size: .38rem;
+    text-align: center;
+}
+.click-hb-text2, .empty-hb-text2 {
+    color: #666666;
+    margin-top: .32rem;
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+.click-hb-ewm ,.empty-hb-ewm {
+    width: 3.2rem;
+    margin: .2rem auto 0;
+}
+.alertbox .ewm-btn{margin-top: .2rem;}
+.empty-hb-wrapper {
+    position: absolute;
+    /* top: 1.8rem; */
+    /* left: 50%; */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 5.9rem;
+    height: 9.88rem;
+    color: #f54144;
+    font-size: .26rem;
+    /* margin-left: -2.95rem; */
+}
+.empty-icon {
+    width: 2.7rem;
+    height: 1.68rem;
+    margin: 0 auto;
+    background: url("../images/tk_komg_icon.png") no-repeat;
+    background-size: 100% 100%;
+}
+.noflop-hb-wrapper {
+    position: absolute;
+    /* top: 3.5rem; */
+    /* left: 50%; */
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 5.9rem;
+    height: 6.58rem;
+    color: #f54144;
+    font-size: .26rem;
+    /* margin-left: -2.95rem; */
+}
+.noflop-icon {
+    width: 2.26rem;
+    height: 1.84rem;
+    margin: 0 auto;
+    background: url("../images/tk_pai_icon.png") no-repeat;
+    background-size: 100% 100%;
+}
+.noflop-hb-text2 {
+    max-width: 4.2rem;
+    color: #666666;
+    margin: .4rem auto 0;
+    line-height: .34rem;
+}
+.lq-hb-wrapper {
+    position: absolute;
+    /* top: 4.8rem; */
+    /* left: 50%; */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 5.9rem;
+    height: 4.6rem;
+    color: #f54144;
+    font-size: .26rem;
+    /* margin-left: -2.95rem; */
+}
+.lq-hb-text1 {
+    max-width: 4.6rem;
+    color: #666666;
+    margin: .2rem auto 0;
+}
+.index-tip-wrapper {
+    position: absolute;
+    /* top: 4.8rem; */
+    /* left: 50%; */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 6.2rem;
+    height: 5.56rem;
+    color: #f54144;
+    font-size: .26rem;
+    /* margin-left: -2.95rem; */
+}
+.index-tip-icon {
+    width: 1.42rem;
+    height: 1.28rem;
+    margin: 0 auto;
+    background: url("../images/index_tip_icon.png") no-repeat;
+    background-size: 100% 100%;
+}
+.index-tip-btn{
+    width: 100%;
+    height: .72rem;
+    line-height: .72rem;
+    color: #f54144;
+    font-size: .24rem;
+    background-color: #ffe2d9;
+    border-radius: .1rem;
+    justify-content: center;
+}
+.index-tip-box .alertbox-content {
+    padding: .6rem .4rem .5rem;
+}
+.index-tip-text1 {
+    color: #666666;
+    text-align: center;
+    font-size: .28rem;
+    height: .28rem;
+    line-height: .28rem;
+}
+.index-tip-text2 {
+    color: #f54144;
+    font-size: .36rem;
+    height: .36rem;
+    line-height: .36rem;
+    font-weight: bold;
+    margin: .16rem 0 .3rem;
+}
+.index-tip-box .ts-icon {
+    display: inline-block;
+    width: .24rem;
+    height: .24rem;
+    margin-right: .1rem;
+    background: url(../images/ts_icon.png) no-repeat;
+    background-size: 100% 100%;
+}

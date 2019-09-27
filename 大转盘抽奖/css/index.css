@@ -1,0 +1,506 @@
+img{ pointer-events: none; }
+.theme-color{background-color: #2a55cd;}
+.img-box{position: relative;}
+.num-text{
+    position: absolute;
+    top:.37rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 3.8rem;
+    height: .6rem;
+    line-height: .6rem;
+    color: #ffffff;
+    font-size: .3rem;
+    text-align: center;
+    font-family: SourceHanSansCN-Medium;
+    letter-spacing: .03rem;
+}
+.num-text>span{
+    color: #fec03c;
+    font-size: .34rem;
+}
+.turn-pro{
+    /* position: absolute;
+    top: .4rem;
+    left: 1.55rem;
+    width: 4.4rem;
+    height: 4.4rem; */
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 58.7%;
+    height: 54.8%;
+    margin-left: -29.35%;
+}
+.turn-zhizhen {
+    /* width: .46rem;
+    height: .71rem;
+    background: url(../images/zhizhen.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    left: 3.52rem;
+    top: 2.21rem; */
+    width: 6.13%;
+    height: 8.84%;
+	background: url(../images/zhizhen.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    left: 46.93%;
+    top: 27.52%;
+}
+.radiate{
+    /* width: 6.1rem;
+    height: .46rem;
+	position: absolute;
+	top: 5.18rem;
+	left: 0;
+    right: 0;
+    margin: 0 auto;
+	line-height: .46rem;
+    overflow: hidden; */
+    width: 81.33%;
+    height: 5.73%;
+	position: absolute;
+	top: 64.51%;
+	left: 0;
+    right: 0;
+    margin: 0 auto;
+	line-height: .46rem;
+	overflow: hidden;
+}
+.radiate .list{
+    width: 100%;
+    font-size: .26rem;
+    color: #32335e;
+    text-align: center;
+    overflow: hidden;
+}
+.go-lottery{
+    /* width: 3.54rem;
+    height: .93rem;
+    position: absolute;
+    bottom: 1.34rem;
+    left: 1.98rem;
+    z-index: 2; */
+    width: 47.2%;
+    height: 11.58%;
+    position: absolute;
+    bottom: 16.69%;
+    left: 26.4%;
+    z-index: 2;
+}
+.go-lottery .go-lottery-img2{display: none;}
+.index-award-btn{
+    /* width: 2.25rem;
+    height: 1.4rem;
+    background: url(../images/award-btn.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    bottom: .43rem;
+    left: .6rem; */
+    width: 30%;
+    height: 17.43%;
+    background: url(../images/award-btn.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    bottom: 5.35%;
+    left: 8%;
+}
+.index-award-btn:active{
+    background: url(../images/award-btned.png) no-repeat center;
+    background-size: 100%;  
+}
+.rule-btn{
+    /* width: 2.25rem;
+    height: 1.4rem;
+    position: absolute;
+    bottom: .43rem;
+    right: .64rem; */
+    width: 30%;
+    height: 17.43%;
+    position: absolute;
+    bottom: 5.35%;
+    right: 8.53%;
+}
+.rule-btn .rule-btn-img2{display: none;}
+.kefu {
+    width: .86rem;
+    position: fixed;
+    top: 50%;
+    right: .1rem;
+    z-index: 8;
+}
+.alertbox {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    background: rgba(0,0,0,0.5);
+}
+.lottery-alert{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    background: rgba(0,0,0,0.5);
+}
+.index-alert-rule {
+    width: 6.14rem;
+    height: 7.38rem;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #fff;
+    background: url(../images/rule-bg.png);
+    background-size: 100% 100%;
+}
+.rule-con {
+    width: 5.54rem;
+    height: 5.6rem;
+    overflow: auto;
+    font-size: .28rem;
+    color: #08132c;
+    line-height: .4rem;
+    margin: 1.2rem auto 0;
+    box-sizing: border-box;
+}
+.alert-closebtn {
+    position: absolute;
+    width: .74rem;
+    height: .74rem;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    bottom: -1.34rem;
+    background: url(../images/dialog-close.png) no-repeat;
+    background-size: 100% 100%;
+}
+.nonum-alert-box{
+    width: 6.16rem;
+    height: 4.40rem;
+    position: absolute;
+    top: 34%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #fff;
+    background: url(../images/nonum-alert-bg.png);
+    background-size: 100% 100%;
+}
+.nonum-alert-box .nonum-msg1{
+    text-align: center;
+    color: #152241;
+    font-size: .34rem;
+    font-weight: bold;
+    line-height: .4rem;
+    margin: 1.63rem auto 0;
+}
+.nonum-alert-box .nonum-msg2{
+    text-align: center;
+    color: #08132c;
+    font-size: .3rem;
+    line-height: .4rem;
+    margin: .28rem auto 0;
+}
+.nonum-alert-box .go-insure-btn{
+    width: 3.2rem;
+	height: .7rem;
+	background-image: linear-gradient(0deg, 
+		#e2540a 0%, 
+		#fb9904 100%), 
+	linear-gradient(
+		#fffbe2, 
+		#fffbe2);
+	background-blend-mode: normal, 
+		normal;
+    border-radius: .35rem;
+    color: #ffffff;
+    font-size: .3rem;
+    line-height: .7rem;
+    margin: .66rem auto 0;
+    text-align: center;
+}
+.money-alert-box,.kaquan-alert-box{
+    width: 5.7rem;
+    height: 6.64rem;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #152241;
+    background: url(../images/index-alert-bg.png);
+    background-size: 100% 100%;
+    text-align: center;
+}
+.lottery-alert-title{
+    font-size: .34rem;
+    font-weight: bold;
+    margin: 1.5rem auto 0;
+}
+.money-alert-box .price{
+    color: #ff8b4f;
+    font-size: .64rem;
+    font-family: SourceHanSansCN-Bold;
+    font-weight: bold;
+    margin: .6rem auto 0;
+}
+.money-alert-box .money-text{
+    font-size: .3rem;
+    line-height: .4rem;
+}
+.money-alert-box .go-lottery2{
+    width: 2.3rem;
+	height: .7rem;
+	background-image: linear-gradient(0deg, 
+		#e2540a 0%, 
+		#fb9904 100%), 
+	linear-gradient(
+		#175fe8, 
+		#175fe8);
+	background-blend-mode: normal, 
+		normal;
+    border-radius: .35rem;
+    color: #ffffff;
+    font-size: .3rem;
+    line-height: .7rem;
+    margin: .7rem .2rem 0 .25rem;
+}
+.money-alert-box .go-money{
+    width: 2.3rem;
+	height: .7rem;
+	background-image: linear-gradient(0deg, 
+		#9588ff 0%, 
+		#7295ff 100%), 
+	linear-gradient(
+		#175fe8, 
+		#175fe8);
+	background-blend-mode: normal, 
+		normal;
+    border-radius: .35rem;
+    color: #ffffff;
+    font-size: .3rem;
+    line-height: .7rem;
+    margin: .7rem .25rem 0 .2rem;
+}
+.money-alert-box .money-msg{
+    color: #152241;
+    font-size: .26rem;
+    line-height: .4rem;
+    margin: .66rem auto 0;
+}
+.kaquan-alert-box .xmsh3{
+    width: 1.07rem;
+    height: 1.62rem;
+    background: url(../images/index-xmsh3.png) no-repeat;
+    background-size: 100% 100%;
+    margin: .26rem auto .18rem;
+}
+.kaquan-alert-box .yddy{
+    width: .92rem;
+    height: 1.29rem;
+    background: url(../images/index-yddy.png) no-repeat;
+    background-size: 100% 100%;
+    margin: .48rem auto .26rem;
+}
+.kaquan-alert-box .dxll{
+    width: 2.53rem;
+    height: 1.35rem;
+    background: url(../images/index-dxll.png) no-repeat;
+    background-size: 100% 100%;
+    margin: .52rem auto .16rem;
+}
+.kaquan-alert-box .znyx{
+    width: 2.1rem;
+    height: 1.01rem;
+    background: url(../images/index-yx.png) no-repeat;
+    background-size: 100% 100%;
+    margin: .74rem auto .28rem;
+}
+.kaquan-alert-box .hwsj{
+    width: 1.08rem;
+    height: 1.37rem;
+    background: url(../images/index-hwsj.png) no-repeat;
+    background-size: 100% 100%;
+    margin: .42rem auto .14rem;
+}
+.kaquan-alert-box .xxcy{
+    width: 1.51rem;
+    height: 2.03rem;
+    background: url(../images/index-xxcy.png) no-repeat;
+    background-size: 100% 100%;
+    margin: .47rem auto .1rem;
+}
+.kaquan-alert-box .ydll{
+    width: 2.53rem;
+    height: 1.35rem;
+    background: url(../images/index-ydll.png) no-repeat;
+    background-size: 100% 100%;
+    margin: .52rem auto .16rem;
+}
+.kaquan-alert-box .wxsb{
+    width: .87rem;
+    height: 1.29rem;
+    background: url(../images/index-sb.png) no-repeat;
+    background-size: 100% 100%;
+    margin: .48rem auto .26rem;
+}
+.kaquan-alert-box .kaquan-name{
+    color: #152241;
+    font-size: .3rem;
+    line-height: .4rem;
+}
+.kaquan-alert-box  .kaquan-lq-btn,.texttel-alert-box  .texttel-lq-btn,.texttel-alert-box2  .texttel-lq-btn2{
+    width: 3.44rem;
+	height: .7rem;
+	background-image: linear-gradient(0deg, 
+		#e2540a 0%, 
+		#fb9904 100%), 
+	linear-gradient(
+		#175fe8, 
+		#175fe8);
+	background-blend-mode: normal, 
+		normal;
+    border-radius: .35rem;
+    color: #ffffff;
+    font-size: .3rem;
+    text-align: center;
+    line-height: .7rem;
+    margin: .8rem auto 0;
+}
+.gamemore{
+    width: 3.44rem;
+	height: .7rem;
+	background-image: linear-gradient(0deg, 
+		#e2540a 0%, 
+		#fb9904 100%), 
+	linear-gradient(
+		#175fe8, 
+		#175fe8);
+	background-blend-mode: normal, 
+		normal;
+    border-radius: .35rem;
+    color: #ffffff;
+    font-size: .3rem;
+    text-align: center;
+    line-height: .7rem;
+    margin: .58rem auto 0;
+    display: none;
+}
+.texttel-alert-box{
+    width: 6.14rem;
+    height: 7rem;
+    position: absolute;
+    top: 24%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #fff;
+    background: url(../images/texttel-alert-bg.png);
+    background-size: 100% 100%;
+}
+.texttel-alert-box .texttel-box-title{
+    color: #152241;
+    font-size: .4rem;
+    font-weight: bold;
+    margin: .4rem auto 0;
+    text-align: center;
+}
+.texttel-alert-box #tbName{
+    margin: .3rem auto .32rem;
+}
+.texttel-alert-box #tbTelNum{
+    margin: 0 auto .32rem;
+}
+.texttel-alert-box #tbAddress{
+    margin: 0 auto;
+    height: 1.6rem;
+    line-height: .4rem;
+}
+.texttel-alert-box .tbAddress{
+    height: 1.1rem!important;
+}
+.texttel-alert-box .txt,.texttel-alert-box2 .txt{
+    display: block;
+    width: 5rem;
+    background-color: #ffffff;
+    border-radius: .2rem;
+    border: solid 1px #808080;
+    padding: .3rem;
+    font-size: .3rem;
+}
+.texttel-alert-box .txt::-moz-placeholder,.texttel-alert-box2 .txt::-moz-placeholder{ color: #6e7076; }
+.texttel-alert-box .txt::-webkit-input-placeholder,.texttel-alert-box2 .txt::-webkit-input-placeholder{ color:#6e7076; }
+.texttel-alert-box .txt::-ms-input-placeholder.texttel-alert-box2 .txt::-ms-input-placeholder{ color:#6e7076; }
+.texttel-alert-box .texttel-lq-btn,.texttel-alert-box2 .texttel-lq-btn2{margin: .2rem auto 0;}
+.texttel-alert-box2{
+    width: 6.14rem;
+    height: 4.47rem;
+    position: absolute;
+    top: 34%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #fff;
+    background: url(../images/texttel-alert-bg2.png);
+    background-size: 100% 100%;
+}
+.texttel-alert-box2 .texttel-box-title{
+    color: #152241;
+    font-size: .4rem;
+    font-weight: bold;
+    margin: .4rem auto 0;
+    text-align: center;
+}
+.texttel-alert-box2 #tbTelNum2{
+    display: block;
+    width: 4.2rem;
+    margin: .7rem auto .32rem;
+}
+/* 我的奖品 */
+.theme-color {
+    background: #2a55cd;
+}
+.has-award-contain .award-item {
+    width: 6.9rem;
+    height: 2rem;
+    padding: 0 .32rem;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: .3rem;
+    color: #080850;
+    margin: 0 auto .3rem;
+    background: url(../images/awardbg.png) no-repeat;
+    background-size: 100% 100%;
+}
+.has-award-contain .award-item:first-child{
+    margin-top: .4rem;
+}
+.award-btn {
+    display: inline-block;
+    width: 1.8rem;
+    padding: .16rem 0;
+    margin-left: .48rem;
+    font-size: .3rem;
+    color: #fff;
+    text-align: center;
+    border-radius: .3rem;
+    background-image: -moz-linear-gradient( 90deg, rgb(226,84,10) 0%, rgb(251,153,4) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(226,84,10) 0%, rgb(251,153,4) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(226,84,10) 0%, rgb(251,153,4) 100%);
+}
+.no-award-img {
+    width: 2.73rem;
+    padding-top: 3.9rem;
+    margin: 0 auto;
+}
+.btn-sty1 {
+    background-image: -moz-linear-gradient( 90deg, rgb(25,234,89) 0%, rgb(78,255,145) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(25,234,89) 0%, rgb(78,255,145) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(25,234,89) 0%, rgb(78,255,145) 100%);
+}

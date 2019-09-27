@@ -1,0 +1,110 @@
+*{margin:0;padding:0;}
+img{display:block;}
+i{font-style:normal;}
+body{
+	font-family: "微软雅黑";
+	overflow: hidden;
+}
+li,ol,ul {
+  list-style: none;
+}
+canvas {
+	/*cursor: crosshair;*/
+	display: block;
+	left: 0;
+	position: absolute;
+	top: 0;
+	z-index: 99;
+}
+/* 清理浮动 */    
+.clearfix:after     
+{    
+	visibility:hidden;    
+	display:block;    
+	font-size:0;    
+	content:" ";    
+	clear:both;    
+	height:0;    
+}    
+.clearfix   
+{    
+	zoom:1;
+}
+.vetically{justify-content:center;align-items:center;display:-webkit-flex;}
+.prize_con{position: absolute;width: 100%;height: 100%;background: url(../images/firstp_bg.jpg) no-repeat left top / 100% 100%;overflow: hidden;}
+.prize_list{
+	position: relative;
+	width:56%;
+	margin: 6px auto 0px;
+	text-align: center;
+	}
+.prize_grade{font-size:3.8vh;color: #fff;text-align: center;margin: 34.1vh auto 0;}
+.prize_list ul{
+	display: block;
+	width:100%;
+	font-size:0;
+	}
+.prize_list .prize_title li{
+	font-size: 2.4vh;
+}
+.prize_list li{
+	float: left;
+	width: 50%;
+	font-size:2.8vh;
+	color:#fff;
+	text-align: center;
+	line-height:5.6vh;
+	font-family:Arial;
+}
+.prize_list .prize_name{
+	height: 29.4vh;
+}
+.prize_list li span{
+	display: block;
+	float: left;
+	width: 40%;
+}
+.prize_list li span:nth-child(2n){
+	width: 60%;
+}
+.start{width: 16vh;height: 6vh;margin:0 auto;cursor:pointer;position: relative;z-index: 999;}
+.start img{
+	height: 100%;
+}
+.prize_set{position: absolute;right: 60px;bottom: 40px;font-size: 16px;color: #f7f3e8;line-height: 30px;}
+.prize_set li{display: inline-block;margin-left: 20px;}
+.set_grade select,.set_num select,.set_people input, .set_money input{background: none;width:110px;height:36px;border:2px solid #00fcfa;margin-left: .1rem;color: #fff;padding-left:10px;position: relative;z-index: 999;}
+.set_people input{
+	margin-left: 6px;
+}
+.set_grade select option,
+.set_num select option{
+	background: none;
+	color: #333333;
+}
+.prize_logo{
+	position: absolute;
+	width: 154px;
+	left: -15.5%;
+	bottom: -26%;
+	z-index: 9;
+}
+.prize_logo .logo-body{
+	display: block;
+	width: 100%;
+}
+.prize_logo .logo-hand{
+	position: absolute;
+	top: 146px;
+	left: 90px;
+	z-index: -1;
+	animation: action 3s linear infinite alternate;
+}
+@keyframes action {
+from {
+transform: rotate(0deg) translate(14px,-10px);
+}
+
+to {
+transform: rotate(56deg) translate(14px,-10px);
+}

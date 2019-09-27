@@ -1,0 +1,375 @@
+/* ******************首页***************** */
+.index-wrap{
+    position: relative;
+}
+.brackbg{
+    background: #000;
+}
+.goanswerbtn{
+    display: inline-block;
+    position: absolute;
+    bottom: 3.37rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 5rem;
+    height: 1.24rem;
+}
+
+/* ******************答题页***************** */
+.quesdiv{
+	width: 100%;
+	min-height: 10px;
+	overflow: hidden;
+	background-image: url(../images/questionbg.png), url(../images/wallbg.png);
+	background-size:7.5rem 8.08rem, 2.59rem 1.58rem;
+	background-position: 0 0, 0 8.08rem; 
+	background-repeat:no-repeat, repeat;
+	position: relative;
+}
+.answer-content{
+	width: 6.84rem;
+    min-height: 10px;
+    margin: 0 auto;
+    margin-top: 5.23rem;
+    overflow: hidden;
+    border-radius: .44rem;
+    background-image: -moz-linear-gradient( 90deg, rgb(124,14,36) 0%, rgb(179,10,43) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(124,14,36) 0%, rgb(179,10,43) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(124,14,36) 0%, rgb(179,10,43) 100%);
+	border: 1px solid #f64367;
+}
+.cloud{
+	position: absolute;
+	top: 4.9rem;
+    width: 7rem;
+    left: .11rem;
+    z-index: 999;
+}
+.pt-page.active{
+	display: block;
+}
+.pt-page {
+	width: 6.46rem;
+	margin: .18rem auto;
+	background-color: #fff6c0;
+	border-radius: .44rem;
+	overflow: hidden;
+}
+.answer-wrap{
+    position: relative;
+    z-index: 2;
+}
+.answer-num{
+    position: absolute;
+    top:1rem;
+    left: 1.2rem;
+    font-size: .3rem;
+    color: #000;
+    font-family: SourceHanSansCN-Bold;
+    font-weight: bold;
+}
+.answer-num .nownum{
+    color:#cc0e0e;
+}
+.answer-box:first-child{
+	margin-top: .9rem;
+}
+.answer-box{
+    width: 100%;
+    font-size: .28rem;
+    color: #333;
+    float: left;
+}
+.question{
+    width: 5.7rem;
+    margin: 0 0 .4rem .45rem;
+}
+.option:last-child{
+	margin-bottom: .4rem;
+}
+.option{
+    width: 6.1rem;
+    height: .81rem;
+    background-color: #f2deb1;
+    border-radius: .1rem;
+    margin: 0 auto;
+    margin-bottom: .3rem;
+    text-indent: .35rem;
+    line-height: .81rem;
+}
+.option.active{
+    color: #fff;
+    background: url(../images/on-option.png) no-repeat;
+    background-size: 6.09rem .81rem;
+}
+.answer-btn{
+    width: 3.7rem;
+    height: .8rem;
+    float: left;
+    margin-left: 1.38rem;
+    position: relative;
+    margin-top: .3rem;
+    margin-bottom: .6rem;
+}
+.answer-btn .answer-btn-text{
+    width: 100%;
+    font-size: .3rem;
+    color: #fff;
+    text-align: center;
+    height: .8rem;
+    line-height: .8rem;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+/*页面切出的效果*/
+.pt-page-rotateCarouselLeftOut {
+	display: block;
+	-webkit-transform-origin: 100% 50%;
+	-webkit-animation: rotateCarouselLeftOut .6s both ease;
+	-moz-transform-origin: 100% 50%;
+	-moz-animation: rotateCarouselLeftOut .6s both ease;
+	transform-origin: 100% 50%;
+	animation: rotateCarouselLeftOut .6s both ease;
+}
+
+/*页面切入的效果*/
+.pt-page-rotateCarouselLeftIn {
+	-webkit-transform-origin: 0% 50%;
+	-webkit-animation: rotateCarouselLeftIn .6s both ease;
+	-moz-transform-origin: 0% 50%;
+	-moz-animation: rotateCarouselLeftIn .6s both ease;
+	transform-origin: 0% 50%;
+	animation: rotateCarouselLeftIn .6s both ease;
+}
+
+
+/* iphone */
+/*页面切出的效果*/
+.pt-page-rotateCarouselLeftOut2 {
+	display: block;
+	-webkit-transform-origin: 100% 50%;
+	-webkit-animation: rotateCarouselLeftOut 1.6s both ease;
+	-moz-transform-origin: 100% 50%;
+	-moz-animation: rotateCarouselLeftOut 1.6s both ease;
+	transform-origin: 100% 50%;
+	animation: rotateCarouselLeftOut 1.6s both ease;
+}
+
+/*页面切入的效果*/
+.pt-page-rotateCarouselLeftIn2 {
+	-webkit-transform-origin: 0% 50%;
+	-webkit-animation: rotateCarouselLeftIn2 1.6s both ease;
+	-moz-transform-origin: 0% 50%;
+	-moz-animation: rotateCarouselLeftIn2 1.6s both ease;
+	transform-origin: 0% 50%;
+	animation: rotateCarouselLeftIn2 1.6s both ease;
+}
+
+
+@-webkit-keyframes rotateCarouselLeftOut {
+	to { opacity: .3; -webkit-transform: translateX(-150%) scale(.4) rotateY(-65deg); }
+}
+@-moz-keyframes rotateCarouselLeftOut {
+	to { opacity: .3; -moz-transform: translateX(-150%) scale(.4) rotateY(-65deg); }
+}
+@keyframes rotateCarouselLeftOut {
+	to { opacity: .3; transform: translateX(-150%) scale(.4) rotateY(-65deg); }
+}
+
+@-webkit-keyframes rotateCarouselLeftIn {
+	from { opacity: .3; -webkit-transform: translateX(200%) scale(.4) rotateY(65deg); }
+}
+@-moz-keyframes rotateCarouselLeftIn {
+	from { opacity: .3; -moz-transform: translateX(200%) scale(.4) rotateY(65deg); }
+}
+@keyframes rotateCarouselLeftIn {
+	from { opacity: .3; transform: translateX(200%) scale(.4) rotateY(65deg); }
+}
+
+@-webkit-keyframes rotateCarouselLeftIn2 {
+	from { opacity: .3; -webkit-transform: translateX(80%) scale(.4) rotateY(65deg); }
+}
+@-moz-keyframes rotateCarouselLeftIn2 {
+	from { opacity: .3; -moz-transform: translateX(80%) scale(.4) rotateY(65deg); }
+}
+@keyframes rotateCarouselLeftIn2 {
+	from { opacity: .3; transform: translateX(80%) scale(.4) rotateY(65deg); }
+}
+
+.nochoice-box{
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 11;
+}
+.nochoice-bg {
+    width: 6.12rem;
+    height: 4.19rem;
+    position: absolute;
+    top: 3.13rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.nochoice-text{
+    position: absolute;
+    top: 1.62rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: .3rem;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+}
+.goonanswer-btn {
+    width: 2.88rem;
+    height: .74rem;
+    position: absolute;
+    bottom: .64rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.goonanswer-btn .goonanswer-btn-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: .3rem;
+    color: #0e0e12;
+    text-align: center;
+    height: .74rem;
+    line-height: .74rem;
+    font-weight: bold;
+}
+
+/* 输昵称结果页 */
+.snc-result{
+    width: 4.09rem;
+    height: 1.79rem;
+    position: absolute;
+    top:3.20rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+.snc-result .snc-result-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: .38rem;
+    color: #df2d01;
+    text-align: center;
+    height:  1.79rem;
+    line-height:  1.79rem;
+    font-weight: bold;
+}
+.snc-desc{
+    width: 3.97rem;
+    height: .97rem;
+    position: absolute;
+    top: 5.25rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+	font-size: .28rem;
+	line-height: .34rem;
+	color: #070203;
+}
+.snc-input{
+    width: 5rem;
+    height: .66rem;
+    position: absolute;
+    top: 6.94rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: 1px solid #070203;
+}
+.snc-input input{
+    width: 100%;
+    text-align: center;
+    padding: .16rem .2rem;
+    font-size: .34rem;
+    color: #070203;
+    font-weight: bold;
+}
+.snc-input input::placeholder{
+    color: #e57324;
+}
+.snc-btn{
+    width: 2.98rem;
+    height: .8rem;
+    position: absolute;
+    top:8.49rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+.snc-btn .snc-btn-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: .3rem;
+    color: #0e0e12;
+    text-align: center;
+    height: .8rem;
+    line-height: .8rem;
+    font-weight: bold;
+}
+
+
+/* 关注页 */
+.gz-box{
+    position: relative;
+}
+.ewm-box{
+    width: 3.58rem;
+    height: 3.58rem;
+    position: absolute;
+    top: 2.37rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.gz-text{
+    position: absolute;
+    top: 6.64rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center; 
+    color: #fefefe;
+    font-size: .34rem;
+    font-weight: bold;  
+}
+.tip{
+	float: left;
+	margin-bottom: .3rem;
+}
+.tip p{
+	color: #7c0e24;
+	font-size: .26rem;
+	text-indent: .3rem;
+}
+.tip p:first-child{
+	font-size: .3rem;
+	font-weight: bold;
+}

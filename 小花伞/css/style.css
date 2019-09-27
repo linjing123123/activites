@@ -1,0 +1,200 @@
+.theme-color{
+    background-color: #ff8330;
+    /* padding-top: .36rem; */
+    height: 100%;
+}
+/* 我的爱心证书 */
+.certificate-title{
+    color: #ffffff;
+    font-size: .34rem;
+    height: .45rem;
+    line-height: .45rem;
+    text-align: center;
+    /* padding-top: .36rem; */
+}
+.content .swiper-container {
+    width: 100%;
+    /* height: 8.51rem; */
+    box-sizing: border-box;
+    margin: .7rem 0 0;
+    /* transition: left .5s; */
+}
+.content .swiper-wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    -ms-transition-property: -ms-transform;
+    transition-property: transform;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.content .certificate-img{
+    width: 5.46rem;
+    height: 8.51rem;
+}
+.content .swiper-slide {
+	-webkit-transition: transform 1.0s;
+	-moz-transition: transform 1.0s;
+	-ms-transition: transform 1.0s;
+	-o-transition: transform 1.0s;
+	-webkit-transform: scale(0.75);
+    transform: scale(0.75);
+}
+.content .swiper-slide2 {
+	-webkit-transition: transform 1.0s;
+	-moz-transition: transform 1.0s;
+	-ms-transition: transform 1.0s;
+	-o-transition: transform 1.0s;
+	-webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
+.content .swiper-slide-active ,.swiper-slide-duplicate-active {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+.content .none-effect {
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+}
+.content .swiper-pagination{
+    width: 100%;
+    margin-top: .58rem;
+}
+.content .swiper-pagination-bullet{
+    width: .15rem;
+    height: .1rem;
+    margin-right: .06rem;
+    opacity: 0.5;
+    background: #FFFFFF;
+    border-radius: .05rem;
+}
+.content .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #FDFDFD;
+    width: .28rem;
+}
+.havecate{
+    position: relative;
+    top: 46%;
+    transform: translate(0,-50%);
+}
+.nocate{
+    background-color:#f7f7f7;
+    height: 100%;
+    position: relative;
+}
+.nocate div{
+    height: 4.2rem;
+    width: 4.55rem;
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    margin-left: -2.275rem;
+}
+.nocate .certificate-img{
+    width: 4.55rem;
+    height: 3.79rem;
+    margin: 0 auto;
+}
+.nocate .certificate-text{
+    color: #323232;
+    font-size: .28rem;
+    text-align: center;
+}
+.share-btn{
+    display: block;
+    width: 3.96rem;
+    height: .74rem;
+    color: #FD7545;
+    font-size: .28rem;
+    line-height: .74rem;
+    text-align: center;
+    background: #FCFCFC;
+    border-radius: .45rem;
+    margin: 1rem auto 0;
+}
+/* 我的爱心证书 */
+/* 我的爱心足迹 begin*/
+.theme-colorf{
+    background-color: #fff;
+}
+
+.jzlist{
+    width: 7.5rem;
+    height: 100%;
+}
+.jz-item{
+    width: 7.2rem;
+    height: 1.4rem;
+    padding-left: .3rem;
+}
+.jz-item:first-child{
+    padding-top: .2rem;
+}
+.ax-img{
+    width: .8rem;
+    height: .7rem;
+}
+.ax-ms{
+    text-align: left;
+    margin-left: .29rem;
+}
+.ax-name{
+    font-family: PingFang-SC-Bold;
+    color: #333;
+    font-size: .32rem;
+    line-height: .32rem;
+    margin-bottom: .21rem;
+    font-weight: bold;
+}
+.ax-time{
+    color: #b3b3b3;
+    font-size: .26rem;
+    line-height: .32rem;
+    font-family: PingFang-SC-Medium;
+}
+.ax-money{
+    text-align: left;
+    margin-right: .3rem;
+    color: #b3b3b3;
+    font-family: PingFang-SC-Medium;
+    font-size: .28rem;
+    line-height: .32rem;
+}
+.ax-money span{
+    color: #ff4c61;
+    font-size: .32rem;
+    line-height: .32rem;
+    font-weight: bold;
+}
+.nojzlist{
+    height: 3.7rem;
+    width: 4.28rem;
+    position: fixed;
+    left: 50%;
+    margin-left: -2.14rem;
+    top: 3rem;
+}
+.nojzlist .jzlist-img{
+    width: 4.28rem;
+    height: 3.24rem;
+    margin: 0 auto;
+}
+.nojzlist .jzlist-text{
+    color:  #333333;
+    font-size: .28rem;
+    text-align: center;
+}
+/* 我的爱心足迹 end*/

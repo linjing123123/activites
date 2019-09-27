@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>难倒AI算你赢</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">	    
+	    <link rel="stylesheet" type="text/css" href="./css/style.css?v={$v}">	    
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body style="background-color: #211fc3;">
+		<div class="content">
+			<div class="imgbox">
+				<img class="img" src="./images/yindao.png?v={$v}" />
+				<img class="iPhoneX-img" src="./images/yindaoX.png" />
+			    <div class="des">此活动仅限在微信公众号参与，请长<br />按识别公众号或打开微信搜索微信公<br />众号“白鸽宝”参与活动。 </div>
+			</div>
+			
+		</div>
+	</body>
+	<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	<script>
+	$(function(){
+		if(isAppIphoneX()){
+			$(".iPhoneX-img").show();
+			$(".des").css("bottom","1.65rem");
+			$(".img").hide();
+		}else {
+			$(".img").show();
+			$(".des").css("bottom","1.22rem");
+			$(".iPhoneX-img").hide();
+		}
+	});
+	function isAppIphoneX(){
+        return $(window).width() >= 360 && $(window).width() < 400 && $(window).height() >= 650;
+    }
+	</script>
+</html>

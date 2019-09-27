@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>测一测你内心住着什么鬼</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">	    
+	    <link rel="stylesheet" type="text/css" href="./css/index.css?v={$v}">	    
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+		<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	</head>
+	<body>
+		<div class="content" style="background: #0e0e12;">
+			<img src="./images/answer-bg.png?v={$v}" />
+			<div class="answer-content"  id="mainBox">
+				<div class="answer-wrap pt-page">
+					<img src="./images/answer-box.png?v={$v}" />
+					<div class="answer-num"><span class="nownum">1</span>/9</div>
+					<div class="answer-box">
+						<div class="question">你因为船难流落到荒岛上，又累又饿的你看到，前方森林里有很多果树，你会摘下果子来吃吗？</div>
+						<div class="dashline"></div>
+						<div class="option" attroption="A" attrtype="1">A.饿得很，先吃点</div>
+						<div class="option"  attroption="B" attrtype="1">B.可能有毒，还是不吃了</div>
+						<div class="option active"  attroption="C" attrtype="1">C.吃点树皮算了</div>
+					</div>
+					<div class="answer-btn">
+						<img src="./images/answer-btn.png?v={$v}" />
+						<span class="answer-btn-text">下一题</span>
+					</div>
+				</div>
+			</div>
+			<!-- 未选择弹框 -->
+			<div class="nochoice-box">
+				<div class="nochoice-bg">
+					<img src="./images/nochoice-box.png?v={$v}">
+					<div class="nochoice-text">还差一点就知道你是什么鬼了!</div>
+					<div class="goonanswer-btn">
+						<img src="./images/goonanswer-btn.png?v={$v}" />
+						<span class="goonanswer-btn-text">继续答题</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../public/js/public.js?v={$v}"></script>
+	<script src="../public/js/dialog.min.js?v={$v}"></script>
+	<script src="../public/js/zepto.alert.js?v={$v}"></script>
+	<script type="text/javascript">
+		$(function(){
+			//最后选中的题库1的答案
+			var answer = '';
+			var allanswer = [];
+
+			var data =  {
+				"你因为船难流落到荒岛上，又累又饿的你看到，前方森林里有很多果树，你会摘下果子来吃吗？": [
+					[
+						"A.饿得很，先吃点",1
+					],
+					[
+						"B.可能有毒，还是不吃了",1
+					],
+					[
+						"C.吃点树皮算了",1
+					]
+				],
+				"森林你竟然看到前方有座小屋，精疲力尽的你需要休息，打开门你觉得会看到什么呢？": [
+					[
+						"A.打开屋子发现是猎人的补给点",1
+					],
+					[
+						"B.里面竟然是半人马的聚集点",1
+					],
+					[
+						"C.一屋子的蓝精灵正在聚会",1
+					]
+				],
+				"在屋子里睡了一会，醒来又饿了，搜刮了一下屋子，你发现了什么呢？": [
+					[
+						"A.一盒蛋糕",1
+					],
+					[
+						"B.几个馒头",1
+					],
+					[
+						"C.一盒饼干",1
+					]
+				],
+				"睡足了想继续出发，走出屋子后发现有个怪物站在你面前，怎么判断它是真是假？": [
+					[
+						"A.直接走开，看看对方反应",1
+					],
+					[
+						"B.拿出打火机烧一下它的脸，看它会不会骂我",1
+					],
+					[
+						"C.假装和空气说话，看看它的反应",1
+					]
+				],
+				"原来怪物竟是稻草人，你走到它的身后发现它的背后藏着什么呢？": [
+					[
+						"A.一支手枪",1
+					],
+					[
+						"B.一把匕首",1
+					],
+					[
+						"C.一柄斧头",1
+					]
+				],
+				"接着往前走，有一条三岔路口，你要往哪条路走呢？": [
+					[
+						"A.一条僻静普通的小路",1
+					],
+					[
+						"B.一条可能通往神秘市场的路",1
+					],
+					[
+						"C.看起来铺满糖果的路",1
+					]
+				],
+				"走在小路上，突然看见有个东西闪闪发光，低头一看，那是？": [
+					[
+						"A.一枚硬币",1
+					],
+					[
+						"B.一颗宝石",1
+					],
+					[
+						"C.一个瓶盖",1
+					]
+				],
+				"捡起东西之后你把它收进口袋，继续赶路，发现路旁边是一条绿色的湖泊,你走进一看，发现湖里有？": [
+					[
+						"A.一群小鱼",1
+					],
+					[
+						"B.一头水怪",1
+					],
+					[
+						"C.一只可达鸭",1
+					]
+				],
+				"水里的东西，看起来对你并不在意，于是继续赶路，迎面来了一个女巫，她问你要不要跟她做一次交换？": [
+					[
+						"A.同意交换",1
+					],
+					[
+						"B.不同意交换",1
+					],
+					[
+						"C.不理她直接走开",1
+					]
+				],
+			};
+
+			//用于计数题号
+			var m = 0;
+			var _html = '';
+			//遍历数据
+			for(var i in data){
+				// console.log(m++);
+				// console.log(i);
+				// console.log(data[i]);
+				m++;
+				_html += '<div class="answer-wrap pt-page"><img src="./images/answer-box.png?v={$v}" /><div class="answer-num"><span class="nownum">'+m+'</span>/9</div><div class="answer-box"><div class="question">'+i+'</div><div class="dashline"></div><div class="option" attrOption="A" attrType="'+data[i][0][1]+'">'+data[i][0][0]+'</div><div class="option" attrOption="B" attrType="'+data[i][0][1]+'">'+data[i][1][0]+'</div><div class="option" attrOption="C" attrType="'+data[i][0][1]+'">'+data[i][2][0]+'</div></div><div class="answer-btn"><img src="./images/answer-btn.png?v={$v}" /><span class="answer-btn-text">下一题</span></div></div>';
+			}
+			$("#mainBox").html("").append(_html);
+
+			$(".pt-page").first().addClass("active");
+
+			//点击选择答案改变背景色
+			$(".option").click(function(){
+				$(".option").removeClass("active");
+				$(this).addClass("active");
+				//属于第一题库
+				if($(this).attr("attrType") == 1){
+					answer = $(this).attr("attrOption");
+				}
+			})
+			
+			//点击下一题
+			//存储第几题
+			var num = "";
+			//存储该题选中什么
+			var choice = "";
+			$(".answer-btn").click(function(){
+				if($(this).parent().find(".option").hasClass("active")){
+					//存储选中答案
+					num = parseInt($(this).parent().find(".nownum").html());
+					choice = $(this).parent().find(".option.active").attr("attrOption");
+					allanswer.push({"num":num,"choice":choice});
+					
+					//如果是最后一页，直接返回
+					if(num > $(".pt-page").length - 1){
+						alert("您选中了"+answer+"选项");
+						console.log(allanswer);
+						return;
+					}
+					
+					var u = navigator.userAgent;
+					//android终端
+					var isAndroid = u.indexOf('Android') > -1 ||u.indexOf('Adr') > -1;
+					//ios终端  			
+					var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); 
+					if (isAndroid) {
+						// 给当前页和下一页增加动画样式
+						$(".answer-wrap").removeClass("active pt-page-rotateCarouselLeftOut pt-page-rotateCarouselLeftIn");
+						$(this).parent().addClass("pt-page-rotateCarouselLeftOut");
+						$(this).parent().next(".answer-wrap").addClass("active pt-page-rotateCarouselLeftIn");
+					} else {
+						// 给当前页和下一页增加动画样式
+						$(".answer-wrap").removeClass("active pt-page-rotateCarouselLeftOut2 pt-page-rotateCarouselLeftIn2");
+						$(this).parent().addClass("pt-page-rotateCarouselLeftOut2");
+						$(this).parent().next(".answer-wrap").addClass("active pt-page-rotateCarouselLeftIn2");
+					}   
+
+				}else{
+					$(".nochoice-box").show();
+				}
+			})
+
+			//关闭未选择弹框
+			$(".goonanswer-btn").click(function(){
+				$(".nochoice-box").hide();
+			});
+		})
+	</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>无博饼不中秋</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">	    
+	    <link rel="stylesheet" type="text/css" href="./css/index.css?v={$v}">	    
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!--引导页-->
+		<div class="content1 index-yd1 " style="display: block;overflow-y:hidden">
+		    <div><img src="./images/yindao13.png?v={$v}"/></div>
+		    <div class="index-bottom"><img src="./images/digu .png?v={$v}"/></div>
+		</div>
+		<div class="content" style="background: #e4dbda;">
+			<div class="erweima"><img src="./images/erweima1.png?v={$v}"/></div>	
+			<div class="erweima"><img src="./images/erweima2.png?v={$v}"/></div>	
+			<div class="erweima"><img src="./images/erweima3.png?v={$v}"/></div>	
+		</div>
+	</body>
+	<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	<script src="../public/js/public.js?v={$v}"></script>
+	<script src="../public/js/dialog.min.js?v={$v}"></script>
+	<script src="../public/js/zepto.alert.js?v={$v}"></script>
+	<script type="text/javascript">
+		var viewheight=$(window).height();
+	    $(".content1").height(viewheight);
+	    $(".content").hide();
+	    window.onload=function(){
+			if(sessionStorage.getItem("first")==undefined || sessionStorage.getItem("first")==""){
+		        $(".index-yd1").addClass("index-yd");
+		        $(".content").show();
+			        var	time2=setTimeout(function(){
+			            $(".content1").height("100%");
+			            $(".content1").css("overflow-y","auto")
+			            $(".index-yd1").hide();
+			            sessionStorage.setItem("first",1);
+			            clearTimeout(time2);
+			        },4000)
+			}else{
+				$(".index-yd1").hide();
+		        $(".content").show();
+		        $(".content1").height("100%");
+		        $(".content1").css("overflow-y","auto")
+			}
+		}
+	</script>
+</html>

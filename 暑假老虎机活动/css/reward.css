@@ -1,0 +1,104 @@
+.theme-color{
+    background: #5fd4b6 url(../images/reward-bg.png) no-repeat;
+    background-size: 100%;
+}
+.top-box{
+    margin-top: .4rem;
+    margin-left: .3rem;
+    color: #ffffff;
+}
+.headImg{
+    width: .86rem;
+    height: .86rem;
+    border-radius: 50%;
+    margin-right: .2rem;
+}
+.coin-num{
+    font-size: .32rem;
+    font-weight: bold;
+    height: .32rem;
+    line-height: .32rem;
+}
+.coin-num>i{
+    width: .32rem;
+    height: .32rem;
+    background: url(../images/coin-icon.png) no-repeat center;
+    background-size: 100% 100%;
+    vertical-align: text-top;
+    margin-right: .06rem;
+    float: left;
+}
+.coin-num > span{
+    height: .32rem;
+    line-height: .32rem;
+    float: left;
+}
+.coin-text{
+    font-size: .24rem;
+}
+.goreward-btn{
+    width: 2.08rem;
+    height: .68rem;
+}
+.reward-con{
+    width: 7.26rem;
+    margin: .28rem auto 0;
+    overflow: auto;
+}
+.reward-con-bg1{
+    height: 10.18rem;
+    background: url(../images/reward-con-bg.png) no-repeat center;
+    background-size: 100% 100%;
+}
+.reward-con-bg2{
+    height: 13.36rem;
+    background: url(../images/reward-con-bg2.png) no-repeat center;
+    background-size: 100% 100%;
+}
+.reward-box{
+    width: 6.08rem;
+    margin: 1.1rem auto 0;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+}
+.reward-con-bg1 .reward-box{height: 8.74rem;}
+.reward-con-bg2 .reward-box{height: 11.92rem;}
+.reward-item:first-child{
+    margin-top: .4rem;
+}
+.reward-item{
+    width: 6.08rem;
+    height: 1.9rem;
+    background: url(../images/reward-item-bg.png) no-repeat center;
+    background-size: 100% 100%;
+    margin-bottom: .37rem;
+}
+.reward-item-left{
+    width: 3.88rem;
+    margin-left: .32rem;
+    color: #ffffff;
+    font-size: .26rem;
+    line-height: .54rem;
+}
+.reward-item-text3>span{
+    color: #fbe56c;
+    font-size: .28rem;
+    font-weight: bold;
+}
+.reward-btn{
+    width: 1.42rem;
+    height: .5rem;
+    background: url(../images/reward-btnbg.png) no-repeat center;
+    background-size: 100% 100%;
+    text-align: center;
+    color: #333333;
+    font-size: .24rem;
+    line-height: .5rem;
+    margin: 0 auto;
+}
+.norecord{
+    width: 1.57rem;
+    margin: 0 auto;
+    margin-top: 3.2rem;
+}

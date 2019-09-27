@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>测一测你内心住着什么鬼</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+	    <link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">	    
+	    <link rel="stylesheet" type="text/css" href="./css/style.css?v={$v}">	    
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+		<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	</head>
+	<body>
+		<div class="content paddingBottom2"  style="background:#f8f8f8">
+			<img src="./images/rhcy-bg1.png?v={$v}"/>
+			<img src="./images/rhcy-bg2.png?v={$v}"/>
+		</div>
+		<div class="footer2">打开微信，立即关注</div>
+	</body>
+	<script src="../public/js/zepto.alert.js?v={$v}"></script>
+	<script src="./js/clipboard.min.js?v={$v}"></script>
+	<script>
+	//判断app是安卓还是ios方法（例）
+	var u = navigator.userAgent;
+	if (u.indexOf("pop=1") < 0) {
+		$(".content").removeClass("pt88");		
+	}else{
+	   
+	}
+	
+	
+	//实例化 ClipboardJS对象;
+	var copyBtn = new ClipboardJS('.footer2');
+	
+	
+	$(".footer2").click(function(){
+	    if (u.indexOf("pop=1") < 0) {
+	      	//复制后打开微信
+	        copyBtn.on("success",function(e){
+	            // 复制成功
+	            window.location.href="weixin://";
+	        });
+	        copyBtn.on("error",function(e){
+	            //复制失败；
+	            window.location.href="weixin://";
+	        });
+	        
+	    }else{
+	        var isAndroid = u.indexOf('Android') > -1 ||u.indexOf('Adr') > -1; //android终端
+	        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+	        if (isAndroid) {	        	
+	            window.android.app_pasteboard("白鸽保险");//
+	        } else {
+	//			        	window.webkit.messageHandlers.bgbEvevt.postMessage({body: 'app_go_back'});
+	            window.app_pasteboard("白鸽保险");
+	        }
+	    }    
+	})
+	</script>	
+</html>

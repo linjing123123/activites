@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta name="format-detection" content="telephone=no,email=no">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <title>我的爱心足迹</title>
+        <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+        <link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+        <link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">
+        <link rel="stylesheet" type="text/css" href="./css/style.css?v={$v}">
+        <script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+        <script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+
+    </head>
+
+    <body>
+        <!-- 头部导航 -->
+        <include file="Activity/Public/header" title="我的爱心足迹" backflag="true" appgo="false" />
+        <div class="content theme-colorf pt88">
+            <!-- 有爱心足迹 -->
+            <div class="jzlist">
+                <div class="jz-item flexbox flexbox-middle">
+                    <img class="ax-img" src="./images/icon.png"/>
+                    <div class="ax-ms flexchild">
+                        <p class="ax-name">白鸽疾病综合险</p>
+                        <p class="ax-time">04-23 08: 56: 39</p>
+                    </div>
+                    <div class="ax-money">
+                        捐赠<span>2</span>颗爱心
+                    </div>
+                </div>
+                <div class="jz-item flexbox flexbox-middle">
+                    <img class="ax-img" src="./images/icon.png"/>
+                    <div class="ax-ms flexchild">
+                        <p class="ax-name">白鸽吃货卫士</p>
+                        <p class="ax-time">04-12 12: 38: 16</p>
+                    </div>
+                    <div class="ax-money">
+                        捐赠<span>2</span>颗爱心
+                    </div>
+                </div>
+                <div class="jz-item flexbox flexbox-middle">
+                    <img class="ax-img" src="./images/icon.png"/>
+                    <div class="ax-ms flexchild">
+                        <p class="ax-name">白鸽少儿意外</p>
+                        <p class="ax-time">03-25 09: 36: 28</p>
+                    </div>
+                    <div class="ax-money">
+                        捐赠<span>2</span>颗爱心
+                    </div>
+                </div>
+                <div class="jz-item flexbox flexbox-middle">
+                    <img class="ax-img" src="./images/icon.png"/>
+                    <div class="ax-ms flexchild">
+                        <p class="ax-name">白鸽专属学平险</p>
+                        <p class="ax-time">04-12 12: 38: 16</p>
+                    </div>
+                    <div class="ax-money">
+                        捐赠<span>2</span>颗爱心
+                    </div>
+                </div>
+                <div class="jz-item flexbox flexbox-middle">
+                    <img class="ax-img" src="./images/icon.png"/>
+                    <div class="ax-ms flexchild">
+                        <p class="ax-name">白鸽航空意外险</p>
+                        <p class="ax-time">03-09 12: 24: 09</p>
+                    </div>
+                    <div class="ax-money">
+                        捐赠<span>2</span>颗爱心
+                    </div>
+                </div>
+            </div>
+            <!-- 无爱心足迹 -->
+            <div class="nojzlist">
+                <img class="jzlist-img" src="./images/nojzlist-icon.png"/>
+                <p class="jzlist-text">暂无爱心动态</p>
+            </div>
+        </div>
+        
+    </body>
+    <script type="text/javascript">
+        $(function(){
+            //判断app是安卓还是ios方法（例）
+            var u = navigator.userAgent;
+            if(u.indexOf('pop=1') < 0){
+                $('.content').removeClass('pt88');
+            }else{
+
+            }
+        });
+    
+    </script>
+</html>

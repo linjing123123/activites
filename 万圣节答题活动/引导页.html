@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>测一测你内心住着什么鬼</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">	    
+	    <link rel="stylesheet" type="text/css" href="./css/style.css?v={$v}">	    
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+		<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	</head>
+	<body>
+		<div class="content guide-page">
+			<div class="img-box">
+			    <img class="guide-img" id="guideImg" onclick="return false;" src="./images/guide-img1.png?v={$v}" />
+		        <a href="" class="guide-test"></a>
+		        <a href="" class="guide-des"></a>
+			</div>
+		</div>
+	</body>
+	<script src="../public/js/public.js?v={$v}"></script>
+	<script src="../public/js/dialog.min.js?v={$v}"></script>
+	<script src="../public/js/zepto.alert.js?v={$v}"></script>
+	<script type="text/javascript">
+	$(function(){
+		if(isIphoneX()){
+			$("#guideImg").attr("src","./images/guide-img2.png?v={$v}")
+		    $(".guide-test").css("bottom","5.7rem");
+		    $(".guide-des").css("bottom","4.55rem");
+		}
+	})
+	
+	/**
+	 * 判断iphonex
+	 *
+	 * */
+    function isIphoneX(){
+        return $(window).width() >= 375 && $(window).width() < 400 && $(window).height() >= 724;
+    }
+	</script>
+</html>

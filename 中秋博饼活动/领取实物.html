@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>无博饼不中秋</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">	    
+	    <link rel="stylesheet" type="text/css" href="./css/award.css?v={$v}">	    
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="content receive-page">
+			<!--头部公共部分start-->
+			<!--<img onclick="return false" src="./images/ch-tj.png?v={$v}"/>	
+			<img onclick="return false" src="./images/gfx-tj.png?v={$v}"/>					    -->
+			<img onclick="return false" src="./images/xiaom-tj.png?v={$v}"/>					    
+			<div class="title">畅吃畅喝，旅行常备健康卫士，真心“胃” 您好</div>
+			<div class="info-title">*请填写投保信息</div>
+			<!--头部公共部分end-->
+			<!--未提交的-->
+			<div class="edit-box">			   
+			    <div class="form-info">		   	   
+			   	    <ul>
+			   	   	    <li class="form-item">
+			   	   	   	   <div class="label">姓名</div>
+			   	   	   	   <input class="txt" id="name" type="text" name=""  />
+			   	   	    </li>
+			   	   	    <li class="form-item">
+			   	   	   	   <div class="label">联系方式</div>
+			   	   	   	   <input class="txt" id="tel" type="text" name="tel"  maxlength="11" />
+			   	   	    </li>
+			   	   	    <li class="form-item">
+			   	   	   	   <div class="label">身份证号码</div>
+			   	   	   	   <input class="txt" id="cardNum" type="text" name="cardNum" maxlength="18" />
+			   	   	    </li>
+			   	   	    <li class="form-item">
+			   	   	   	   <div class="label">邮箱</div>
+			   	   	   	   <input class="txt" id="email" type="text" name="email" />
+			   	   	    </li>
+			   	   	    <!--实物收货地址-->
+			   	   	    <li class="form-item address-box">
+			   	   	   	   <div class="label">收货地址</div>
+			   	   	   	    <div class="flexbox">
+			   	   	   	    	<input type="text" class="ipt flexchild"/><span>省</span>
+			   	   	   	    	<input type="text" class="ipt flexchild"/><span>市</span>
+			   	   	   	    	<input type="text" class="ipt flexchild"/><span>区</span>
+			   	   	   	    </div>
+			   	   	   	    <!--<span class="adress" style="overflow: hidden;">
+				                <input id="provinceCity" name="rec_address_select" class="txt" placeholder="请选择省市区" readonly="readonly">
+				                <input id="detailssq" type="hidden" readonly="readonly">
+					        </span>-->
+			   	   	    </li>
+			   	   	    <li class="flexbox" style="padding: .25rem 0 ; ">
+							<textarea class="addrDetail" id="addrDetail"  placeholder="请填写详细收货地址，便于奖品配送"></textarea>
+						</li>
+			   	    </ul>			   	    
+			    </div>
+			    <div class="agree-box">
+		   	   	   <label for="agreeTerm">
+		   	   	   	<input type="checkbox" name="agreeTerm" id="agreeTerm" class="hidden agreeTerm" />
+		   	        <i class="checkbox-icon"></i>了解保险详情，请阅读</label>
+		   	       <span class="tbxz">《投保须知》</span><span class="bxtk">《 保险条款》</span>和<span class="mztk">《免责条款》</span>	   	       
+		   	    </div>
+			   <div class="submit-btn">提交</div>
+			</div>
+			<!--已提交的-->
+			<div class="no-edit-box">
+				<!--保险部分-->
+				<div class="bx-box" >
+					<ul>
+						<li><label>姓名：</label>小白</li>
+						<li><label>联系方式：</label>143*******14</li>
+						<li><label>身份证号码：</label>143*******14</li>
+					</ul>
+					<div class="agree-box">
+			   	   	   <label for="agreeTerm">
+			   	   	   	<input type="checkbox" name="agreeTerm" id="agreeTerm" class="hidden agreeTerm" checked="checked" disabled="disabled"/>
+			   	        <i class="checkbox-icon"></i>了解保险详情，请阅读</label>
+			   	       <span class="tbxz">《投保须知》</span><span class="bxtk">《 保险条款》</span>和<span class="mztk">《免责条款》</span>	   	       
+			   	    </div>
+			   	    <div class="info-tip">
+			   	    	*保单信息已填写，白鸽客服将在活动结束后7个工作日<br/>内帮您完成投保，请耐心等待
+			   	    </div>
+				</div>
+				<!--小米净化实物部分-->
+				<div class="sw-box" style="display: none;">
+					<ul>
+						<li><label>姓名：</label>小白</li>
+						<li><label>联系方式：</label>143*******14</li>
+						<li>
+							<label>收货地址</label>
+							<div class="addrDetail">								 
+								<p>小白、183****5031，</p>
+								<p>福建省厦门市虎丘里奇区22号4楼</p>
+							</div>
+						</li>
+					</ul>
+					<div class="info-tip">温馨提醒：博饼获得奖品客服将会在活动结束7个工作日<br />内帮您发送，请耐心等待。</div>
+				</div>
+				<div class="submit-btn2">已提交</div>
+				<div class="info-tip text-c js-tip" >*收货地址已填写，如需更改，请联系在线客服</div>
+			</div>
+		</div>
+		<!--客服-->
+        <div class="index-kefu service_show_btn"><img src="./images/kefu.png?v={$v}"/></div>
+		<div class="shadeLayer" style="display: none;"></div>
+		<!--未满18周岁提示弹窗-->		
+		<div class="dialog-tip" style="display: none;">
+			<div class="dialog-tip-text">不好意思，该用户未满18岁，<br />不能参与投保，您可帮其他用户投保</div>
+		    <div class="dialog-tip-btn"></div>
+		    <div class="tip-close"></div>
+		</div>
+		<!--投保须知弹窗-->		
+		<div class="tbxz-dialog-outer dialog-radius" style="display: none;">
+			<div class="noteboxh1 tbxzinfo">
+		    	<strong>投保须知</strong>
+			    <div class="closebtn"><img style="width:100%" src="./images/close-ico.png?v={$v}"></div>
+			</div>
+		    <div class="notebox-tbxz tbxzinfo">
+		        <div class="notecontent notecontent1" id="rulekey">
+		            <p style="line-height:1.75em;"><span style="font-family:微软雅黑, 'microsoft yahei';font-size:14px;color:#000000;"></span></p>
+		            <p>1.本产品由安心财产保险有限责任公司承保，销售区域为全国，客户从白鸽保险购买，后续变更与理赔事务均可由白鸽保险协助您办理。</p>
+		            <p><br></p>
+		            <p>2.<span class="tbox" style="color:#4d72e2;">责任免除</span>、保险责任、犹豫期、费用扣除、退保、保险单现金价值、投保人、被保险人义务等内容详见产品条款， 请务必仔细阅读产品条款及电子保单的特别约定。</p>
+		            <p><br></p>
+		            <p>3.本产品承保年龄为18-60周岁（含18、60周岁）。</p>
+		            <p><br></p>
+		            <p>4.本产品仅限持卡人本人投保，且同一被保险人限投1份，多投无效。</p>
+		            <p><br></p>
+		            <p>5.本产品起保日期为投保成功后的次日零时。</p>
+		            <p><br></p>
+		            <p>6.本产品在保险期间内，可申请多次赔偿，但赔付总金额最高不超过保险金额。</p>
+		            <p><br></p>
+		            <p>7.本产品采用电子保单形式承保，法律效力等同于纸质保单。</p>
+		            <p><br></p>
+		            <p>8.保单可在订单中下载查看，如需发票可前往<a href="https://www.95303.com/service/service.html" target="_blank">安心官网</a>自行申请下载电子发票。</p>
+		            <p><br></p>
+		        </div>
+		    </div>
+		</div>
+		<!--保险条款-->
+		<div class="bxtk-dialog-outer dialog-radius" style="display: none;">
+		    <div class="noteboxh1 tbxzinfo">
+		        <strong>保险条款</strong>
+		        <div class="closebtn"><img style="width:100%" src="./images/close-ico.png?v={$v}"></div>
+		    </div>
+		    <div class="notebox-bxtk">
+	            <ul class="con-list">
+	                <li>
+                        <a href="/M/Product/know_detail?id=59&amp;pro_number=106005">银行卡资金损失保险条款(2016版)（B款）</a>
+                    </li>
+                    <li>
+                        <a href="/M/Product/know_detail?id=63&amp;pro_number=106005">银行卡资金损失保险附加险条款</a>
+                    </li>            
+	            </ul>
+	        </div>
+		</div> 
+		<!--免责任条款-->
+		<div class="mztk-dialog-outer dialog-radius" style="display: none;">
+		    <div class="noteboxh1 tbxzinfo">
+		        <strong>免责条款</strong>
+		        <div class="closebtn"><img style="width:100%" src="./images/close-ico.png?v={$v}"></div>
+		    </div>
+		    <div class="notebox-mztk">
+		        <div class="con-list">
+		            1、银行卡资金损失保险条款(2016版)（B款）<br><p style="text-indent:28px;"><span style="font-family:宋体;">请您注意，出现下列情形或损失，我公司是不负责赔偿的。</span></p><p style="text-indent:28px;"><span style="font-family:宋体;">（一）您或家庭成员的操作错误、故意行为或违法犯罪行为；</span></p><p style="text-indent:28px;"><span style="font-family:宋体;">（二）您的银行卡或网银帐户被您雇佣的人员、共同居住的人员所盗用；</span></p><p style="text-indent:28px;"><span style="font-family:宋体;">（三）您或其家庭成员自愿出租、转借银行卡给其他人；</span></p><p style="text-indent:28px;"><span style="font-family:宋体;">（四）诈骗行为。</span></p><p><br></p>        
+		        </div>
+		    </div>
+		</div>
+		<!--省市区的保存数据-->
+		<input type="hidden" id="provinceRef" value="" />
+		<input type="hidden" id="provinceName" value="" />
+		<input type="hidden" id="cityRef" value="" />
+		<input type="hidden" id="cityName" value="" />
+		<input type="hidden" id="areaRef" value="" />
+		<input type="hidden" id="areaName" value="" />
+		<!--常用地址弹出框-->
+		<div class="city-type py10 px10">
+		    <dl id="btbCityType-1" data-level="1">
+		        <dt class="bbse bold">请选择地址</dt>
+		        <foreach name='area' item='vo'>
+		            <dd ref="{$vo.num}">{$vo.name}</dd>
+		        </foreach>
+		    </dl>
+		    <a href="javascript:void(0)" class="back-btn js-back"></a>
+		    <input type="hidden" id="city_ref" />
+		</div>
+		
+	</body>
+	<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	<script src="../public/js/public.js?v={$v}"></script>
+	<script src="../public/js/dialog.min.js?v={$v}"></script>
+	<script src="../public/js/zepto.alert.js?v={$v}"></script>
+	<include file="Public/service" />
+	<script type="text/javascript">
+		//投保须知
+		$(".tbxz").on("click",function(){
+			$(".shadeLayer , .tbxz-dialog-outer").show();
+		});
+		//保险条款
+		$(".bxtk").on("click",function(){
+			$(".shadeLayer , .bxtk-dialog-outer").show();
+		});
+		//免责条款 
+		$(".mztk").on("click",function(){
+			$(".shadeLayer , .mztk-dialog-outer").show();
+		});
+		$(".closebtn").on("click",function(){
+			$(".shadeLayer").hide();
+			$(this).parents(".dialog-radius").hide();
+		});
+		//18周岁关闭按钮
+		$(".tip-close").on("click",function(){
+			$(".shadeLayer").hide();
+			$(this).parent().hide();
+		});
+		//帮好友投保按钮
+		$(".dialog-tip-btn").on("click",function(){
+			$(".shadeLayer").hide();
+			$(this).parent().hide();
+			$("[type='text']").val("");
+		});
+		//身份证校验
+		$("#cardNum").on("input",function(){
+			var cardNum = $.trim($("#cardNum").val());
+			var age = ages(matchBirthday(name));
+			if(cardNum.length==18) {
+				if(!isCardNo(cardNum)){
+	                $.dialog({content: '亲~，请输入正确的身份证号码', time: 1000});
+	                return false;
+	            }else {
+	            	if(age < 18){
+						$(".shadeLayer").show();
+						$(".dialog-tip").show();
+						return false;
+					}
+	            }
+			}
+		})
+		$(function(){
+			var isEdit = true ; //是否可编辑
+			if(isEdit) {
+				$(".edit-box").show();
+				$(".no-edit-box").hide();
+			}else {
+				$(".edit-box").hide();
+				$(".no-edit-box").show();
+				$("#agreeTerm").attr("checked",true);
+			}
+//			address();
+		})
+		var ajaxFlagBtn = true;
+		$(".submit-btn").on("click",function(){
+			var name = $.trim($("#name").val());
+			var tel = $.trim($("#tel").val());
+			var cardNum = $.trim($("#cardNum").val());
+			var email = $.trim($("#email").val());
+			var age = ages(matchBirthday(name));
+			if(!isUserName(name)){
+	            $.dialog({content: '亲~，请输入正确的姓名', time: 1000});
+	            return false;
+	        }
+			if(!isPhoneNo(tel)){
+	            $.dialog({content: '亲~，请输入正确的手机号', time: 1000});
+	            return false;
+	        }
+			if(!isCardNo(cardNum)){
+                $.dialog({content: '亲~，请输入正确的身份证号码', time: 1000});
+                return false;
+            }
+			if(!isEmail(email)){
+                $.dialog({content: '亲~，请输入正确的邮箱', time: 1000});
+                return false;
+            }
+			if(!$("#agreeTerm").is(":checked")){
+				$.dialog({content: '请勾选同意《保险条款》《免责条款》和《重要告知与申明》', time: 1000});
+			}
+			if(age < 18){
+				$(".shadeLayer").show();
+				$(".dialog-tip").show();
+				return false;
+			}
+			ajaxFlagBtn = false;
+	        $.ajax({
+	            url:"{:U('lotInsurance')}",
+	            type:'post',
+	            data:{},
+	            success:function (data) {
+                    if(data.status == 1000){
+                    	$.dialog({content: '提交成功', time: 1000});
+                    	setTimeout(function () {
+	                        window.location.href = "{:U('orderConfirm')}?num_id="+data.data;
+                        }, 1100);
+                        ajaxFlagBtn = true;
+                    }else {
+                    	$.dialog({content: data.data, time: 1000});
+                        ajaxFlagBtn = true;
+                    }
+                },
+                error:function () {
+                	$.dialog({content: data.data, time: 1000});
+                    ajaxFlagBtn = true;
+                }
+	        });
+		})
+	</script>
+</html>

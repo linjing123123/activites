@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>测一测，买份保险多少钱？</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">	    
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="./css/style.css?v={$v}">	    
+    <script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+    <script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+</head>
+<body>
+<div class="content index-page">
+	<div class="info-wrap">
+		<div class="luobo-wrap">
+			<div class="luobo-box">
+				<div class="list">林**   手机号码：139*****678  提交了测算申请；</div>
+	            <div class="list">林**   手机号码：139*****678  提交了测算申请；</div>
+	        </div>    
+		</div>
+		<div class="info-box">
+			<div class="info-title"><img class="index-img" src="./images/info-title.png?v={$v}"/></div>
+		    <dl id="" class="money flexbox">
+				<dt>为谁投保：</dt>
+				<dd class="flexchild">
+					<span>
+						<input id="principal_0" name="oneself" class="selection-rd hidden" type="radio" value="1" checked="checked">
+						<label class="selection-lb" for="principal_0">自己</label>
+					</span>
+					<span>
+						<input id="principal_1" name="oneself" class="selection-rd hidden" type="radio" value="2">
+						<label class="selection-lb" for="principal_1">配偶</label>
+					</span>
+					<span>
+						<input id="principal_2" name="oneself" class="selection-rd hidden" type="radio" value="3">
+						<label class="selection-lb" for="principal_2">孩子</label>
+					</span>
+					<span>
+						<input id="principal_3" name="oneself" class="selection-rd hidden" type="radio" value="4">
+						<label class="selection-lb no-margin-r" for="principal_3">父母</label>
+					</span>
+				</dd>
+			</dl>
+			<dl id="" class="bx_type flexbox">
+				<dt>保险类别：</dt>
+				<dd class="flexchild">
+					<span>
+						<input id="type_0" name="bx_type" class="selection-rd hidden" type="radio" value="1" checked="checked">
+						<label class="selection-lb" for="type_0">医疗</label>
+					</span>
+					<span>
+						<input id="type_1" name="bx_type" class="selection-rd hidden" type="radio" value="2">
+						<label class="selection-lb" for="type_1">重疾</label>
+					</span>
+					<span>
+						<input id="type_2" name="bx_type" class="selection-rd hidden" type="radio" value="1" >
+						<label class="selection-lb" for="type_2">意外</label>
+					</span>
+					<span>
+						<input id="type_3" name="bx_type" class="selection-rd hidden" type="radio" value="2">
+						<label class="selection-lb no-margin-r" for="type_3">寿险</label>
+					</span>
+					<span>
+						<input id="type_4" name="bx_type" class="selection-rd hidden" type="radio" value="1" >
+						<label class="selection-lb margin-t" for="type_4">少儿</label>
+					</span>
+					<span>
+						<input id="type_5" name="bx_type" class="selection-rd hidden" type="radio" value="2">
+						<label class="selection-lb margin-t" for="type_5">财产</label>
+					</span>
+				</dd>
+			</dl>
+		    <dl id="" class="name flexbox flexbox-middle">
+				<dt>您的姓名：</dt>
+				<dd class="flexchild">
+					<input type="text" id="tbName" class="inpt" name="tbName" placeholder="您的信息将被保密">
+				</dd>
+				<dd>
+					<span>
+						<input id="sex_0" name="sex" class="selection-rd hidden" type="radio" value="1" checked="checked">
+						<label class="selection-lb2" for="sex_0">男</label>
+					</span>
+					<span>
+						<input id="sex_1" name="sex" class="selection-rd hidden" type="radio" value="2">
+						<label class="selection-lb2 no-margin-r" for="sex_1">女</label>
+					</span>
+				</dd>	
+			</dl>
+			<dl id="" class="tel_box flexbox flexbox-middle">
+				<dt>手机号码：</dt>
+				<dd class="flexchild">
+					<input id="tbTelNum" class="inpt" type="text" name="tbTelNum" maxlength="11" placeholder="用于接收保费测算信息">
+				</dd>
+			</dl>
+			<dl id="" class="flexbox flexbox-middle relative">
+				<dt>图形验证：</dt>
+				<dd class="flexchild">
+					<input  id="dyncode" class="inpt" type="tel" name="tel" maxlength="4" placeholder="请输入图形验证码">
+				    <img id="dyncodeimg" class="code-img" src="{:U('getDynamicCode')}" onclick="javascript:this.src = '{:U('getDynamicCode')}?tm=' + Math.random();">
+				</dd>
+			</dl>
+			<dl id="" class="flexbox flexbox-middle relative">
+				<dt>短信验证：</dt>
+				<dd class="flexchild">
+					<input id="verifyCode" type="tel" class="inpt" name="tel" maxlength="6" placeholder="请输入短信验证码">
+					<input id="getVerifyCode" class="verify-code-btn" type="button" value="点击获取">
+                    <input id="clickVerifyFlag" type="hidden" value="false">
+				</dd>
+			</dl>
+			<label for="agreeTerm" class="agreeTerm">
+	            <input id="agreeTerm" name="agreeTerm" class="agreeTerm hidden" type="checkbox" value="1">
+	            <i class="icon checkbox-icon vcenter" style="margin-top: -0.05rem;"></i>
+	            <span class="agreeText">*本人同意白鸽保险后续致电联系保险等相关事宜</span>
+	        </label>
+	        <a class="footer-bottom test-btn" href="javascript:;"></a>
+		</div>	
+		<img class="index-img" src="./images/index_02.png?v={$v}"/>
+	    <img class="index-img" src="./images/index_03.png?v={$v}"/>
+	    <img class="index-img" src="./images/index_04.png?v={$v}"/>
+	</div>		    
+</div>    
+</body>
+<script src="../public/js/public.js?v={$v}"></script>
+<script src="../public/js/dialog.min.js?v={$v}"></script>
+<script src="../public/js/zepto.alert.js?v={$v}"></script>
+<script type="text/javascript">
+$(function(){
+    //调用广告轮播
+	var startRollOne = setInterval(lunbo,2000);
+    //广告轮播
+	function lunbo(){
+	    $(".luobo-box").animate({marginTop:"-.7rem"},1000,"linear",function(){  
+	        $(this).children(".list").first().remove().clone(true).appendTo(".luobo-box");
+	        $(this).css("margin-top","0rem");      
+	    });  
+	    
+	}
+       var ajaxLock = true;
+        //提交按钮
+        $(".test-btn").on('click',function(){
+            if(!ajaxLock){
+                return ;
+            }
+            ajaxLock = false;
+            var btbName = $.trim($('[name="oneself"]:checked').val());
+            var bxType = $.trim($('[name="bx_type"]:checked').val());
+            var tbName = $.trim($('#tbName').val());
+            var tbTelNum = $.trim($('#tbTelNum').val());
+            var sex = $.trim($('[name="sex"]:checked').val());
+            var dyncode = $.trim($('#dyncode').val());
+            var verifyCode = $.trim($('#verifyCode').val());
+            var agreement = $.trim($("#agreeTerm:checked").val());
+            var post_data = {btb_name:btbName, bx_type:bxType, t_name:tbName, t_sex:sex, t_tel:tbTelNum, verifyCode:verifyCode};
+            try{
+                if (!tbName||!$.isNameTwo(tbName)) {
+                    throw '请填写正确的姓名';
+                }
+                if (!isPhoneNo(tbTelNum)) {
+                    throw '请填写正确的手机号';
+                }
+                if (dyncode.length < 4) {
+                    throw '请填写正确的图形验证码';
+                }
+                if (verifyCode.length < 6) {
+                    throw '请填写正确的短信验证码';
+                }
+                if(agreement!=1){
+                    throw '请勾选条款协议'
+                }
+            }catch(err){
+                $.dialog({content: err, time: 2000});
+                ajaxLock = true;
+                return false;
+            }
+            // console.log(post_data);
+            $.ajax({
+                url: "{:U('lotInsurance')}",
+                type:'post',
+                dataType: "json",
+                data: post_data,
+                success:function(rst){
+                    // console.log(rst);
+                    ajaxLock = true;
+                    //错误处理
+                    if (rst.status != 1000) {
+                        $.dialog({content: rst.data, time: 2000});
+                        return ;
+                    }
+
+                    // 正确处理
+                    $.dialog({content: '领取成功', time: 2000});
+                    setTimeout(function(){
+                        window.location.href = "{:U('lotSuccess')}";
+                    }, 2000);
+
+                },
+                error:function(){
+                    ajaxLock = true;
+                }
+            });
+        });
+
+
+        //登录 发送验证码
+        var getVerifyFlag = true;
+        $('#getVerifyCode').on('click',function(){
+            var tel = $.trim($("#tbTelNum").val());
+            var dyncode = $.trim($("#dyncode").val());
+            if(tel == ''){
+                $.dialog({content: '手机号不能为空!', time: 2000});
+                return ;
+            }
+            if(!isPhoneNo(tel)){
+                $.dialog({content: '手机格式不正确!', time: 2000});
+                return ;
+            }
+            if(dyncode.length < 4){
+                $.dialog({content: '请输入图形验证码!', time: 2000});
+                return ;
+            }
+            if(window.localStorage.getItem('getVerifyCodeTime')){		//验证码时间控制
+                var nowTime = new Date();
+                nowTime = nowTime.getTime();
+                oldTime = Number(window.localStorage.getItem('getVerifyCodeTime'));
+                var t = nowTime - oldTime;
+                //时间差	秒数
+                var	seconds = Math.floor(t/1000);
+                if(seconds<60){                  //localstorage 防止60秒内再次发送信息 
+                    $.dialog({content: '发送信息太频繁，请稍候~', time: 2000});
+                    return false;
+                }
+            }
+
+            if (getVerifyFlag) {
+                getVerifyFlag = false;
+                $.ajax({
+                    url:'sendSms',
+                    type:'post',
+                    data:{tel:tel,dyncode:dyncode,keyword:'MESSAGE_SPRING'},
+                    success: function(res){
+                        console.log(res);
+                        if (res.status == 1000) {		//成功
+                            if (res.re_flag == 1) {
+                                $('#dyncodeimg').trigger('click');//刷新动态码
+                            }
+                            var date = new Date();
+                            date = date.getTime();
+                            window.localStorage.setItem('getVerifyCodeTime', date);
+                            getVerifyCodeCount();
+                            $.dialog({content: '发送成功！', time: 2000});
+                            $("#clickVerifyFlag").val(true);
+                        } else {
+                            $.dialog({content: res.data, time: 2000});
+                            $('#dyncodeimg').trigger('click');//刷新动态码
+                        }
+                        getVerifyFlag = true;
+                    },
+                    error: function(){
+                        $.dialog({content: '网络加载失败！', time: 2000});
+                        getVerifyFlag = true;
+                    }
+                })
+            };
+        })
+
+        //登录发送验证码 倒计时
+        function getVerifyCodeCount(){
+            if(window.localStorage.getItem('getVerifyCodeTime')){
+                var nowTime = new Date();
+                nowTime = nowTime.getTime();
+                oldTime = Number(window.localStorage.getItem('getVerifyCodeTime'));
+                var t = nowTime - oldTime;
+                //时间差	秒数
+                var	seconds = Math.floor(t/1000);
+                counts = 60 - seconds ;
+                timer = setInterval(function(){
+                    if(counts>0){
+                        counts--;
+                        //防止再次发送短信
+                        $('#getVerifyCode').val('('+counts+'秒)后重新获取').addClass('btn-disabled').removeClass('btn-blue');
+                        $('#getVerifyCode').attr("disabled","disabled");
+                    }else{
+                        clearInterval(timer);
+                        $('#getVerifyCode').removeAttr("disabled");
+                        $('#getVerifyCode').val('重新发送').removeClass('btn-disabled').addClass('btn-blue');
+                    }
+                },1000)
+            }
+        }
+    });
+</script>
+
+<include file="Public/service" />
+<include file="Activity/Public/wx_share"/>
+</html>

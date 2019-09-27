@@ -1,0 +1,511 @@
+body{
+    min-height: .1rem;
+    overflow: hidden;
+}
+.con-top{
+    position: relative;
+}
+.theme-color{
+    background-color: #5fd4b6;
+}
+.rule-btn{
+    position: absolute;
+    width: 1.49rem;
+    height: .56rem;
+    right: 0;
+    top: .25rem;
+    background: url(../images/rule-btn.png) no-repeat center;
+    background-size: 100% 100%;
+}
+.acttime-wrap{
+    position: absolute;
+    width: 5.65rem;
+    height: .57rem;
+    left: .84rem;
+    top: 3.18rem;
+    background: url(../images/acttime-bg.png) no-repeat center;
+    background-size: 100% 100%;
+    color: #ffffff;
+    font-size: .26rem;
+    line-height: .57rem;
+    text-align: center;
+}
+.scroll-msg-div {
+    height: .68rem;
+    width: 101%;
+    overflow: hidden;
+    background-color: #a0f3dd;
+}
+.scroll-msg-list{
+    margin: 0 0.3rem;
+}
+.scroll-msg-list .list{
+    width: 100%;
+    line-height: .68rem;
+    color: #333333;
+    font-size: .24rem;
+}
+.scroll-msg-list .list span{
+    float: left;
+    width: 100%;
+    text-align: center;
+    height: .68rem;
+    line-height: .68rem;
+    font-family: "微软雅黑";
+}
+.go-game-btn{
+    width: 3.94rem;
+    height: 1.10rem;
+    background: url(../images/go-game-btn.png) no-repeat center;
+    background-size: 100% 100%;
+    margin: .36rem auto .59rem;
+}
+.game-end{
+    display: none;
+    width: 3.94rem;
+    height: 1.10rem;
+    background: url(../images/end.png) no-repeat center;
+    background-size: 100% 100%;
+    margin: .36rem auto .59rem;
+}
+.luckyUsers{
+    margin-left: .12rem;
+    width: 7.38rem;
+    height: 9.39rem;
+    display: none;
+}
+.djjl_btn{
+    position: fixed;
+    width: .86rem;
+    height: .86rem;
+    top: 1.15rem;
+    right: 0;
+    z-index: 9;
+}
+.kefu_btn{
+    position: fixed;
+    width: .86rem;
+    height: .86rem;
+    top: 2.17rem;
+    right: 0;
+    z-index: 9;
+}
+.exchange_prizes{
+    width: 7.5rem;
+    height: 23.3rem;
+    background-image: url("../images/dhjp.png");
+    background-size: 100% 100%;
+}
+.exchange{
+    position: relative;
+    width: 2.48rem;
+    height: 3.36rem;
+    float: left;
+    margin-top: .48rem;
+}
+.exchange:first-child, .exchange:nth-child(2){
+    margin-top: 1.96rem;
+}
+.exchange:nth-child(2n-1){
+    margin-left: .98rem;
+}
+.exchange:nth-child(2n){
+    margin-left: .56rem;
+}
+.bucang{
+    width: .54rem;
+    height: .54rem;
+    background-image: url("../images/bucang.png");
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.progress_bar{
+    margin-top: 2.04rem;
+    margin-left: .24rem;
+    width: 2rem;
+    height: .26rem;
+    background-color: #2eaa8a;
+    border-radius: 1rem;
+    position: relative;
+}
+.bar{
+    width: 1rem;
+    height: .26rem;
+    background-color: #a1f3db;
+    border-radius: 1rem;
+}
+.percentage{
+    font-size: .2rem;
+    height: .26rem;
+    line-height: .28rem;
+    color: #333;
+    text-indent: .25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.redeem_now{
+    margin-top: .26rem;
+    margin-left: .24rem;
+    width: 2rem;
+    height: .66rem;
+}
+.redeem_now img{
+    width: 100%;
+}
+.bggold_coin{
+    width: 7.26rem;
+    height: 13.85rem;
+    margin: 0 auto;
+    position: relative;
+}
+.bggold_coin > img{
+    position: absolute;
+    top: -.5rem;
+}
+.bggl{
+    position: absolute;
+    width: 6.08rem;
+    left: 50%;
+    margin-left: -3.04rem;
+}
+.bggl .bggl_text{
+    margin-top: .46rem;
+    min-height: .1rem;
+    overflow: hidden;
+}
+.bggl .bggl_text:first-child{
+    margin-top: 1.1rem;
+    height: 1.65rem;
+}
+.bggl .bggl_text:nth-child(2){
+    height: 1.6rem;
+}
+.bggl .bggl_text:nth-child(3){
+    height: 1.64rem;
+}
+
+.bggl .bggl_text:nth-child(4){
+    height: 2.3rem;
+}
+.bggl .bggl_text:last-child{
+    height: 2.9rem;
+}
+.bggl .bggl_text:last-child .text_one{
+    height: 3.45rem;
+}    
+.bggl .bggl_text:nth-child(4) .text_two{
+    margin-top: 1.04rem;
+}
+.bggl .bggl_text:last-child .text_two{
+    margin-top: 1.47rem;
+}
+.bggl .bggl_text div{
+    float: left;
+}
+.bggl .bggl_text div.text_one{
+    width: 4.26rem;
+}
+.bggl .bggl_text div.text_two{
+    width: 1.42rem;
+    margin-left: .2rem;
+    margin-top: .56rem;
+}
+.bggl .bggl_text div.text_one h3{
+    font-size: .28rem;
+    font-weight: bold;
+    margin-top: .2rem;
+    margin-left: .3rem;
+    width: 3.8rem;
+    float: left;
+}
+.bggl .bggl_text div.text_one p{
+    font-size: .24rem;
+    margin-top: .15rem;
+    margin-left: .3rem;
+    text-align: justify;
+    width: 3.8rem;
+    float: left;
+    line-height: .32rem;
+}
+.copy-btn{
+    width: 3.77rem;
+    height: .64rem;
+    margin-top: .2rem;
+    margin-left: .3rem;
+}
+.jplist{
+    width: 7.38rem;
+    margin-top: .56rem;
+}
+.bottom{
+    position: relative;
+    width: 100%;
+    margin-top: .5rem;
+}
+.bottom img:first-child{
+    position: absolute;
+    top: -1.35rem;
+    right: 0;
+    width: 1.28rem;
+    height: 1.28rem;
+}
+.rule_btn_text{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.8);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+.rule_div{
+    width: 7.26rem;
+    height: 10.9rem;
+    position: absolute;
+    top: 50%;
+    margin-top: -5.45rem;
+    left: 50%;
+    margin-left: -3.63rem;
+}
+.rule_text{
+    /* width: 7.26rem; */
+    height: 9.95rem;
+    /* background-image: url("../images/rulebg.png"); */
+    /* background-size: 100% 100%; */
+    /* border: 0; */
+    background-color: #e2fdfc;
+    border-radius: .2rem;
+    box-sizing: border-box;
+    border: 5px solid #92facf;
+    position: relative;
+    margin: 0 auto;
+    width: 7rem;
+}
+.rule-title{
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: .71rem;
+    font-size: .36rem;
+    line-height: .71rem;
+    color: #fff;
+    text-align: center;
+    top: -.28rem;
+    font-weight: bold;
+    background: url(../images/title-bg.png) no-repeat center;
+    background-size: 5.55rem .71rem;
+}
+.rule_text_div{
+    /* width: 6.2rem; */
+    height: 9rem;
+    float: left;
+    /* margin-left: .53rem; */
+    /* margin-top: .7rem; */
+    overflow-y: scroll;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 .4rem;
+    box-sizing: border-box;
+    margin-top: -.28rem;
+}
+.rule_text p{
+    font-size: .26rem;
+    color: #2b9387;
+    margin-top: .4rem;
+    float: left;
+    width: 100%;
+}
+.rule_text p.rule_table_title{
+    margin-bottom: .2rem;
+}
+.rule_btn_text .close{
+    width: .78rem;
+    height: .78rem;
+    margin: 0 auto;
+    /* margin-top: .1rem; */
+    margin-top: .5rem;
+}
+.duihuan{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8);
+    top: 0;
+    left: 0;
+}
+.duidiv{
+    width: 5.37rem;
+    height: 6.6rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -2.685rem;
+    margin-top: -3.3rem;
+}
+.duidiv .duitext{
+    width: 5.37rem;
+    height: 5.1rem;
+    background-image: url("../images/bgbtk.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.duidiv .duitext p{
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: .36rem;
+    color: #fff;
+} 
+.duidiv .duitext .cancel{
+    float: left;
+    width: 1.72rem;
+    height: .73rem;
+    margin-left: .66rem;
+    margin-top: .54rem;
+}
+.duidiv .duitext .confirm{
+    float: left;
+    width: 1.72rem;
+    height: .73rem;
+    margin-left: .56rem;
+    margin-top: .54rem;
+}
+.duidiv .duiclose{
+    margin: 0 auto;
+    margin-top: .68rem;
+    width: .78rem;
+    height: .78rem;
+}
+.duidiv .duitext p:first-child{
+    margin-top: 2.2rem;
+}
+.share_div{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8);
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+}
+.share_div img{
+    width: 4.71rem;
+    height: 3.89rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.attention_div{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.8);
+    z-index: 999;
+}
+.attention_div div{
+    width: 5.37rem;
+    height: 6.6rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -3.3rem;
+    margin-left: -2.685rem;
+}
+.attention_div div img:first-child{
+    widows: 5.37rem;
+    height: 5.1rem;
+}
+.attention_div div .aclose{
+    width: .78rem;
+    height: .78rem;
+    margin: 0 auto;
+    margin-top: .7rem;
+}
+.toadddiv{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.8);
+}
+.toadddiv div{
+    width: 4.53rem;
+    height: 5.3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -2.65rem;
+    margin-left: -2.265rem;
+}
+.toadddiv div input{
+    position: absolute;
+    width: 3.82rem;
+    height: .66rem;
+    font-size: .26rem;
+    color: #fff;
+    text-indent: .15rem;
+    top: .96rem;
+    left: .35rem;
+}
+.toadddiv div input::placeholder{
+    color: #fff;
+}
+.toadddiv div img.to_dh{
+    position: absolute;
+    width: 1.52rem;
+    top: 2.7rem;
+    left: 1.5rem;
+}
+.toadddiv div img.dhclose{
+    width: .78rem;
+    height: .78rem;
+    margin: 0 auto;
+    margin-top: .86rem;
+}
+/* 首页活动规则表格 */
+.rule_table_title{
+    height: .5rem;
+    line-height: .5rem;
+}
+.rule_table_con{
+    width: 86%;
+    display: table;
+    margin: 0 auto;
+}
+.rule_table_con .row{
+    display: table-row;
+}
+.rule_table_con .row:last-child .cell:first-child, .rule_table_con .row:last-child .cell:last-child{
+    border-bottom: 1px solid #adadad;
+}
+.rule_table_con .cell{
+    display: table-cell;
+    height: .2rem;
+    border: 1px solid #adadad;
+    padding: .2rem;
+    font-size: .26rem;
+    color: #2b9387;
+    text-align: center;
+}
+.rule_table_con .row .cell:first-child{
+    width: 70%;
+    border-bottom: 0;
+}
+.rule_table_con .row .cell:last-child{
+    width: 30%;
+    border-left: 0;
+    border-bottom: 0;
+}
+/* 首页活动规则表格 */

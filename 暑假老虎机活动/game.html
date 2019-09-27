@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>玩游戏 赚金币 兑大奖</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="./css/game.css?v={$v}">
+    <script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+    <script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+</head>
+<body>
+<div class="content theme-bg">
+    <div class="top flexbox">
+        <div class="uinfo flexchild">
+            <img src="./images/photo.png?v={$v}"/>
+            <div class="uname"><span>玩家：</span><span class="name">admin</span></div>
+        </div>
+        <div class="btns">
+            <a class="record-btn" href="javascript:void(0)"></a>
+            <a class="help-btn" href="javascript:void(0)"></a>
+        </div>
+    </div>
+    <div class="draw-box">
+        <img src="./images/draw-bg.png?v={$v}"/>
+        <div class="g-title">
+            <div class="roll-msg">
+                <!-- <span>欢迎来到幸运水果机！！！</span>
+                
+                <span>战绩：<span>-30</span></span>
+                <span>战绩：<span>+30</span></span>
+                
+                <span>欢迎来到幸运水果机！！！</span>
+                
+                <span>战绩：<span>-30</span></span>
+                <span>战绩：<span>+30</span></span> -->
+            </div>
+        </div>
+        <div class="jb-box">
+            <span class="getjb">0</span>
+            <span class="totaljb">2000</span>
+        </div>
+        <div class="draw-item">
+            <img src="./images/pattern_3.png?v={$v}"/>
+            <span>X10</span>
+        </div>
+        <div class="countdown">15</div>
+        <div class="opt-btns flexbox">
+            <div class="opt-btn bs1-div"><input type="radio"  id="bs1" name="bs" class="hidden" checked='checked' value="1" /><label class="btn-bs1" for='bs1'></label></div>
+            <div class="opt-btn bs10-div"><input type="radio"  id="bs2" name="bs" class="hidden" value="10"/><label class="btn-bs10" for='bs2'></label></div>
+            <div class="opt-btn btn-xy xyactive"></div>
+        </div>
+        <div class="yz-num-box flexbox">
+            <span name='pattern_1'>0</span>
+            <span name='pattern_8'>0</span>
+            <span name='pattern_7'>0</span>
+            <span name='pattern_6'>0</span>
+            <span name='pattern_5'>0</span>
+            <span name='pattern_4'>0</span>
+            <span name='pattern_3'>0</span>
+            <span name='pattern_2'>0</span>
+        </div>
+        <div class="yz-btn-box flexbox">
+            <span name='pattern_1' data-num='50'></span>
+            <span name='pattern_8' data-num='20'></span>
+            <span name='pattern_7' data-num='20'></span>
+            <span name='pattern_6' data-num='20'></span>
+            <span name='pattern_5' data-num='10'></span>
+            <span name='pattern_4' data-num='10'></span>
+            <span name='pattern_3' data-num='10'></span>
+            <span name='pattern_2' data-num='50'></span>
+        </div>
+        <!-- <div class="move-box"></div> -->
+        <div class="turntalbe" id='turntalbe'>
+            <div>
+                <span class="item0" id='wz1' name='pattern_3' data-icon='pattern_3' data-bs='10'></span>
+                <span class="item1" id='wz2' name='pattern_5' data-icon='pattern_5' data-bs='20'></span>
+                <span class="item2" id='wz3' name='pattern_s1' data-icon='pattern_1' data-bs='25'></span>
+                <span class="item3" id='wz4' name='pattern_1' data-icon='pattern_1' data-bs='50'></span>
+                <span class="item4" id='wz5' name='pattern_2' data-icon='pattern_2' data-bs='5'></span>
+                <span class="item5" id='wz6' name='pattern_s2' data-icon='pattern_2' data-bs='2'></span>
+                <span class="item6" id='wz7' name='pattern_4' data-icon='pattern_4' data-bs='10'></span>
+            </div>
+            <div>
+                <span class="item7" id='wz8' name='pattern_6' data-icon='pattern_6' data-bs='20'></span>
+                <span class="item8" id='wz9' name='pattern_s6' data-icon='pattern_6' data-bs='2'></span>
+                <span class="item9"></span>
+                <span class="item10" id='wz10' name='pattern_2' data-icon='pattern_2' data-bs='5'></span>
+                <span class="item11" id='wz11' name='pattern_s3' data-icon='pattern_3' data-bs='2'></span>
+            </div>
+            <div>
+                <span class="item12" id='wz12' name='pattern_3' data-icon='pattern_3' data-bs='10'></span>
+                <span class="item13" id='wz13' name='pattern_5' data-icon='pattern_5' data-bs='20'></span>
+                <span class="item14" id='wz14' name='pattern_s8' data-icon='pattern_8' data-bs='2'></span>
+                <span class="item15" id='wz15' name='pattern_8' data-icon='pattern_8' data-bs='30'></span>
+                <span class="item16" id='wz16' name='pattern_2' data-icon='pattern_2' data-bs='5'></span>
+                <span class="item17" id='wz17' name='pattern_s4' data-icon='pattern_4' data-bs='2'></span>
+                <span class="item18" id='wz18' name='pattern_4' data-icon='pattern_4' data-bs='10'></span>
+            </div>
+            <div>
+                <span class="item19" id='wz20' name='pattern_7' data-icon='pattern_7' data-bs='30'></span>
+                <span class="item20" id='wz21' name='pattern_s7' data-icon='pattern_7' data-bs='2'></span>
+                <span class="item21"></span>
+                <span class="item22" id='wz22' name='pattern_2' data-icon='pattern_2' data-bs='5'></span>
+                <span class="item23" id='wz23' name='pattern_s5' data-icon='pattern_5' data-bs='2'></span>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- 玩法说明 -->
+<div class="help-alert">
+    <div class="help-box">
+        <div class="help-bg">
+            <div class="help-title">水果机玩法</div>
+            <div class="help-content">
+                <p>1、每15秒为一轮，倒计时结束即开始一轮游戏；</p>
+                <p>2、点击选择下列图案下注相应白鸽金币；</p>
+                <p>3、1个白鸽金币起下注，可单个图案下注多份，下注份数展示在图案下方；</p>
+                <p>4、抽中下注图案，则白鸽金币对应增加相应倍数；</p>
+            </div>
+        </div>
+        <div class="close-btn"></div>
+    </div>
+</div>
+
+</body>
+<script src="../public/js/public.js?v={$v}"></script>
+<script src="../public/js/zepto.alert.js?v={$v}"></script>
+<script type="text/javascript">
+$(function(){
+    // 埋点
+    window.onbeforeunload=function(e){
+        maiDian('exposure','','{$event_key}_Activelanding_page_enter');
+    }
+    
+})
+</script>
+<script type="text/javascript">
+	// 设置keyframes属性
+	function addKeyFrames(y){
+		var style = document.createElement('style');
+		style.type = 'text/css';
+        //设置动画
+		var keyFrames = `
+		@-webkit-keyframes move {
+            0% {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                -webkit-transform: translate3d(A_DYNAMIC_VALUE, 0, 0);
+                transform: translate3d(A_DYNAMIC_VALUE, 0, 0);
+            }
+			
+		}
+		@keyframes move {
+			0% {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                -webkit-transform: translate3d(A_DYNAMIC_VALUE, 0, 0);
+                transform: translate3d(A_DYNAMIC_VALUE, 0, 0);
+            }
+			
+		}`;
+		style.innerHTML = keyFrames.replace(/A_DYNAMIC_VALUE/g, y);
+		document.getElementsByTagName('head')[0].appendChild(style);
+	}
+
+
+	function init(){ 
+        var speed = 15;//转动速度
+        var allwidth = 0;
+        $('.g-title div span').each(function(i){
+            allwidth +=$(this).width() + parseInt($(this).css("margin-right").split('px')[0]);
+        })
+        var width = (allwidth/2);console.log(width);
+		addKeyFrames( '-' + width  +'px');
+        document.querySelector('.g-title div').className += ' rowobj';
+        //获取li 数量 设置动画时间
+        var licount = (speed*$('.g-title div span').length/10)+'s';
+		$('.g-title div').css({'animation-duration': licount});
+	}
+    ajaxRecord();
+    function ajaxRecord(){
+        // $.ajax({
+        //     url:'',
+        //     type:'post',
+        //     data:'',
+        //     success:function(res){
+        //         //战绩
+        //         if(res.status == 1000){
+                   // var recordlist = res.data.twenty_record;
+                    var recordhtml = '<span>欢迎来到幸运水果机！！！</span>';
+                    // for(var i in recordlist){
+                    //     recordhtml += '<span>战绩：<span>'+recordlist[i].gold+'</span></span>';
+                    // }
+                    recordhtml+= '<span>战绩：-30</span><span>战绩：-30</span>';
+                    $('.roll-msg').html(recordhtml+recordhtml);
+                    $('.roll-msg').removeClass('rowobj');
+                    init();
+        //         }
+                
+                
+        //     },
+        //     error:function(){
+        //         $.dialog({content: '网络加载失败！', time: 1000});
+        //     }
+            
+
+        // })
+    }
+</script>
+<script type="text/javascript">
+    var lottery = {
+        index:-1,  //初始位置
+        count:0,  //总数
+        timer:0,   //定时器id
+        speed:10,  //初始速度
+        times:0,   //转动次数
+        cycle:50,  //初始至少转动50次后，才正式进入抽奖
+        prize:-1,  //中奖位置
+        init:function(id){
+            if($('#'+id).find('span').length>0){
+                $lottery = $('#'+id);
+                $units = $lottery.find('span');
+                this.obj = $lottery;
+                this.count = $units.length;
+                $lottery.find('.item'+this.index).addClass('move-box');
+
+            }
+        },
+        roll:function(){
+            var index = this.index;
+            var count = this.count;
+            var lottery = this.obj;
+            $(lottery).find('.item'+index).removeClass('move-box');
+            index += 1;
+            if(index > count-1){
+                index = 0;
+            }
+            $(lottery).find('.item'+index).addClass('move-box');
+            this.index = index;
+            return false;
+        },
+        stop:function(index){
+            this.prize = index;
+            return false;
+        }
+    }
+
+    var ajaxlock = false;  //发送请求标志
+    function roll(){
+        lottery.times += 1;
+        lottery.roll();
+        //发送请求抽奖
+        if(!ajaxlock){
+            ajaxAward();
+        }
+        if(lottery.times > lottery.cycle+10 && lottery.index == lottery.prize){
+            clearTimeout(lottery.timer);
+            //中奖提示框
+            //提示中奖内容
+            $('.draw-item').show();
+            setTimeout(function(){
+                $('.draw-item').hide();
+            },4000);
+            //刷新轮播战绩内容
+            // ajaxRecord();
+            $('.getjb').text(prizeScore);
+            $('.totaljb').text(parseInt($('.totaljb').text())+prizeScore);
+
+            //解除请求锁
+            ajaxlock = false;
+            //提示框消失，开始下一轮压注倒计时
+            setTimeout(yzTimer,5000);
+        }else{
+            if(lottery.times < lottery.cycle){
+                lottery.speed -=10;
+            }else if(lottery.times == lottery.cycle){
+                
+
+            }else{
+                if(lottery.times > lottery.cycle+10 && ((lottery.prize==0 && lottery.index == 20) || lottery.prize ==lottery.index+1)){
+                    lottery.speed +=110;
+                }else {
+                    lottery.speed +=20;
+                }
+            }
+            if(lottery.speed < 40){
+                lottery.speed = 40;
+            }
+            lottery.timer = setTimeout(roll,lottery.speed);
+        }
+        return false;
+    
+    }
+
+    //请求抽奖
+    function ajaxAward(){
+        ajaxlock = true;  
+        //请求
+        $.ajax({
+            url:'',
+            type:'post',
+            data:yzinfo,
+            success:function(res){
+                //中奖内容
+                //if(res.status == 1000){
+                    var position = 'wz17';//res.data.position;
+                    var name = 'pattern_s4';//res.data.name;
+                    $('#turntalbe span').each(function(index){
+                        if($(this).attr('id') == position && $(this).attr('name') == name){
+                            lottery.prize = index;
+                            $('.draw-item img').attr('src','./images/'+$(this).attr('data-icon')+".png");
+                            $('.draw-item span').text('X'+$(this).attr('data-bs'));
+                            prizeScore = 50;//res.data.lot_gold;
+                            console.log(lottery.prize);
+                        }
+                    });
+                    
+                //}
+                
+            },
+            error:function(){
+                $.dialog({content: '网络加载失败！', time: 1000});
+            }
+        });
+    }
+</script>
+<script type="text/javascript">
+    var xyflag = false; //续押标记
+    var yzinfo = [];  //压注数组
+    var xytotal = 0;  //所需压注金币
+    var bsflag = true;  //压注标记
+    var countdown = 15;  //默认倒计时
+    var prizeScore = 0;
+  
+     //清空压注内容
+    function clearyz(){
+        yzinfo = [];  //清空保证每局的最新压注
+        xytotal = 0;  //清空所需压注金币
+        //遍历压注内容并储存到数组中
+        $('.yz-num-box span').each(function(index){
+            var objname = $(this).attr('name');
+            var yznum = $(this).text();
+            
+            //记录有压注的内容
+            if(yznum > 0){
+                xytotal += yznum;  //计算所需压注金币
+                yzinfo.push({key:objname,val:yznum}); 
+            }
+                
+        });
+        //上一局有压注过，续押按钮可点击
+        if(xytotal>0){
+            $('.btn-xy').removeClass('xyactive');
+        }
+        $('.yz-num-box span').each(function(index){
+            //清空置0
+            $(this).text('0');
+        });
+        //重置倒计时
+        if (window.localStorage.getItem('countdown')) {
+            countdown = window.localStorage.getItem('countdown');
+        } else {
+            countdown = 15;
+        }
+        var slen = $('.countdown').text(countdown);
+        //重置续押状态
+        xyflag = false;
+        //重置压注状态
+        bsflag = true;
+        //清空转盘
+        $('#turntalbe').find('#wz'+lottery.index).removeClass('move-box');
+        lottery.times=0;
+        lottery.prize=-1;
+        //恢复续押可点击
+        xyflag = true;  
+        //清空上局获得金币
+        $('.getjb').text(0);
+
+    }
+    var ttimer;
+    //压注倒计时
+    function yzTimer(){
+        //清空重置
+        clearyz();
+        var ttimer = setInterval(function(){
+            var t = $('.countdown').text();
+            $('.countdown').text('');
+            t = parseInt(t);
+            if(t == 1){
+                t = t-1; //最后一次的循环还是会执行定时器，所以从1截止
+                clearTimeout(ttimer);
+                //不能压注
+                bsflag = false;
+                window.localStorage.removeItem('countdown');
+                //转动抽奖
+                lottery.speed=100;
+                roll();
+                
+            }else{
+                t-=1;      
+                window.localStorage.setItem('countdown', t);                   
+            }
+            var slen = $('.countdown').text(t);
+           
+        }, 1000);
+    }
+    $(function(){
+        //初始化
+        lottery.init('turntalbe');
+
+        var slen = $('.countdown').text(countdown);
+        //压注倒计时
+        yzTimer();
+        
+        $('.yz-btn-box span').each(function(index){
+            $(this).on('click',function(){
+                //可压注
+                if(bsflag){
+                    var jb = $('.totaljb').text();
+                    var bs = parseInt($('input:checked').val());
+                    if(jb > 0){    //金币不为0
+                        if(jb >=  bs){  //金币大于压注数
+                            var numspan = $('.yz-num-box span').eq(index);
+                            var num=parseInt(numspan.text());
+                            num = num + bs;   //原压注+压注数
+                            
+                            $('.yz-num-box span').eq(index).text(num);
+                            jb = jb - bs;    //金币-压注数
+                            $('.totaljb').html(jb);
+                            //点击过压注，再点击续押无反应
+                            xyflag = false;
+                            
+                        }else{
+                            $.dialog({content: '金币不足', time: 2000});
+                        }
+                        
+                    }else{
+                        $.dialog({content: '金币不足', time: 2000});
+                    }
+                }
+            })
+        })
+
+        $('.btn-xy').on('click',function(){
+            if(yzinfo.length > 0){   //未压注则无续押
+                if(xyflag){  //可续押
+                    var jb = $('.totaljb').text();
+                    var accountjb = jb;
+                    if(xytotal > 0 && jb >= xytotal){    //有压过，且金币足够
+                        $('.yz-num-box span').each(function(index){
+                            var objname = $(this).attr('name');
+                            for(var z=0;z < yzinfo.length;z++){
+                                if(yzinfo[z].key == objname){  
+                                    //计算扣除金币
+                                    accountjb -= parseInt(yzinfo[z].val);
+                                    var num = parseInt($(this).text())+parseInt(yzinfo[z].val);
+                                    $(this).text(num);
+                                }
+                            }
+                        });
+                        $('.totaljb').html(accountjb);
+                        $('.btn-xy').addClass('xyactive');
+                    }else{
+                        if(jb < xytotal){
+                            $.dialog({content: '金币不足', time: 2000});
+                        }
+                    }
+                }
+            }else{
+                console.log('无压注记录，不能续押');
+                // $.dialog({content: '金币不足', time: 2000});
+            }
+
+        });
+
+        $('.help-btn').on('click',function(){
+            $('.help-alert').show();
+        });
+
+        $('.close-btn').on('click',function(){
+            $('.help-alert').hide();
+        });
+
+        $('.record-btn').on('click',function(){
+            window.location.href='gameRecord.html';
+        });
+
+    })
+    
+</script>
+</html>

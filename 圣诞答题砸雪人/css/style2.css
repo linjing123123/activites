@@ -1,0 +1,458 @@
+.pt88 {
+	padding-top: .88rem;
+}
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.award-page {
+	width: 100%;
+	max-width: 1024px;
+	margin:0 auto;
+	background: url("../images/award-bg.png") repeat-y;
+	background-size:100% auto;
+}
+.award-title {
+	width: 6.96rem;
+	height: 2.57rem;
+	padding:1.55rem .5rem 0 .4rem;
+	box-sizing: border-box;
+	font-size: .26rem;
+	color: #fff;
+	background: url("../images/award-title.png") no-repeat;
+	background-size:100% 100%;
+	margin:.34rem auto .76rem;
+}
+.award-item {
+	width: 6.9rem;
+	height: 1.89rem;
+	padding:0 .49rem 0 .39rem;
+	box-sizing: border-box;
+	font-weight: bold;
+	font-size: .34rem;
+	line-height: .38rem;
+	color: #fff;
+	background: url("../images/award-item.png") no-repeat;
+	background-size:100% 100%;
+	margin: 0 auto .33rem;
+}
+.award-btn {
+	display: inline-block;
+	width: 2.05rem;
+	padding:.12rem 0;
+	margin-left:.48rem;
+	font-size: .3rem;
+	color:#fff;
+	font-weight: bold;
+	text-align: center;
+	border-radius: .3rem;
+}
+/*去提现、立即领取*/
+.btn-sty1 {
+	background-image: linear-gradient(0deg, 
+		#f1880c 0%, 
+		#e7cd3f 100%), 
+	linear-gradient(
+		#0c8b4b, 
+		#0c8b4b);
+	background-blend-mode: normal, 
+		normal;
+}
+/*等待发放、已领取*/
+.btn-sty2 {
+	background-color: #850f28;
+}
+.no-award-img {
+	width: 3.1rem;
+	margin: 4.12rem auto 0;
+}
+.success-top {
+	padding-top: 1.17rem;
+}
+.success-top-img {
+	width: 1.18rem;
+	height: 1.33rem;
+	margin:0 auto;
+}
+.success-top-text{
+	padding-top: .2rem;
+	font-weight: bold;
+	font-size: .32rem;
+	color: #333;
+	text-align: center;
+}
+.suc-btn-group {
+	margin:.48rem auto .6rem;
+	font-size: 0;
+	text-align: center;
+}
+.suc-btn-group a{
+	display: inline-block;
+	width: 2.88rem;
+	padding:.18rem;
+	font-size: .32rem;
+	color: #fefefe;
+	background-color: #4d72e2;
+	border-radius: .08rem;
+}
+.my-order {
+	margin-right:.2rem;
+}
+.suc-img-box {
+	position: relative;
+}
+.go-btn ,.suc-tip1,.suc-tip2 {
+	position: absolute;
+	left: .46rem;
+	color: #313131;
+}
+.go-btn {	
+	width:1.4rem;
+	height: .44rem;
+	bottom: .5rem;   
+	background: url("../images/go-btn.png") no-repeat;
+	background-size:100% 100%;
+}
+.suc-tip1 {
+	font-size:.36rem;
+	font-weight: bold;
+	top: .27rem;	
+}
+.suc-tip1 span{
+	color:#4d72e2;
+}
+.suc-tip2 {
+	font-size:.26rem;
+	top: .78rem;
+}
+.rank-page {
+	width: 100%;
+	background: url("../images/rank-bg.png") repeat-y;
+	background-size:100% auto;
+}
+.rank-page:before {
+	display: inline-block;
+	content: "";
+	width: 100%;
+	height: 3.74rem;
+	background: url("../images/rank-bg-top.png") no-repeat;
+	background-size:100% auto;
+}
+.rank-list-bg{
+	position: relative;
+	display: block;
+	width: 6.88rem;
+	margin:  -2.9rem auto 0;
+	background-color: #b20a2b;
+	border-radius: .44rem;
+	border: solid .02rem #ff476b;
+}
+.rank-list-contain{
+    position: relative;
+    width: 6.47rem;
+    margin: .22rem auto;
+    padding-bottom: .3rem;
+    background-color: #ffcb39;
+    border-radius: .27rem;
+    padding-top: 1.85rem;
+}
+.rank-list-title {
+	position: absolute;
+    width: 7.1rem;
+    left: -.45rem;
+    top: -.6rem;
+}
+.rank-list-t {
+	padding: .1rem 0;
+	font-weight: bold;
+	font-size: .3rem;
+	color: #af0a2b;
+	border-bottom:1px solid #bd2425;
+}
+.rank-list-box{
+	padding:0 .17rem;
+}
+/*.col1 {
+	width: 3rem;
+}*/
+.rank-list-contain .col2 {
+	width: 1.3rem;
+	text-align: center;
+	margin-right: .24rem;
+}
+.rank-list-contain .col3 {
+	width: 1.42rem;
+	text-align: center;
+}
+.rank-list-t .col1{
+	text-indent: .92rem;
+}
+.rank-list {
+	padding:.18rem 0 .21rem;
+	color:#333;
+}
+.rank-list li {
+	height: 1.07rem;
+}
+.rank-item-photo{
+	width: .7rem;
+	height:.7rem ;
+	border: solid 1px #b20a2b;
+	border-radius: 50%;
+	box-sizing: border-box;
+}
+.rank-item-name {
+	width:1.65rem;
+	margin:0 .6rem 0 .22rem;
+	font-size: .24rem;
+	color:#333;
+}
+.current-rank {
+	
+}
+.rank1,.rank2,.rank3{
+	height:1.07rem;
+}
+.rank1 {
+	background: url("../images/rank-1.png") center center no-repeat;
+	background-size:.35rem .47rem;
+}
+.rank2 {
+	background: url("../images/rank-2.png") center center no-repeat;
+	background-size:.39rem .47rem;
+}
+.rank3 {
+	background: url("../images/rank-3.png") center center no-repeat;
+	background-size:.4rem .49rem;
+}
+.more-btn {
+    display: inline-block;
+	text-align: center;
+	padding-bottom: .05rem;
+	font-size: .3rem;
+	color: #098b48;
+	border-bottom: 1px solid #098b48;
+}
+.rank-award-box {
+	width: 6.9rem;
+	margin:.6rem auto .26rem;
+	text-align: center;
+	font-size: .26rem;
+	color:#fff;
+	border-radius: .1rem;
+	border: solid 2px #fff;
+	box-sizing: border-box;
+}
+.row-title {
+	height: .54rem;
+	line-height: .54rem;
+	font-size: .3rem;
+	font-weight: bold;
+}
+.row {
+	border-bottom: 2px solid #fff;
+}
+.row:last-of-type {
+	border-bottom:0 none;
+}
+.rank-award-box .col {
+	border-right: 1px solid #fff;
+}
+.rank-award-box .col:last-of-type {
+	border-right: 0 none;
+}
+.rank-award-box .col11{
+	width: .98rem;
+}
+.rank-award-box .col12{
+	text-align: left;
+}
+.rank-award-box .col13{
+	width: 1.18rem;
+}
+.rank-award-box .col14{
+	width: 1.1rem;
+}
+.row-title .col12{
+	text-align: center;
+}
+.rank-award-name ,.award-price,.award-num {
+	line-height: .64rem;
+	height: .64rem;
+	border-bottom: 1px solid #fff;
+}
+.rank-award-name:last-of-type ,.award-price:last-of-type,.award-num:last-of-type {
+	border-bottom: 0 none;
+}
+.rank-award-name {
+	font-size: .25rem;
+	padding-left: .17rem;
+	border-left: 1px solid #fff;
+}
+.rank-end-tip {
+	width: 6.9rem;
+    margin: 0 auto;
+    padding-bottom: .65rem;
+    line-height: .48rem;
+	font-size: .24rem;
+	color:#fff;
+}
+.index-rulebox, .alertbox {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    background: rgba(0,0,0,0.5);
+}
+
+.xxtext-alertbox{
+    width: 7.24rem;
+    height: 10.08rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.xxtext-alertbox .xxtext-title{
+    position: absolute;
+    top: 1.2rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #ffc12c;
+    font-size: .44rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: .6rem;
+}
+.xxtext-alertbox .xxtext-desc1{
+    position: absolute;
+    top: 1.74rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: .3rem;
+    text-align: center;
+}
+.xxtext-alertbox .xxtext-form{
+    width: 5.6rem;
+    position: absolute;
+    top: 2.09rem;
+    left: .68rem;
+}
+.xxtext-alertbox .xxtext-input{
+    width: 100%;
+    color: #000;
+    font-size: .3rem;
+    padding: .3rem 0 .3rem .2rem;
+    background-color: #ffffff;
+    margin-top: .2rem;
+    border-radius: .1rem;
+}
+.xxtext-alertbox .xxtext-input2{
+    width: 5.4rem;
+    height: 1rem;
+    line-height: .48rem;
+    color: #000;
+    font-size: .3rem;
+    padding: .3rem .2rem;
+    background-color: #ffffff;
+    margin-top: .2rem;
+    border-radius: .1rem;
+}
+.xxtext-alertbox .xxtext-desc2{
+    width: 5.4rem;
+    position: absolute;
+    top: 6.36rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: .24rem;
+    line-height: .36rem;
+}
+.xxtext-alertbox .alertbtn{
+    top:7.36rem;
+}
+.money-alertbox{
+    width: 7.24rem;
+    height: 6.39rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.money-alertbox .money-title{
+    position: absolute;
+    top: 1.24rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #ffc12c;
+    font-size: .44rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: .6rem;
+}
+.money-alertbox .money-desc1{
+    position: absolute;
+    top: 1.84rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: .34rem;
+    text-align: center;
+    line-height: .6rem;
+}
+.money-alertbox .money-desc2{
+    position: absolute;
+    top: 2.52rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: .3rem;
+    text-align: center;
+    line-height: .48rem;
+}
+.money-alertbox .alertbtn{
+    top:3.49rem;
+}
+[type=tel] {
+    -webkit-appearance: none;
+}
+.overflowH {
+	height: 100%;
+	overflow: hidden;
+}
+.alertbox .alertbtn {
+    width: 3.37rem;
+    height: .8rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    line-height: .8rem;
+    background: url(../images/alert-btn.png) center no-repeat;
+    background-size: 100% 100%;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+.alertbox .alert-closebtn {
+    width: .86rem;
+    height: .74rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}

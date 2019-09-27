@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<title>白鸽年会</title>
+<link rel="stylesheet" type="text/css" href="css/luck.css"/>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/firewors.js"></script>
+</head>
+<body>
+	<audio autoplay loop>
+  <source src="music.mp3" type="audio/ogg">
+</audio>
+<div class="wrap">
+  <div class="prize_con">
+      <p class="prize_grade">请选择奖等</p>
+        <div class="prize_list">
+        	<div class="prize_logo">
+        		<img class="logo-body" src="images/logo.png"/>
+        		<img class="logo-hand" src="images/logo_hand.png"/>
+        	</div>
+        	<ul class="prize_title clearfix">
+        		<li>
+            	<span>姓名</span>
+            	<span>手机号</span>
+            </li>
+            <li>
+            	<span>姓名</span>
+            	<span>手机号</span>
+            </li>
+        	</ul>
+          <ul class="prize_name clearfix"></ul>
+        </div>
+      <p class="start"><img src="images/prize_start.png" alt=""></p>
+      <ul class="prize_set">
+          <li class="set_grade">选择奖等
+            <select id="set_grade">
+              <option>选择奖等</option>
+              <option>特等奖</option>
+              <option>一等奖</option>
+              <option>二等奖</option>
+              <option>三等奖</option>
+            </select>
+          </li>
+          <!--<li class="set_num">选择人数
+            <select id="set_num">
+              <option>选择人数</option>
+              <option>2</option>
+              <option>5</option>
+              <option>10</option>
+            </select>
+          </li>-->
+          <li class="set_people">人数<input type="text" placeholder="输入中奖人数" id="set_num"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"></li>
+      </ul>
+  </div>
+</div>
+<input type="hidden" value="0" id="prize_btn">
+<script>
+window.onfocus = function() { 
+  //页面获得焦点
+  if(fworks){
+  	fworks = new Fireworks();
+	fworks.init()
+  }
+  
+};
+window.onblur = function() {
+   if(fworks){
+	  	$("body").find("canvas").remove();
+	  	fworks.remove()
+	  } 
+};
+  var fworks
+  var myNumber;
+  var arr = [];
+  var code = [
+  	{
+  		name:"点击",
+  		tel: "212****442"
+  	},
+  	{
+  		name:"点点击",
+  		tel: "265****452"
+  	},
+  	{
+  		name:"等等",
+  		tel: "145****164"
+  	},
+  	{
+  		name:"地方",
+  		tel: "145****153"
+  	},{
+  		name:"大幅",
+  		tel: "344****162"
+  	},
+  	{
+  		name:"点击",
+  		tel: "143****142"
+  	},
+  	{
+  		name:"打扫房",
+  		tel: "134****132"
+  	},
+  	{
+  		name:"大幅度",
+  		tel: "434****142"
+  	},
+  	{
+  		name:"看",
+  		tel: "134****132"
+  	},
+  	{
+  		name:"点击",
+  		tel: "134****163"
+  	},
+  	{
+  		name:"啊",
+  		tel: "134****164"
+  	},
+  	{
+  		name:"饵",
+  		tel: "156****142"
+  	},
+  	{
+  		name:"大幅度",
+  		tel: "134****134"
+  	},
+  	{
+  		name:"的",
+  		tel: "142****176"
+  	},{
+  		name:"饵",
+  		tel: "162****167"
+  	}
+  ];
+
+  /*随机所有的code并且不重复*/
+  function showRandomNum(num) {
+    var li = "";
+    for(var i = 0; i < code.length; i++){
+      arr[i] = i;
+    }
+    arr.sort(function(){
+      return 0.5 - Math.random();
+    });
+
+    for(var i = 0; i < num; i++){
+      var index = arr[i];
+      li += '<li>'+
+      			'<span>'+code[index].name+'</span>'+
+      			'<span>'+code[index].tel+'</span>'+
+      			'</li>';
+    }
+
+    $(".prize_name").html(li);
+  }
+
+  $(function () {
+    $(".start").click(function(){
+      if($("#prize_btn").val() == 0){        
+        if($("#set_grade").val() == "选择奖等") {
+            alert("请选择奖等");
+            return;
+        }else if($("#set_num").val() == "") {
+            alert("请输入中奖人数");
+            return;
+        }else if($("#set_num").val() == 0 || $("#set_num").val() > 10) {
+            alert("请输入1~10个中奖人数");
+            return;
+        }else{
+          $("#prize_btn").val(1);
+          var num = $("#set_num").val();
+          $(this).find("img").attr("src","images/prize_stop.png");
+
+          myNumber = setInterval(function(){
+            showRandomNum(num);
+          }, 20);
+          if(fworks){
+          	$("body").find("canvas").remove();
+          	fworks.remove()
+          } 
+          
+        }        
+      }else{
+        $("#prize_btn").val(0);
+        clearInterval(myNumber);
+        $(this).find("img").attr("src","images/prize_start.png");
+        fworks = new Fireworks();
+		fworks.init()
+      }      
+    });
+
+    //回车键控制开始和停止
+    $(document).keydown(function (event) {
+        var e = event || window.event || arguments.callee.caller.arguments[0];
+        if (e && e.keyCode == 13) { // enter 键
+            $(".start").click();
+        }
+    });
+
+    $("#set_grade").change(function(){
+      $(".prize_grade").text($(this).val());
+    });
+
+})
+</script>
+</body>
+</html>

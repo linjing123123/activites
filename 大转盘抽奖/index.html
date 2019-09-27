@@ -1,0 +1,243 @@
+<!                                                                                                                                     DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>转转盘    拿好礼</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="./css/index.css?v={$v}">
+    <script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+    <script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+</head>
+<body>
+<!-- 头部导航 -->
+<include file="Activity/Public/header" title="转转盘    拿好礼" backflag="true" appgo="true" />
+<div class="content theme-color pt88">
+    <div class="img-box">
+        <img src="./images/index_01.png?v={$v}"/>
+        <div class="num-text">剩余<span id="game-num">2</span>次抽奖机会</div>
+    </div>
+    <div class="img-box">
+        <img src="./images/index_02.png?v={$v}"/>
+        <div class="turn-pro pan-body">
+            <img src="./images/lottery.png?v={$v}"/>
+        </div>
+        <div class="turn-zhizhen"></div>
+        <div class="radiate">
+            <div class="radiate-wra">
+                <div class="list">123****4563 获得了XXXX  </div>
+                <div class="list">123****4563 获得了XXXX  </div>
+            </div>
+        </div>
+        <div class="go-lottery">
+            <img class="go-lottery-img1" src="./images/go-lottery.png?v={$v}"/>
+            <img class="go-lottery-img2" src="./images/go-lotteryed.png?v={$v}"/>
+        </div>
+        <a class="index-award-btn" href="#" ></a>
+        <div class="rule-btn">
+            <img class="rule-btn-img1" src="./images/rule-btn.png?v={$v}"/>
+            <img class="rule-btn-img2" src="./images/rule-btned.png?v={$v}"/>
+        </div>
+    </div>
+    <div>
+        <img src="./images/index_03.png?v={$v}"/>
+    </div>
+</div>
+<!-- 客服 -->
+<div class="kefu service_show_btn"><img src="./images/kefu.png?v={$v}"></div>
+<!-- 活动规则弹框 -->
+<div class="alertbox index-rulebox" style="display:none;">
+    <div class="index-alert-rule">
+        <div class="rule-con">
+            <p>1.活动期间，用户每购买保险费累计满200元，即可获得转盘抽奖1次；抽奖次数满5次后，可额外获得转盘抽奖1次；通过转盘抽奖可随机获得以下奖品；</p>
+            <p>2.若使用优惠券购买保险，按实际购买金额计算；</p>
+            <p>3.如用户有任何舞弊、欺诈或违反平台规则的其他行为，将被取消参加本次活动的资格；</p>
+            <p>4.活动期间如进行退保等操作，则视为放弃本次活动奖品，如需申请请联系在线客服；</p>
+            <p>5.实物类型奖品将于填写寄件信息后的7个工作日内寄出；</p>
+            <p>6.如有疑问请联系在线客服。</p>
+        </div>
+        <div class="alert-closebtn"></div>
+    </div>
+</div>
+<!-- 无机会提示弹框 -->
+<div class="lottery-alert nonum-box" style="display:none;">
+    <div class="nonum-alert-box">
+        <div class="nonum-msg1">没有抽奖机会啦！</div>
+        <div class="nonum-msg2">立即购买保险，获得更多抽奖次数！</div>
+        <div class="alert-closebtn"></div>
+    </div>
+</div>
+<!-- 获得现金弹框 -->
+<div class="lottery-alert money-box" style="display: none">
+    <div class="money-alert-box">
+        <div class="lottery-alert-title">恭喜您获得了</div>
+        <div class="price">5.00</div>
+        <div class="money-text">现金红包</div>
+        <div class="flexbox flexbox-middle">
+            <div class="go-lottery2">继续抽奖</div>
+            <div class="go-money">立即查看</div>
+        </div>
+        <div class="money-msg">奖品已发放，请至“我的奖品”中查看</div>
+        <div class="alert-closebtn"></div>
+    </div>
+</div>
+<!-- 获得卡券弹框 -->
+<div class="lottery-alert kaquan-box" style="display: none">
+    <div class="kaquan-alert-box">
+        <div class="lottery-alert-title">恭喜您获得了</div>
+        <!-- 1、txspyk=》腾讯视频月卡  2、ykhy=>优酷会员周卡  3、jdk100=>100元京东e卡  4、hfk10=>10元话费卡  5、snk50=》50元苏宁礼品卡-->
+        <div class="txspyk"></div>
+        <div class="kaquan-name">腾讯视频月卡</div>
+        <div class="kaquan-lq-btn">立即领取</div>
+        <div class="alert-closebtn"></div>
+    </div>
+</div>
+<!-- 填写tel弹框 -->
+<div class="lottery-alert texttel-box" style="display: none">
+    <div class="texttel-alert-box">
+        <div class="texttel-box-title">奖品领取</div>
+        <input id="tbTelNum" name="tbTelNum" class="txt" type="text" placeholder="请输入手机号码" maxlength="11">
+        <div class="texttel-lq-btn">立即领取</div>
+        <div class="alert-closebtn"></div>
+    </div>
+</div>
+</body>
+<script src="../public/js/zepto.alert.js?v={$v}"></script>
+<script src="./js/jQueryRotate.2.2.js?v={$v}"></script>
+<script type="text/javascript">
+$(function(){
+    var ajaxLock = true;
+    //判断是否登录
+    var is_login = "{$is_login}";
+    var myDate = new Date(+new Date() + 8 * 3600 * 1000).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '');
+    // 埋点
+    window.onbeforeunload=function(e){
+        maiDian('exposure','','{$event_key}_Activelanding_page_enter');
+    }
+
+    //判断app是安卓还是ios方法（例）
+    var u = navigator.userAgent;
+    if (u.indexOf("pop=1") < 0) {
+        $(".content").removeClass("pt88");
+    }else{
+
+    }
+
+    //调用广告轮播
+	var startRollOne = setInterval(lunbo,2000);
+
+    //显示规则弹框
+    $(".rule-btn").on("click",function(){
+        $(".rule-btn-img1").hide();
+        $(".rule-btn-img2").show();
+        $(".index-rulebox").show();
+        $(".content").addClass("overflowH");
+    });
+    // 关闭规则弹框
+    $(".index-rulebox .alert-closebtn").on("click",function(){
+        $(".alertbox").hide();
+        $(".content").removeClass("overflowH");
+        $(".rule-btn-img1").show();
+        $(".rule-btn-img2").hide();
+    });
+    
+    //关闭抽奖的提示框
+    $(".lottery-alert .alert-closebtn").on("click",function(){
+        $(".lottery-alert").hide();
+        $(".content").removeClass("overflowH");
+        $(".go-lottery-img1").show();
+        $(".go-lottery-img2").hide();
+    });
+
+    //填写手机号码-立即领取
+    $(".texttel-lq-btn").on("click",function(){
+        var tel = $.trim($('#tbTelNum').val());
+        if(tel == ''){
+            $.dialog({content: '手机号不能为空!', time: 2000});
+            $('#tbTelNum').focus();
+            return ;
+        }
+        if(!isPhoneNo(tel)){
+            $.dialog({content: '手机格式不正确!', time: 2000});
+            $('#tbTelNum').focus();
+            return ;
+        }
+        var data = {tel:tel};
+        if(ajaxLock){
+            ajaxLock = false;
+            $.ajax({
+                url: "",
+                type: 'POST',
+                data: data,
+                success: function (res) {
+                    ajaxLock = true;
+
+                    //正确处理
+                    $(".go-lottery-img1").show();
+                    $(".go-lottery-img2").hide();
+                },
+                error: function () {
+                    $.dialog({content: '网络加载失败！', time: 2000});
+                    ajaxLock=true;
+                }
+            });
+        }
+    });
+
+    $(".go-lottery,.go-lottery2").on("click",function(){
+        $(".go-lottery-img1").hide();
+        $(".go-lottery-img2").show();
+        if(is_login){
+            play();
+    	}else{
+            amlogin();
+        }
+	})
+})
+
+//广告轮播
+function lunbo(){
+    $(".radiate-wra").animate({marginTop:"-.46rem"},1000,"linear",function(){  
+        $(this).children(".list").first().remove().clone(true).appendTo(".radiate-wra");
+        $(this).css("margin-top","0rem");      
+    });  
+    
+}
+//1元==》337.5度，腾讯视频会员==》292.5度，优酷会员==》247.5，10元红包==》202.5，京东购物卡==》157.5，5元==》112.5，话费卡==》67.5，苏宁礼品卡==》22.5
+function play(){
+    var   table_num=parseFloat(292.5);
+    $(".pan-body").stopRotate();
+    $(".pan-body").rotate({
+        angle: 0,
+        duration: 6000,
+        animateTo: table_num + 1440,
+        ease: function(e, f, a, h, g) {
+            return -h * (f /= g) * (f - 2) + a
+        },
+        callback: function(){
+            $(".kaquan-box").show();
+        }
+    });
+}
+//去登陆
+function amlogin() {
+    if (u.indexOf("pop=1") < 0) {
+        window.location.href="{:U('User/login')}?redirect_url=" + encodeURIComponent("{:U('index', '', true, true)}");
+    }else{
+        var isAndroid = u.indexOf('Android') > -1 ||u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if (isAndroid) {
+            window.android.app_login();//
+        } else {
+            window.app_login();
+        }  
+    }
+}
+</script>
+<include file="Activity/Public/baidu_statistics"/>
+<include file="Activity/Public/tengxun_statistics_main"/>
+</html>

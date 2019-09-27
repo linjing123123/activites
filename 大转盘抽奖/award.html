@@ -1,0 +1,57 @@
+<!                                                                                                                                     DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>转转盘    拿好礼</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">
+    <link rel="stylesheet" type="text/css" href="./css/index.css?v={$v}">
+    <script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+    <script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+</head>
+<body class="theme-color">
+<!-- 头部导航 -->
+<include file="Activity/Public/header" title="转转盘    拿好礼" backflag="true" appgo="true" />
+<div class="content pt88">
+    <div class="has-award-contain">
+        <div class="has-award-wrap">
+            <div class="award-item flexbox flexbox-middle">
+                <div class="award-name flexchild">现金红包 5元</div>
+                <a href="javascript:;" class="award-btn btn-sty1">查看</a>
+            </div>
+            <div class="award-item flexbox flexbox-middle">
+                <div class="award-name flexchild">10元优惠券</div>
+                <a href="javascript:;" class="award-btn btn-sty1">查看</a>
+            </div>
+            <div class="award-item flexbox flexbox-middle">
+                <div class="award-name flexchild">银行卡资金损失险</div>
+                <a href="javascript:;" class="award-btn btn-sty1">填写信息</a>
+            </div>
+            <div class="award-item flexbox flexbox-middle">
+                <div class="award-name flexchild">出行无忧-综合交通保障</div>
+                <a href="javascript:;" class="award-btn">等待出单</a>
+            </div>
+        </div>
+    </div>
+    <div claSS="no-award-contain" style="display:none;">
+        <img class="no-award-img" src="./images/box.png?v={$v}">
+    </div>
+</div>
+</body>
+<script src="../public/js/zepto.alert.js?v={$v}"></script>
+<script>
+    //判断app是安卓还是ios方法（例）
+    var u = navigator.userAgent;
+    if (u.indexOf("pop=1") < 0) {
+        $(".content").removeClass("pt88");
+    }else{
+
+    }
+</script>
+<include file="Activity/Public/baidu_statistics"/>
+<include file="Activity/Public/tengxun_statistics_main"/>
+</html>

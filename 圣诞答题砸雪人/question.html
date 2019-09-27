@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>圣诞答题</title>
+	    <link rel="stylesheet" type="text/css" href="../public/css/rem_reset.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/public.css?v={$v}">
+		<link rel="stylesheet" type="text/css" href="../public/css/plugins.css?v={$v}">
+	    <link rel="stylesheet" type="text/css" href="./css/question.css?v={$v}">
+		<script src="../public/js/scale.js?v={$v}" type="text/javascript" charset="utf-8"></script>
+		<script src="../public/js/jquery-1.9.1.min.js?v={$v}"></script>
+	</head>
+	<body>
+	<include file="Activity/Public/header" title="砸雪人 抢红包" backflag="false" appgo="true" />
+		<div class="content">
+			<div class="quesdiv">
+				<img class="cloud" src="./images/cloud.png?v={$v}"/>
+				<div class="answer-content"  id="mainBox">
+					<div class="answer-wrap pt-page">
+						<div class="answer-box">
+							<div class="question">你因为船难流落到荒岛上，又累又饿的你看到，前方森林里有很多果树，你会摘下果子来吃吗？</div>
+							<div class="option" attroption="A" attrtype="1">A.饿得很，先吃点</div>
+							<div class="option"  attroption="B" attrtype="1">B.可能有毒，还是不吃了</div>
+							<div class="option"  attroption="C" attrtype="1">C.吃点树皮算了</div>
+						</div>
+						<div class="answer-box">
+							<div class="question">你因为船难流落到荒岛上，又累又饿的你看到，前方森林里有很多果树，你会摘下果子来吃吗？</div>
+							<div class="option" attroption="A" attrtype="1">A.饿得很，先吃点</div>
+							<div class="option"  attroption="B" attrtype="1">B.可能有毒，还是不吃了</div>
+							<div class="option"  attroption="C" attrtype="1">C.吃点树皮算了</div>
+						</div>
+						<div class="answer-box">
+							<div class="question">你因为船难流落到荒岛上，又累又饿的你看到，前方森林里有很多果树，你会摘下果子来吃吗？</div>
+							<div class="option" attroption="A" attrtype="1">A.饿得很，先吃点</div>
+							<div class="option"  attroption="B" attrtype="1">B.可能有毒，还是不吃了</div>
+							<div class="option"  attroption="C" attrtype="1">C.吃点树皮算了</div>
+						</div>
+						<div class="answer-box">
+							<div class="question">你因为船难流落到荒岛上，又累又饿的你看到，前方森林里有很多果树，你会摘下果子来吃吗？</div>
+							<div class="option" attroption="A" attrtype="1">A.饿得很，先吃点</div>
+							<div class="option"  attroption="B" attrtype="1">B.可能有毒，还是不吃了</div>
+							<div class="option"  attroption="C" attrtype="1">C.吃点树皮算了</div>
+						</div>
+						<div class="answer-box">
+							<div class="question">你因为船难流落到荒岛上，又累又饿的你看到，前方森林里有很多果树，你会摘下果子来吃吗？</div>
+							<div class="option" attroption="A" attrtype="1">A.饿得很，先吃点</div>
+							<div class="option"  attroption="B" attrtype="1">B.可能有毒，还是不吃了</div>
+							<div class="option"  attroption="C" attrtype="1">C.吃点树皮算了</div>
+						</div>
+						<div class="answer-btn">
+							<img src="./images/answer-btn.png?v={$v}" />
+							<span class="answer-btn-text">提交答卷</span>
+						</div>
+						<div class="tip">
+							<p>温馨小提示：</p>
+							<p>白鸽保险官网(www.baigebao.com)藏有答案哟~</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 未选择弹框 -->
+			
+		</div>
+	</body>
+	<script src="../public/js/public.js?v={$v}"></script>
+	<script src="../public/js/dialog.min.js?v={$v}"></script>
+	<script src="../public/js/zepto.alert.js?v={$v}"></script>
+	<script type="text/javascript">
+		$(function(){
+			//点击选择答案改变背景色
+			$(".option").click(function(){
+				$(this).addClass("active").siblings(".option").removeClass("active");
+                //属于第一题库
+				if($(this).attr("attrType") == 1){
+					answer = $(this).attr("attrOption");
+				}
+			});
+			
+			//点击下一题
+            //存储第几题
+            var allanswer =[];
+			var num = [];
+            //存储该题选中什么
+			var choice = "";
+			$(".answer-btn").click(function(){
+				allanswer =[];
+				$(".answer-box").each(function(index){
+					if($(this).find(".option").hasClass("active")){
+						choice = $(this).find(".option.active").attr("attrOption");
+						allanswer.push({"num":index,"choice":choice});
+					}else{
+						$.dialog({content: "还有题目未选择哦~", time: 2000});
+					}
+				})
+						console.log(allanswer)
+			})
+
+			//关闭未选择弹框
+			$(".goonanswer-btn").click(function(){
+				$(".nochoice-box").hide();
+			});
+		})
+	</script>
+	<include file="Public/service" />
+	<include file="Activity/Public/baidu_statistics"/>
+	<include file="Activity/Public/wx_share"/>
+</html>
